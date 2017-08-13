@@ -1,0 +1,13 @@
+.pignose-calendar {
+	
+}
+
+.language-calender .pignose-calender {
+	margin-top: .4em !important;
+}
+
+@media screen and (max-width: 640px) {
+	.pignose-calendar {
+		font-size: 12px !important;
+	}
+}

@@ -1,0 +1,1147 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/cast.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="demo/css/calendar-style.css" />
+    <link rel="stylesheet" type="text/css" href="dist/css/pignose.calendar.css" />
+    <script type="text/javascript" src="demo/js/jquery.latest.min.js"></script>
+    <script type="text/javascript" src="demo/js/moment.latest.min.js"></script>
+    <script type="text/javascript" src="dist/js/pignose.calendar.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function() {
+            $('#wrapper .version strong').text('v' + $.fn.pignoseCalendar.ComponentVersion);
+
+            function onSelectHandler(date, context) {
+                /**
+                 * @date is an array which be included dates(clicked date at first index)
+                 * @context is an object which stored calendar interal data.
+                 * @context.calendar is a root element reference.
+                 * @context.calendar is a calendar element reference.
+                 * @context.storage.activeDates is all toggled data, If you use toggle type calendar.
+                 * @context.storage.events is all events associated to this date
+                 */
+
+                var $element = context.element;
+                var $calendar = context.calendar;
+                var $box = $element.siblings('.box').show();
+                var text = 'You choose date ';
+
+                if (date[0] !== null) {
+                    text += date[0].format('YYYY-MM-DD');
+                }
+
+                if (date[0] !== null && date[1] !== null) {
+                    text += ' ~ ';
+                } else if (date[0] === null && date[1] == null) {
+                    text += 'nothing';
+                }
+
+                if (date[1] !== null) {
+                    text += date[1].format('YYYY-MM-DD');
+                }
+
+                $box.text(text);
+            }
+
+            function onApplyHandler(date, context) {
+                /**
+                 * @date is an array which be included dates(clicked date at first index)
+                 * @context is an object which stored calendar interal data.
+                 * @context.calendar is a root element reference.
+                 * @context.calendar is a calendar element reference.
+                 * @context.storage.activeDates is all toggled data, If you use toggle type calendar.
+                 * @context.storage.events is all events associated to this date
+                 */
+
+                var $element = context.element;
+                var $calendar = context.calendar;
+                var $box = $element.siblings('.box').show();
+                var text = 'You applied date ';
+
+                if (date[0] !== null) {
+                    text += date[0].format('YYYY-MM-DD');
+                }
+
+                if (date[0] !== null && date[1] !== null) {
+                    text += ' ~ ';
+                } else if (date[0] === null && date[1] == null) {
+                    text += 'nothing';
+                }
+
+                if (date[1] !== null) {
+                    text += date[1].format('YYYY-MM-DD');
+                }
+
+                $box.text(text);
+            }
+
+            // Default Calendar
+            $('.calendar').pignoseCalendar({
+                select: onSelectHandler
+            });
+
+            // Input Calendar
+            $('.input-calendar').pignoseCalendar({
+                select: onSelectHandler,
+                apply: onApplyHandler,
+                buttons: true, // It means you can give bottom button controller to the modal which be opened when you click.
+            });
+
+            // Calendar modal
+            var $btn = $('.btn-calendar').pignoseCalendar({
+                select: onSelectHandler,
+                apply: onApplyHandler,
+                modal: true, // It means modal will be showed when you click the target button.
+                buttons: true
+            });
+
+            // Color theme type Calendar
+            $('.calendar-dark').pignoseCalendar({
+                theme: 'dark', // light, dark, blue
+                select: onSelectHandler
+            });
+
+            // Blue theme type Calendar
+            $('.calendar-blue').pignoseCalendar({
+                theme: 'blue', // light, dark, blue
+                select: onSelectHandler
+            });
+
+            // Schedule Calendar
+            $('.calendar-schedules').pignoseCalendar({
+                scheduleOptions: {
+                    colors: {
+                        holiday: '#2fabb7',
+                        seminar: '#5c6270',
+                        meetup: '#ef8080'
+                    }
+                },
+                schedules: [{
+                    name: 'holiday',
+                    date: '2017-02-08'
+                }, {
+                    name: 'holiday',
+                    date: '2017-02-16'
+                }, {
+                    name: 'holiday',
+                    date: '2017-03-01',
+                }, {
+                    name: 'holiday',
+                    date: '2017-03-05'
+                }, {
+                    name: 'holiday',
+                    date: '2017-03-18',
+                }, {
+                    name: 'seminar',
+                    date: '2017-02-14'
+                }, {
+                    name: 'seminar',
+                    date: '2017-03-01',
+                }, {
+                    name: 'meetup',
+                    date: '2017-02-16'
+                }, {
+                    name: 'meetup',
+                    date: '2017-03-01',
+                }, {
+                    name: 'meetup',
+                    date: '2017-03-18'
+                }, {
+                    name: 'meetup',
+                    date: '2017-04-04',
+                }, {
+                    name: 'meetup',
+                    date: '2017-05-01'
+                }, {
+                    name: 'meetup',
+                    date: '2017-06-19',
+                }],
+                select: function(date, context) {
+                    var message = `You selected ${(date[0] === null ? 'null' : date[0].format('YYYY-MM-DD'))}.
+							   <br />
+							   <br />
+							   <strong>Events for this date</strong>
+							   <br />
+							   <br />
+							   <div class="schedules-date"></div>`;
+                    var $target = context.calendar.parent().next().show().html(message);
+
+                    for (var idx in context.storage.schedules) {
+                        var schedule = context.storage.schedules[idx];
+                        if (typeof schedule !== 'object') {
+                            continue;
+                        }
+                        $target.find('.schedules-date').append('<span class="ui label default">' + schedule.name + '</span>');
+                    }
+                }
+            });
+
+            // Multiple picker type Calendar
+            $('.multi-select-calendar').pignoseCalendar({
+                multiple: true,
+                select: onSelectHandler
+            });
+
+            // Toggle type Calendar
+            $('.toggle-calendar').pignoseCalendar({
+                toggle: true,
+                select: function(date, context) {
+                    var message = `You selected ${(date[0] === null ? 'null' : date[0].format('YYYY-MM-DD'))}.
+							   <br />
+							   <br />
+							   <strong>Events for this date</strong>
+							   <br />
+							   <br />
+							   <div class="active-dates"></div>`;
+                    var $target = context.calendar.parent().next().show().html(message);
+
+                    for (var idx in context.storage.activeDates) {
+                        var date = context.storage.activeDates[idx];
+                        if (typeof date !== 'string') {
+                            continue;
+                        }
+                        $target.find('.active-dates').append('<span class="ui label default">' + date + '</span>');
+                    }
+                }
+            });
+
+            // Disabled date settings.
+            !(function() {
+                // IIFE Closure
+                var times = 30;
+                var disabledDates = [];
+                for (var i = 0; i < times; /* Do not increase index */ ) {
+                    var year = moment().year();
+                    var month = 0;
+                    var day = parseInt(Math.random() * 364 + 1);
+                    var date = moment().year(year).month(month).date(day).format('YYYY-MM-DD');
+                    if ($.inArray(date, disabledDates) === -1) {
+                        disabledDates.push(date);
+                        i++;
+                    }
+                }
+
+                disabledDates.sort();
+
+                var $dates = $('.disabled-dates-calendar').siblings('.guide').find('.guide-dates');
+                for (var idx in disabledDates) {
+                    $dates.append('<span>' + disabledDates[idx] + '</span>');
+                }
+
+                $('.disabled-dates-calendar').pignoseCalendar({
+                    select: onSelectHandler,
+                    disabledDates: disabledDates
+                });
+            }());
+
+            // Disabled Weekdays Calendar.
+            $('.disabled-weekdays-calendar').pignoseCalendar({
+                select: onSelectHandler,
+                disabledWeekdays: [0, 6]
+            });
+
+            // Disabled Range Calendar.
+            var minDate = moment().set('dates', Math.min(moment().day(), 2 + 1)).format('YYYY-MM-DD');
+            var maxDate = moment().set('dates', Math.max(moment().day(), 24 + 1)).format('YYYY-MM-DD');
+            $('.disabled-range-calendar').pignoseCalendar({
+                select: onSelectHandler,
+                minDate: minDate,
+                maxDate: maxDate
+            });
+
+            // Multiple Week Select
+            $('.pick-weeks-calendar').pignoseCalendar({
+                pickWeeks: true,
+                multiple: true,
+                select: onSelectHandler
+            });
+
+            // Disabled Ranges Calendar.
+            $('.disabled-ranges-calendar').pignoseCalendar({
+                select: onSelectHandler,
+                disabledRanges: [
+                    ['2016-10-05', '2016-10-21'],
+                    ['2016-11-01', '2016-11-07'],
+                    ['2016-11-19', '2016-11-21'],
+                    ['2016-12-05', '2016-12-08'],
+                    ['2016-12-17', '2016-12-18'],
+                    ['2016-12-29', '2016-12-30'],
+                    ['2017-01-10', '2017-01-20'],
+                    ['2017-02-10', '2017-04-11'],
+                    ['2017-07-04', '2017-07-09'],
+                    ['2017-12-01', '2017-12-25'],
+                    ['2018-02-10', '2018-02-26'],
+                    ['2018-05-10', '2018-09-17'],
+                ]
+            });
+
+            // I18N Calendar
+            $('.language-calendar').each(function() {
+                var $this = $(this);
+                var lang = $this.data('lang');
+                $this.pignoseCalendar({
+                    lang: lang
+                });
+            });
+
+            // This use for DEMO page tab component.
+            $('.menu .item').tab();
+        });
+        //]]>
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="container paddXsZ paddSmZ">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="col-md-3 col-sm-3 col-xs-9 hiddSm paddingZ logoDivath hidden-xs">
+                <a href="index.html">
+                    <img src="images/logo1.png" alt="logoimage" class="img-responsive">
+                </a>
+            </div>
+			<div class="sideonMoTab">
+				<div class="sideonMoTabOne">
+					<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
+					<p class="portal-sectionpara">Gather 'round and raise a toast to the final episode of the season! The season three finale 
+								of Tia mowry at Home airs this Sunday, February 26th at 5:30pm PT I 8:30pm ET on Cooking Channel.
+							</p>
+				</div>
+				<div class="sideonMoTabTwo">
+					<img src="images/facebookgroup.png" class="img-responsive" alt="fbgroup">				
+				</div>
+				<div class="sideonMoTabThree">	
+					<h2 class="curHeading nwesFlas">News Flash</h2>	
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					<ul>
+				</div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 paddingZ logoDiv showSm aboshadow visible-xs">
+                <a href="index.html">
+                    <div class="logoFirst">
+                        <img src="images/logo1.png" alt="logo-image" class="img-responsive">
+                        <p>Welcome to Company Portal</p>
+                    </div>
+                    <div class="logoSecond">
+                        <img src="images/logo-man-pic.png" alt="logo man pic" class="img-responsive">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12 paddXsZ tablr paddingZ">
+                <nav class="navbar navbar-default navBarNew">
+                    <div class="collapse navbar-collapse paddSmZ" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="index.html" class="active">Dashboard</a></li>
+							<li class="hidden-xs"><a href="#">IT</a></li>
+							<li><a href="#">Resource</a></li>
+							<li><a href="#">Directory</a></li>
+							<li class="hidden-xs"><a href="#">Calendar</a></li>
+							<li><a href="#">Gallery</a></li>                            
+							<li><a href="#">Contest/Games</a></li>
+							<li class="hidden-xs"><a href="#">Admins</a></li>
+						</ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid paddXsZ paddSmZ">
+        <div class="container paddXsZ conposition">
+            <div class="col-md-3 col-sm-3 col-xs-12 abosDiv hidden-xs widd22">
+                <div class="col-md-12 col-sm-12 col-xs-12 bsdivll logoDiv aboshadow hiddSm">
+                    <div class="logoSecond" style="float:left;">
+                        <img src="images/logo-man-pic.png" alt="logo man pic" class="img-responsive" style="float:left;">
+                    </div>
+                    <div class="logoanthrtext">
+                        <h1>Logan Huggins</h1>
+                        <p>Welcome to Company Portal</p>
+                        <span>Your Portal</span>
+                    </div>
+
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDiv">
+                    <div id="wrapper">
+                        <div class="header">
+                            <div class="calendar"></div>
+                        </div>
+                    </div>
+
+                    <div class="btmTest">
+                        <div class="maiDate">
+                            <p>Friday</p>
+                            <h2>07</h2>
+                            <span>July</span>
+                        </div>
+                        <div class="DayDesc">
+                            <div class="DayDesc12">
+                                <div class="dayTime">
+                                    10:00 AM
+                                </div>
+                                <div class="daywork">
+                                    <span>Bagels </span>
+                                    <span>In main kitchen</span>
+                                </div>
+                            </div>
+                            <div class="DayDesc12">
+                                <div class="dayTime">
+                                    07:00 AM
+                                </div>
+                                <div class="daywork">
+                                    <span>Happy Hour </span>
+                                    <span>At Local Peasant <i class="fa fa-map-marker"></i></span>
+                                </div>
+                            </div>
+                            <a style="cursor:pointer"><img src="images/arrow-box.jpg" id="toggleProfile" class="img-responsive imageArrw" alt="Arrow Icon"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                    <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                        <img src="images/comment-boxes.jpg" class="img-responsive commentbox" alt="commentbox">
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExt">
+                        <div class="col-md-12 col-sm-12 col-xs-12 divinpees">
+                            <form>
+							<label for="inpper1" class="hiddensection">inpper</label>
+                                <input id="inpper1" type="text" placeholder="" class="inpper1">
+                                <input type="submit" value="search" class="inppersbmt">
+                            </form>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                                <i class="fa fa-user userList"></i>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
+                                <h3>John Smith</h3>
+                                <p>Line Producer Production</p>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
+                                <ul class="IcnListFrm">
+                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                                <i class="fa fa-user userList"></i>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
+                                <h3>John Smith</h3>
+                                <p>Line Producer Production</p>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
+                                <ul class="IcnListFrm">
+                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                                <i class="fa fa-user userList"></i>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
+                                <h3>John Smith</h3>
+                                <p>Line Producer Production</p>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
+                                <ul class="IcnListFrm">
+                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                                <i class="fa fa-user userList"></i>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
+                                <h3>John Smith</h3>
+                                <p>Line Producer Production</p>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
+                                <ul class="IcnListFrm">
+                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                                <i class="fa fa-user userList"></i>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
+                                <h3>John Smith</h3>
+                                <p>Line Producer Production</p>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
+                                <ul class="IcnListFrm">
+                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                                <i class="fa fa-user userList"></i>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
+                                <h3>John Smith</h3>
+                                <p>Line Producer Production</p>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
+                                <ul class="IcnListFrm">
+                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                                <i class="fa fa-user userList"></i>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
+                                <h3>John Smith</h3>
+                                <p>Line Producer Production</p>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
+                                <ul class="IcnListFrm">
+                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                    <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvl">
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                            <img src="images/comment-logo.jpg" class="img-responsive coomntlogo" alt="">
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                            <form class="InForm">
+                                <label for="type1">Type:</label>
+                                <select id="type1">
+                                    <option>Type1</option>
+                                    <option>Type2</option>
+                                    <option>Type3</option>
+                                    <select>
+                                        <label for="comment">Comment:</label>
+                                        <textarea id="comment"></textarea>
+                                        <input type="submit" value="Send">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-7 col-xs-12 widd40">
+                <div class="col-md-12 col-sm-12 col-xs-12 centereDBoxIMSlid">
+
+                    <div class="slideValues">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li class="sliderLink" data-target="#myCarousel" data-slide-to="3"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+
+                                <div class="item active">
+                                    <img src="images/slide1.jpg" alt="Los Angeles" style="width:100%;">
+                                    <div class="carousel-caption">
+                                        <h3>Los Angeles</h3>
+                                        <p>LA is always so much fun!</p>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="images/slide2.jpg" alt="Chicago" style="width:100%;">
+                                    <div class="carousel-caption">
+                                        <h3>Chicago</h3>
+                                        <p>Thank you, Chicago!</p>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="images/slide3.jpg" alt="New York" style="width:100%;">
+                                    <div class="carousel-caption">
+                                        <h3>New York</h3>
+                                        <p>We love the Big Apple!</p>
+                                    </div>
+                                </div>
+
+                                <div class="item1">
+                                    <img src="images/slide2.jpg" alt="Chicago" style="width:100%;">
+                                    <div class="carousel-caption">
+                                        <h3>Chicago</h3>
+                                        <p>Thank you, Chicago!</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="testimo_anthr">
+                        <h3>John holiaday</h3>
+                        <p>Strive ot be a succuss, but rather to be value <span>-- Aristotle --</span></p>
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 aboshadow marSpecl ">
+                    <h2 class="curHeading">Company Feed</h2>
+                    <div class="col-md-12 col-sm-12 col-xs-12 paddingZ  ">
+					<label for="happingtext" class="hiddensection">happening</label>
+                        <textarea id="happingtext" placeholder="What's happening?" class="happningTearea"> </textarea>
+                        <div class="sendWithCI">
+                            <img src="images/emoji.png" class="emoji" alt="emoji">
+                            <i class="fa fa-camera"></i>
+                            <input type="submit" value="Send">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 paddingZ  martSom">
+                        <div class="CommmenImg">
+                            <img src="images/user1.jpg" class="img-responsive" alt="user">
+                        </div>
+                        <div class="CommmenBOx">
+                            <h2><span >Demo</span> commented on their video</h2>
+                            <div class="divInner">
+                                <img src="images/youtube.jpg" alt="youtube">
+                                <div class="divInner1">
+                                    <h3>Funny Cats - A Funny Cat Videos Compilation 2015</h3>
+                                    <p>Here are some funny cats. ihope these funny cats videos will make you lough or smile. So check out this funny cats compilation</p>
+                                </div>
+                            </div>
+                            <div class="iconDiv">
+                                <span><i class="iconCoome"></i> 2</span>
+                                <span><i class="fa fa-heart-o"></i> 0</span>
+                                <p class="sideThind">46 minuts ago</p>
+                            </div>
+                            <div class="cmntSecT">
+                                <div class="cmntSecTimg">
+                                    <img src="images/user3.jpg" class="img-responsive" alt="sue images1">
+                                </div>
+                                <div class="cmntSecTtext">
+                                    <h5>Brittany Williams</h5>
+                                    <p> so cute cate !</p>
+                                </div>
+                                <div class="cmntSecTtime">
+                                    <span>jun 21'16</span>
+                                </div>
+                            </div>
+                            <div class="cmntSecT">
+                                <div class="cmntSecTimg">
+                                    <img src="images/user1.jpg" class="img-responsive" alt="sue images">
+                                </div>
+                                <div class="cmntSecTtext">
+                                    <h5>	Demo</h5>
+                                    <p><img src="images/emoji.png" class="img-responsive" alt="emoji-images"> wow</p>
+                                </div>
+                                <div class="cmntSecTtime">
+                                    <span>46 minuts ago</span>
+                                </div>
+                            </div>
+                            <div class="cmntSecT">
+                                <div class="cmntSecTimg">
+                                    <img src="images/user1.jpg" class="img-responsive" alt="sue images">
+                                </div>
+                                <div class="cmntSecTinp">
+								<label for="herecomment">commenthesre</label>
+                                    <input id="herecomment" type="text" placeholder="comment here....">
+                                    <div class="sendWithCI smthspImg">
+                                        <img src="images/emoji.png" class="emoji" alt="emoji-img">
+                                        <i class="fa fa-camera"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 paddingZ  martSom">
+                        <div class="CommmenImg">
+                            <img src="images/user2.jpg" class="img-responsive" alt="user-2">
+                        </div>
+                        <div class="CommmenBOx">
+                            <h2><span >Josh Marrison</span> and <span >Demo</span> are now friends</h2>
+                            <div class="iconDiv">
+                                <span><i class="iconCoome1"></i> 0</span>
+                                <span><i class="fa fa-heart-o"></i> 0</span>
+                                <p class="sideThind">one hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 paddingZ  martSom">
+                        <div class="CommmenImg">
+                            <img src="images/user3.jpg" class="img-responsive" alt="user-img">
+                        </div>
+                        <div class="CommmenBOx">
+                            <h2><span >Brittany Williams</span> and <span >Demo</span> are now friends</h2>
+                            <div class="iconDiv">
+                                <span><i class="iconCoome1"></i> 0</span>
+                                <span><i class="fa fa-heart-o"></i> 0</span>
+                                <p class="sideThind">one hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12  colMddle2 widd15">
+                <div class="col-md-12 col-sm-12 col-xs-12 paddXsZ">
+
+                    <div class="col-ms-12 col-sm-12 col-xs-12 paddSmZ">
+                        <div class="col-md-12 col-xs-12 col-sm-12 paddingZ">
+                            <div class="col-md-12 col-sm-12 col-xs-12 border-red color-red font">
+                                <h4>Empire</h4>
+                                <p>Food truc info</p>
+                                <span class="spanVludiv" style="color:#056598">July 6<span>th</span><span>
+			</div>	
+
+			<div class="col-md-12 col-sm-12 col-xs-12 border-red color-red font" >
+				<h4>Empire</h4>
+				<p>Big Announcement <br>at 1PM in Cafe</p>
+				<span class="spanVludiv" style="color:#056598">July 6<span>th</span><span>
+			</div>	
+
+			<div class="col-md-12 col-sm-12 col-xs-12 border-blue color-blue font" >
+				<h4>PDC </h4>
+				<p>Photo Day</p>
+				<span class="spanVludiv" style="color:#970301">July 6<span>th</span><span>
+			</div>	
+
+			<div class="col-md-12 col-sm-12 col-xs-12 border-green color-green font" >
+				<h4>Go Green </h4>
+				<p>Recycle Today</p>
+				<span class="spanVludiv" style="color:rgb(2,154,3)">July 7<span>th</span><span>
+			</div>	
+		</div>
+	</div>
+	<div class="col-ms-12 col-sm-12 col-xs-12 paddingZ tabtypxs">
+		<div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+			<div class="col-md-12 col-sm-12 col-xs-12  paddingZ hidden-xs" style="display:block;">
+				<div class="col-md-12 col-sm-12 col-xs-12 user paddingZ" style="display:block;margin: 25px 0px 10px;">
+					<h6><b>My Feed</b></h6>
+				</div>
+			</div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ pad015">
+                            <div class="col-md-5 col-sm-5 col-xs-12 user paddingZ">
+                                <h6><b>Users</b></h6>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 color-gray paddingZ hidden-xs">
+                                <p>
+									<ul class="nav nav-pills">
+									  <li><a data-toggle="pill" href="#Online" class="siteonline">Online</a></li>
+									  <li>|</li>
+									  <li class="active"><a data-toggle="pill" href="#Latest" class="siteonline">Latest</a></li>
+									</ul>
+								</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 paddingZ tab-content  hidden-xs">
+                        <div id="Online" class="col-md-12 col-sm-12 col-xs-12 paddingZ tab-pane fade in active ">
+                            <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal1.jpg" alt="img-circle-1"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal2.jpg"  alt="img-circle-2"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal3.jpg"  alt="img-circle-3"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal4.jpg"  alt="img-circle-4"></img>
+                                </div>
+
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal5.jpg"  alt="img-circle-5"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal6.jpg"  alt="img-circle-6"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal7.jpg"  alt="img-circle-7"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal8.jpg"  alt="img-circle-8"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal9.jpg"  alt="img-circle-9"></img>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="Latest" class="col-md-12 col-sm-12 col-xs-12 paddingZ tab-pane fade ">
+                            <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal1.jpg"  alt="img-circle-10"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal2.jpg"  alt="img-circle-11"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal3.jpg"  alt="img-circle-12"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal4.jpg"  alt="img-circle-13"></img>
+                                </div>
+
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal5.jpg"  alt="img-circle-14"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal6.jpg"  alt="img-circle-15"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal7.jpg"  alt="img-circle-16"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal8.jpg"  alt="img-circle-17"></img>
+                                </div>
+                                <div class="col-md-3 img-margin">
+                                    <img class="img-circle " width="30px;" src="images/portal9.jpg"  alt="img-circle-18"></img>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+	<div class="col-ms-12 col-sm-12 col-xs-12 paddingZ tabtypxs" style="padding-top:30px;">
+		<div class="col-md-12 col-sm-12 col-xs-12 font paddingZ">
+			<div class="col-md-5 col-sm-5 col-xs-12 user paddingZ">
+				<h6><b>Building</b></h6>
+			</div>
+			<div class="col-md-12 col-sm-12 col-xs-12 marginZ hidden-xs" style="margin-top: 10px; ">
+				<p>PDC</p>
+				<p>Empire</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-ms-12 col-sm-12 col-xs-12 paddingZ tabtypxs" style="padding-top:30px;">
+		<div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+			<div class="col-md-6 col-sm-6 col-xs-12 user paddingZ">
+				<h6><b>Department</b></h6>
+			</div>
+			<div class="col-md-12 col-sm-12 col-xs-12 marginZ font  hidden-xs" style="margin-top: 10px;">
+				<p>Human Resourses</p>
+				<p>Legal</p>	
+				<p>Production</p>	
+				<p>Post</p>	
+				<p>Accounting</p>	
+				<p>IT</p>
+				<p>Executive Office</p>
+				<p></p>
+				<p></p>
+			</div>
+		</div>
+	</div>
+				</div>
+			</div>
+			<div class="col-md-1 widd6">
+				<h2 class="curHeading nwesFlas dflash">News Flash</h2>	
+				<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow">
+						
+						<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+							<img src="images/portal-group1.png" alt="grounp1-img">
+						</div>
+						<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
+							<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
+							<p class="portal-sectionpara">Gather 'round and raise a toast to the final episode of the season! The season three finale 
+								of Tia mowry at Home airs this Sunday, February 26th at 5:30pm PT I 8:30pm ET on Cooking Channel.
+							</p>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
+							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+								<img src="images/portal-group2.png" alt="poral-grounp2">
+							</div>
+							<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
+								<h2 class="portal-section">TUNE IN: Besties Brunch with Tia SUNDAY!</h2>
+									<p class="portal-sectionpara">Be sure to catch the next episode of Tie Mowry at Home on Cooking Channel this Sunday.
+											February 19th at 5:30pm PT I 8:30pm ET. Don’t  forget to tune in and set your DVRs! 
+									</p>
+							</div>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
+							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+									<img src="images/portal-group3.png"  alt="grounp3" >
+							</div>
+							<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
+								<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
+								<p class="portal-sectionpara">Gather 'round and raise a toast to the final episode of the season! The season three finale 
+									of Tia mowry at Home airs this Sunday, February 26th at 5:30pm PT I 8:30pm ET on Cooking Channel.
+								</p>
+							</div>
+							<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
+							<a style="cursor:pointer"><img src="images/arrow-box.jpg"   id="toggleProfile1" class="img-responsive imageArrw1" alt="Arrow Icon"></a>
+						</div>
+							</div>
+
+					</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
+					<img src="images/facebook.png" class="newsfedd1" alt="facebook">
+					
+					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide1 caledivextra">
+						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ pad0Top">
+							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+								<img src="images/tv-show.png" alt="tv-show"  class="img-responsive">
+							</div>
+							<div class="col-md-9 col-sm-9 col-xs-12 pad0Righ">
+								<h2 class="tv-show">Catfish: The TV Show's photo.</h2>
+								<p class="show-para">It's the day we've all been waiting for! Tag a friend in the comments to let them know Catfish: The TV Show is back tonight!</p>
+								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+									<p class="like"><i class="fa fa-thumbs-up facebook-icon" aria-hidden="true" ></i>like</p>
+								</div>
+								<div class="col-md-5 col-sm-5 col-xs-12 paddingZ">
+									<p class="like"><img src="images/comment.png" class="facebook-icon"  alt="comment1">comment</p>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-12 paddingZ">
+									<p class="like"><i class="fa fa-share facebook-icon" aria-hidden="true" ></i>share</p>
+								</div>
+							</div>
+						
+
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ pad0Top">
+
+							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+								<img src="images/facebookgroup.png" alt="tv-show1"  class="img-responsive">
+							</div>
+							<div class="col-md-9 col-sm-9 col-xs-12 pad0Righ">
+								<h2 class="tv-show">Tia Mowry At Home</h2>
+								<p class="show-para">It's the season 3 FINALE of #TiaMowryAtHome TODAY 2/26 at 5:30pPT|8:30pET with Tia Mowry on Cooking Channel</p>
+								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+									<p class="like"><i class="fa fa-thumbs-up facebook-icon" aria-hidden="true" ></i>like</p>
+								</div>
+								<div class="col-md-5 col-sm-5 col-xs-12 paddingZ">
+									<p class="like"><img src="images/comment.png" class="facebook-icon" alt="comment00">comment</p>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-12 paddingZ">
+									<p class="like"><i class="fa fa-share facebook-icon" aria-hidden="true" ></i>share</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
+					<img src="images/twitter.png" class="newsfedd2" alt="twitter">
+					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide2 caledivextra">
+
+							
+						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ twitter">
+							<div class="col-md-2 col-sm-2 col-xs-12 paddingZ">
+							<img src="images/demoman.png" class="img-responsive" alt="default">
+							</div>
+							<div class="col-md-10 col-sm-10 col-xs-12 paddingZ">
+							<p class="content"><img src="images/share.png" alt="share">critical content relweeted</p>
+							<p><span class="catfish1">catfish</span> <img src="images/fbmessanger.png" alt="fbmessager"><span class="catfish2">catfish Mtv .mar1</span></p>
+                                <p class="seasonrelated">THREE HOUR UNTIL THE NEW SEASON OF I</P>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-l-45">
+                            <ul class="list-inline twitterimage">
+                                <li>
+                                    <p class="like"><i class="fa fa-share facebook-icon likeisd" aria-hidden="true"></i></p>
+                                </li>
+                                <li>
+                                    <p class="like"><i class="fa fa-retweet" aria-hidden="true"></i>22</p>
+                                </li>
+                                <li>
+                                    <p class="like"><i class="fa fa-star" aria-hidden="true"></i>7</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ twitter1">
+                            <div class="col-md-2 col-sm-2 col-xs-12 paddingZ">
+                                <img src="images/demoman.png" class="img-responsive" alt="default">
+                            </div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 paddingZ">
+                                <p class="content"><img src="images/share.png" alt="share">critical content relweeted</p>
+                                <p><span class="catfish1">catfish</span> <img src="images/fbmessanger.png" alt="fbmessager"><span class="catfish2">catfish Mtv .mar1</span></p>
+                                <p class="seasonrelated">Did Someone Say........Two hour Until #catfish ?!</P>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-l-45">
+                            <ul class="list-inline twitterimage">
+                                <li>
+                                    <p class="like"><i class="fa fa-share facebook-icon likeisd" aria-hidden="true"></i></p>
+                                </li>
+                                <li>
+                                    <p class="like"><i class="fa fa-retweet" aria-hidden="true"></i>22</p>
+                                </li>
+                                <li>
+                                    <p class="like"><i class="fa fa-star" aria-hidden="true"></i>7</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ twitter">
+                            <div class="col-md-2 col-sm-2 col-xs-12 paddingZ">
+                                <img src="images/demoman.png" class="img-responsive" alt="default">
+                            </div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 paddingZ">
+                                <p class="content"><img src="images/share.png" alt="share">critical content relweeted</p>
+                                <p><span class="catfish1">catfish</span> <img src="images/fbmessanger.png" alt="fbmessager"><span class="catfish2">catfish Mtv .mar1</span></p>
+                                <p class="seasonrelated">THREE HOUR UNTIL THE NEW SEASON OF I</P>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-l-45">
+                            <ul class="list-inline twitterimage">
+                                <li>
+                                    <p class="like"><i class="fa fa-share facebook-icon likeisd" aria-hidden="true"></i></p>
+                                </li>
+                                <li>
+                                    <p class="like"><i class="fa fa-retweet" aria-hidden="true"></i>22</p>
+                                </li>
+                                <li>
+                                    <p class="like"><i class="fa fa-star" aria-hidden="true"></i>7</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
+					<img src="images/instagram.png" class="newsfedd3" alt="intragram">
+					
+					
+                    <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide3 caledivextra areasectionWide">
+                        
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ ">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                                <ul class="list-inline linelitForim marBimg">
+                                    <li><img src="images/intagram1.png" class="img-responsive" alt="intragram1"></li>
+                                    <li><img src="images/intagram2.png" class="img-responsive" alt="intragram2"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                            <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+                                <ul class="list-inline linelitForim">
+                                    <li><img src="images/intagram3.png" class="img-responsive" alt="intragram3"></li>
+                                    <li><img src="images/intagram4.png" class="img-responsive" alt="intragram4"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-3 col-xs-12 hidden-xs hiddSm widd23">	
+			
+				<div class="col-md-12 col-sm-12 col-xs-12 abosDiv ">	
+	
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divFixed">
+        <a class="divFixedAn"> Chat</a>
+        <form>
+            <p>Sorry, we aren't online at the moment. Leave a message and we'll get back to you.</p>
+            <label for="name">Name*:</label>
+            <input id="name" type="text" required="">
+            <label for="email">Email*:</label>
+            <input id="email"type="email" required="">
+            <input  type="submit" value="send">
+			<form>
+    </div>
+    <div class="container">
+        <div class="profile">
+            <div class="profile__form">
+                <h3 class="loginpa">Login</h3>
+                <a class="closs">&times;</a>
+                <div class="profile__fields">
+                    <div class="field">
+                        <label for="fieldUser" class="label">Username</label>
+                        <input type="text" id="fieldUser" class="input" required />
+                    </div>
+                    <div class="field">
+                        <label for="fieldPassword" class="label">Password</label>
+                        <input type="password" id="fieldPassword" class="input" required />
+                    </div>
+                    <div class="profile__footer">
+                        <button class="btn">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".divFixedAn").click(function() {
+                $(".divFixed").toggleClass("divFixed1");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".sliderLink").click(function() {
+                $(".item1").addClass("item");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#toggleProfile").click(function() {
+                $(".profile").toggleClass("profile1");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#toggleProfile1").click(function() {
+                $(".profile").toggleClass("profile1");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".closs").click(function() {
+                $(".profile").toggleClass("profile1");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".divFixedAn").click(function() {
+                $(".divFixedAn").toggleClass("divFixedAn1");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
