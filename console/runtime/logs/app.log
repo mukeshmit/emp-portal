@@ -1,0 +1,493 @@
+2017-07-13 18:28:37 [-][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'COMMENT' (T_STRING)' in C:\wamp\www\employee-portal\console\migrations\m170713_125828_add_type_column_to_newsFlash_table.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-07-13 18:28:35 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\employee-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1499950715.7323
+    'REQUEST_TIME' => 1499950715
+    'argv' => [
+        0 => 'C:\\wamp\\www\\employee-portal\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2017-07-13 18:29:45 [-][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'COMMENT' (T_STRING)' in C:\wamp\www\employee-portal\console\migrations\m170713_125828_add_type_column_to_newsFlash_table.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-07-13 18:29:43 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\employee-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1499950783.5768
+    'REQUEST_TIME' => 1499950783
+    'argv' => [
+        0 => 'C:\\wamp\\www\\employee-portal\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2017-07-13 18:30:46 [-][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'COMMENT' (T_STRING)' in C:\wamp\www\employee-portal\console\migrations\m170713_125828_add_type_column_to_newsFlash_table.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-07-13 18:30:44 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\employee-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1499950844.4361
+    'REQUEST_TIME' => 1499950844
+    'argv' => [
+        0 => 'C:\\wamp\\www\\employee-portal\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2017-07-13 18:31:43 [-][-][-][error][yii\console\Exception] exception 'yii\console\Exception' with message 'The step argument must be greater than 0.' in C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php:220
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionDown('m170713_125828_...')
+#1 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('down', Array)
+#4 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('down', Array)
+#5 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/down', Array)
+#6 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/down', Array)
+#7 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\wamp\www\employee-portal\yii(27): yii\base\Application->run()
+#9 {main}
+2017-07-13 18:31:43 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\employee-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1499950903.2215
+    'REQUEST_TIME' => 1499950903
+    'argv' => [
+        0 => 'C:\\wamp\\www\\employee-portal\\yii'
+        1 => 'migrate/down'
+        2 => 'm170713_125828_add_type_column_to_newsFlash_table'
+    ]
+    'argc' => 3
+]
+2017-07-13 18:34:46 [-][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'COMMENT' (T_STRING)' in C:\wamp\www\employee-portal\console\migrations\m170713_125828_add_type_column_to_newsFlash_table.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-07-13 18:34:40 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\employee-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1499951080.3323
+    'REQUEST_TIME' => 1499951080
+    'argv' => [
+        0 => 'C:\\wamp\\www\\employee-portal\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2017-07-13 18:41:25 [-][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'COMMENT' (T_STRING)' in C:\wamp\www\employee-portal\console\migrations\m170713_125828_add_type_column_to_newsFlash_table.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-07-13 18:41:20 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\employee-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1499951480.3083
+    'REQUEST_TIME' => 1499951480
+    'argv' => [
+        0 => 'C:\\wamp\\www\\employee-portal\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2017-07-13 18:43:54 [-][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'COMMENT' (T_STRING)' in C:\wamp\www\employee-portal\console\migrations\m170713_125828_add_type_column_to_newsFlash_table.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-07-13 18:43:52 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\employee-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1499951632.005
+    'REQUEST_TIME' => 1499951632
+    'argv' => [
+        0 => 'C:\\wamp\\www\\employee-portal\\yii'
+        1 => 'migrate/up'
+    ]
+    'argc' => 2
+]
+2017-07-13 18:47:54 [-][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: m170713_130430_create_newsFlash_table::tinyint()' in C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\Component.php:290
+Stack trace:
+#0 C:\wamp\www\employee-portal\console\migrations\m170713_130430_create_newsFlash_table.php(26): yii\base\Component->__call('tinyint', Array)
+#1 C:\wamp\www\employee-portal\console\migrations\m170713_130430_create_newsFlash_table.php(26): m170713_130430_create_newsFlash_table->tinyint()
+#2 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m170713_130430_create_newsFlash_table->up()
+#3 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m170713_130430_...')
+#4 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#5 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#6 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#7 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('', Array)
+#8 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('', Array)
+#9 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#10 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#11 C:\wamp\www\employee-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 C:\wamp\www\employee-portal\yii(27): yii\base\Application->run()
+#13 {main}
+2017-07-13 18:47:43 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\employee-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\employee-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1499951863.8041
+    'REQUEST_TIME' => 1499951863
+    'argv' => [
+        0 => 'C:\\wamp\\www\\employee-portal\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
