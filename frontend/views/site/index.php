@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 use kartik\social\FacebookPlugin;
 use kartik\social\TwitterPlugin;
 use nirvana\instafeed\Instafeed;
@@ -32,7 +32,21 @@ echo Instafeed::widget([
 ]);
 
 ?>
+<style>
+.fb_iframe_widget iframe {
+    position: absolute;
+    width: 100% !important;
+    height: 200px !important;
+}
+.fb_iframe_widget span {
+    display: inline-block;
+    position: relative;
+    text-align: justify;
+    width: 190px !important;
+    height: 200px !important;
+}
 
+</style>
 <div class="col-md-4 col-sm-7 col-xs-12 widd40">
 <div class="col-md-12 col-sm-12 col-xs-12 centereDBoxIMSlid">
 
@@ -49,7 +63,7 @@ echo Instafeed::widget([
 			<div class="carousel-inner">
 
 				<div class="item active">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/slide1.jpg'; ?>" alt="Los Angeles" style="width:100%;">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/slide1.jpg'; ?>" alt="Los Angeles" style="width:100%;">
 					<div class="carousel-caption">
 						<h3>Los Angeles</h3>
 						<p>LA is always so much fun!</p>
@@ -57,7 +71,7 @@ echo Instafeed::widget([
 				</div>
 
 				<div class="item">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/slide2.jpg'; ?>" alt="Chicago" style="width:100%;">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/slide2.jpg'; ?>" alt="Chicago" style="width:100%;">
 					<div class="carousel-caption">
 						<h3>Chicago</h3>
 						<p>Thank you, Chicago!</p>
@@ -65,7 +79,7 @@ echo Instafeed::widget([
 				</div>
 
 				<div class="item">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/slide3.jpg'; ?>" alt="New York" style="width:100%;">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/slide3.jpg'; ?>" alt="New York" style="width:100%;">
 					<div class="carousel-caption">
 						<h3>New York</h3>
 						<p>We love the Big Apple!</p>
@@ -73,7 +87,7 @@ echo Instafeed::widget([
 				</div>
 
 				<div class="item1">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/slide2.jpg'; ?>" alt="Chicago" style="width:100%;">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/slide2.jpg'; ?>" alt="Chicago" style="width:100%;">
 					<div class="carousel-caption">
 						<h3>Chicago</h3>
 						<p>Thank you, Chicago!</p>
@@ -96,19 +110,19 @@ echo Instafeed::widget([
 	<div class="col-md-12 col-sm-12 col-xs-12 paddingZ  ">
 		<textarea placeholder="What's happening?" class="happningTearea"> </textarea>
 		<div class="sendWithCI">
-			<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/emoji.png'; ?>" class="emoji">
+			<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/emoji.png'; ?>" class="emoji">
 			<i class="fa fa-camera"></i>
 			<input type="submit" value="Send">
 		</div>
 	</div>
 	<div class="col-md-12 col-sm-12 col-xs-12 paddingZ  martSom">
 		<div class="CommmenImg">
-			<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/user1.jpg'; ?>" class="img-responsive">
+			<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/user1.jpg'; ?>" class="img-responsive">
 		</div>
 		<div class="CommmenBOx">
 			<h2><span >Demo</span> commented on their video</h2>
 			<div class="divInner">
-				<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/youtube.jpg'; ?>">
+				<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/youtube.jpg'; ?>">
 				<div class="divInner1">
 					<h3>Funny Cats - A Funny Cat Videos Compilation 2015</h3>
 					<p>Here are some funny cats. ihope these funny cats videos will make you lough or smile. So check out this funny cats compilation</p>
@@ -121,7 +135,7 @@ echo Instafeed::widget([
 			</div>
 			<div class="cmntSecT">
 				<div class="cmntSecTimg">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/user3.jpg'; ?>" class="img-responsive" alt="sue images">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/user3.jpg'; ?>" class="img-responsive" alt="sue images">
 				</div>
 				<div class="cmntSecTtext">
 					<h5>	Brittany Williams</h5>
@@ -133,11 +147,11 @@ echo Instafeed::widget([
 			</div>
 			<div class="cmntSecT">
 				<div class="cmntSecTimg">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/user1.jpg'; ?>" class="img-responsive" alt="sue images">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/user1.jpg'; ?>" class="img-responsive" alt="sue images">
 				</div>
 				<div class="cmntSecTtext">
 					<h5>	Demo</h5>
-					<p><img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/emoji.png'; ?>" class="img-responsive" alt="emoji images"> wow</p>
+					<p><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/emoji.png'; ?>" class="img-responsive" alt="emoji images"> wow</p>
 				</div>
 				<div class="cmntSecTtime">
 					<span>46 minuts ago</span>
@@ -145,12 +159,12 @@ echo Instafeed::widget([
 			</div>
 			<div class="cmntSecT">
 				<div class="cmntSecTimg">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/user1.jpg'; ?>" class="img-responsive" alt="sue images">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/user1.jpg'; ?>" class="img-responsive" alt="sue images">
 				</div>
 				<div class="cmntSecTinp">
 					<input type="text" placeholder="comment here....">
 					<div class="sendWithCI smthspImg">
-						<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/emoji.png'; ?>" class="emoji">
+						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/emoji.png'; ?>" class="emoji">
 						<i class="fa fa-camera"></i>
 					</div>
 				</div>
@@ -160,7 +174,7 @@ echo Instafeed::widget([
 	</div>
 	<div class="col-md-12 col-sm-12 col-xs-12 paddingZ  martSom">
 		<div class="CommmenImg">
-			<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/user2.jpg'; ?>" class="img-responsive">
+			<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/user2.jpg'; ?>" class="img-responsive">
 		</div>
 		<div class="CommmenBOx">
 			<h2><span >Josh Marrison</span> and <span >Demo</span> are now friends</h2>
@@ -173,7 +187,7 @@ echo Instafeed::widget([
 	</div>
 	<div class="col-md-12 col-sm-12 col-xs-12 paddingZ  martSom">
 		<div class="CommmenImg">
-			<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/user3.jpg'; ?>" class="img-responsive">
+			<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/user3.jpg'; ?>" class="img-responsive">
 		</div>
 		<div class="CommmenBOx">
 			<h2><span >Brittany Williams</span> and <span >Demo</span> are now friends</h2>
@@ -243,32 +257,32 @@ echo Instafeed::widget([
 			<div id="Online" class="col-md-12 col-sm-12 col-xs-12 paddingZ tab-pane fade in active ">
 				<div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal1.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal1.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal2.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal2.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal3.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal3.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal4.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal4.jpg'; ?>"></img>
 					</div>
 
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal5.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal5.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal6.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal6.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal7.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal7.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal8.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal8.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal9.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal9.jpg'; ?>"></img>
 					</div>
 
 				</div>
@@ -276,32 +290,32 @@ echo Instafeed::widget([
 			<div id="Latest" class="col-md-12 col-sm-12 col-xs-12 paddingZ tab-pane fade ">
 				<div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal1.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal1.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal2.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal2.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal3.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal3.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal4.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal4.jpg'; ?>"></img>
 					</div>
 
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal5.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal5.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal6.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal6.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal7.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal7.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal8.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal8.jpg'; ?>"></img>
 					</div>
 					<div class="col-md-3 img-margin">
-						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal9.jpg'; ?>"></img>
+						<img class="img-circle " width="30px;" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal9.jpg'; ?>"></img>
 					</div>
 
 				</div>
@@ -344,7 +358,7 @@ echo Instafeed::widget([
 	<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow">
 			
 			<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-				<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal-group1.png'; ?>" >
+				<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>" >
 			</div>
 			<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
 				<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
@@ -354,7 +368,7 @@ echo Instafeed::widget([
 			</div>
 			<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
 				<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal-group2.png'; ?>" >
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group2.png'; ?>" >
 				</div>
 				<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
 					<h2 class="portal-section">TUNE IN: Besties Brunch with Tia SUNDAY!</h2>
@@ -365,7 +379,7 @@ echo Instafeed::widget([
 			</div>
 			<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
 				<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-						<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/portal-group3.png'; ?>" >
+						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group3.png'; ?>" >
 				</div>
 				<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
 					<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
@@ -374,13 +388,13 @@ echo Instafeed::widget([
 					</p>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
-				<a style="cursor:pointer"><img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/arrow-box.jpg'; ?>"   id="toggleProfile1" class="img-responsive imageArrw1" alt="Arrow Icon"></a>
+				<a style="cursor:pointer"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/arrow-box.jpg'; ?>"   id="toggleProfile1" class="img-responsive imageArrw1" alt="Arrow Icon"></a>
 			</div>
 				</div>
 
 		</div>
 	<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-		<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/facebook.png'; ?>" class="newsfedd1">
+		<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/facebook.png'; ?>" class="newsfedd1">
 		
 		<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide1 caledivextra">
 			<div class="col-md-12 col-sm-12 col-xs-12 paddingZ pad0Top">
@@ -394,7 +408,7 @@ echo Instafeed::widget([
 		</div>
 	</div>
 	<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-		<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/twitter.png'; ?>" class="newsfedd2">
+		<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/twitter.png'; ?>" class="newsfedd2">
 		<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide2 caledivextra">
 			<?php 
 				echo TwitterPlugin::widget(['type'=>TwitterPlugin::TWEET, 'content' => '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/TheLoweFiles?src=hash">#TheLoweFiles</a> WED 8/2 on <a href="https://twitter.com/AETV">@AETV</a> <a href="https://t.co/gt8cw48IrV">https://t.co/gt8cw48IrV</a></p>&mdash; Critical Content (@critcalcontent) <a href="https://twitter.com/critcalcontent/status/892096557914349568">July 31, 2017</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>', 'settings' => ['href'=>'https://twitter.com/critcalcontent']]);
@@ -402,7 +416,7 @@ echo Instafeed::widget([
 		</div>
 	</div>
 	<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-		<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/instagram.png'; ?>" class="newsfedd3">
+		<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/instagram.png'; ?>" class="newsfedd3">
 		
 		
 		<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide3 caledivextra areasectionWide">
