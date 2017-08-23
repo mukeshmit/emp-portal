@@ -7,11 +7,13 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\widgets\ActiveForm;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+
 
 /**
  * Site controller
@@ -73,7 +75,9 @@ class SiteController extends Controller
     public function actionIndex()
     {
 		$model = new LoginForm();
-		
+		if (!\Yii::$app->user->isGuest) {
+			return $this->redirect(['news-flash/index']);
+		}
         return $this->render('index',['model' => $model]);
     }
 
@@ -101,9 +105,19 @@ class SiteController extends Controller
 			return $this->goHome();
 		}
 
+		
 		$model = new LoginForm();
+		
+		// $model->'_csrf-frontend' = Yii::$app->request->post()['_csrf-frontend'];
+		$model->username = Yii::$app->request->post()['LoginForm']['username'];
+		$model->password = Yii::$app->request->post()['LoginForm']['password'];
+		$model->rememberMe = Yii::$app->request->post()['LoginForm']['rememberMe'];
+		$postedData = (object) Yii::$app->request->post()['LoginForm'];
+		
 		if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
-			Yii::$app->response->format = Response::FORMAT_JSON;
+			// Yii::$app->response->format = Response::FORMAT_JSON;
+			 \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+		
 			return ActiveForm::validate($model);
 		}
 		if ($model->load(Yii::$app->request->post()) && $model->login()) {

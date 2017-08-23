@@ -1,14 +1,14 @@
 <?php
 
-namespace app\backend\models;
+namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\backend\models\Newsflash;
+use frontend\models\Newsflash;
 
 /**
- * SearchNewsFlash represents the model behind the search form about `app\backend\models\Newsflash`.
+ * SearchNewsFlash represents the model behind the search form about `app\frontend\models\Newsflash`.
  */
 class SearchNewsFlash extends Newsflash
 {

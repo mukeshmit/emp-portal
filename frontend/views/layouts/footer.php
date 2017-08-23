@@ -2,7 +2,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\LoginForm;
-
 $model = new LoginForm();
 ?>
 <div class="divFixed">
@@ -23,6 +22,7 @@ $model = new LoginForm();
 			<a class="closs">&times;</a>
 			<div class="profile__fields">
 				 <?php $form = ActiveForm::begin([
+				'action' =>['site/login'],
                 'id' => $model->formName(),
                 'enableAjaxValidation' => true,
             ]); ?>
@@ -48,14 +48,3 @@ $model = new LoginForm();
 		</div>
 	</div>
 </div>
-<script>
-$(document).ready(function(){
-	alert('asas');
-	$('#myform').on('ajaxBeforeSend', function (event, jqXHR, settings) {
-		// Activate waiting label
-	}).on('ajaxComplete', function (event, jqXHR, textStatus) {
-		// Deactivate waiting label
-	});
-	
-});
-</script>

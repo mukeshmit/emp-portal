@@ -1,5 +1,6 @@
 <?php
-namespace app\frontend\models;
+
+namespace frontend\models;
 
 use Yii;
 
@@ -63,5 +64,16 @@ class Newsflash extends \yii\db\ActiveRecord
     public static function find()
     {
         return new NewsflashQuery(get_called_class());
+    }
+	
+	public static function getflashdata()
+    {
+		$model = Newsflash::find()
+				->select('*')
+				->where(['type' => 2])
+				->orderBy(['created_at' => SORT_DESC])
+				->one();
+		
+        return $model;
     }
 }

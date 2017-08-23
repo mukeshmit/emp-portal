@@ -3,13 +3,24 @@ use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+// $baseUrlimg = Yii::app()->request->baseUrl;
+
 ?>
+<style>
+.logoutbutton{
+	background: transparent;
+	border: 0 none;
+	border-bottom: 2px solid transparent;
+    margin: 6px;
+    transition: all 0.4s ease 0s;
+}
+</style>
 <div class="container-fluid ">
 	<div class="container paddXsZ paddSmZ">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="col-md-3 col-sm-3 col-xs-9 hiddSm paddingZ logoDivath hidden-xs">
-			<a href="index.html">
-				<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/logo1.png'; ?>" alt="logo image" class="img-responsive">
+			<a href="/">
+				<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/logo1.png'; ?>" alt="logo image" class="img-responsive">
 			</a>
 		</div>
 		<div class="sideonMoTab">
@@ -20,7 +31,7 @@ use yii\helpers\Html;
 						</p>
 			</div>
 			<div class="sideonMoTabTwo">
-				<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/facebookgroup.png'; ?>" class="img-responsive">				
+				<img src="<?php echo Yii::getAlias('@web').'//themes/portal-front/images/facebookgroup.png'; ?>" class="img-responsive">				
 			</div>
 			<div class="sideonMoTabThree">	
 				<h2 class="curHeading nwesFlas">News Flash</h2>	
@@ -34,11 +45,11 @@ use yii\helpers\Html;
 		<div class="col-md-3 col-sm-3 col-xs-12 paddingZ logoDiv showSm aboshadow visible-xs">
 			<a href="index.html">
 				<div class="logoFirst">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/logo1.png'; ?>" alt="logo image" class="img-responsive">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/logo1.png'; ?>" alt="logo image" class="img-responsive">
 					<p>Welcome to Company Portal</p>
 				</div>
 				<div class="logoSecond">
-					<img src="<?php echo Yii::getAlias('@web').'themes/portal-front/images/logo-man-pic.png'; ?>" alt="logo man pic" class="img-responsive">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/nouser.jpg'; ?>" alt="logo man pic" class="img-responsive">
 				</div>
 			</a>
 		</div>
@@ -70,8 +81,8 @@ use yii\helpers\Html;
 						<li>
 							<?= Html::a(
                                     'Directory',
-                                    ['/'],
-                                    ['class' => '']
+                                    ['/directory/'],
+                                    ['class' => $this->context->action->controller->id=='directory'?'active':'']
                                 ) ?>
 						</li>
 						<li class="hidden-xs">
@@ -96,7 +107,18 @@ use yii\helpers\Html;
                                 ) ?>
 						</li>
 						<li class="hidden-xs">
-							<a class="" id="toggleProfile" href="#">Admins</a>
+							<?php 								
+								echo Yii::$app->user->isGuest ? (
+										'<a class="" id="toggleProfile" href="#">Admins</a>'
+									) : (Html::beginForm(['/site/logout'], 'post', ['class' => ''])
+										. Html::submitButton(
+											'Logout (' . Yii::$app->user->identity->username . ')',
+											['class' => 'logoutbutton']
+										)
+										. Html::endForm()
+									)
+								
+							?>
 						</li>
 					</ul>
 				</div>

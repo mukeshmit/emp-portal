@@ -13,6 +13,7 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
 use kartik\social\FacebookPlugin;
+use common\models\LoginForm;
 
 AppAsset::register($this);
 ?>
@@ -26,9 +27,6 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-	
-	
-	
 </head>
 <body>
 <?php $this->beginBody() ?>	
@@ -66,9 +64,28 @@ AppAsset::register($this);
     </div>	
 	<?= $this->render('footer.php') ?>
 <?php $this->endBody() ?>
+
+<script>
+$(document).ready(function(){
+	
+	$('#LoginForm').on('ajaxBeforeSend', function (event, jqXHR, settings) {
+		// Activate waiting label
+		// alert('sending');
+	}).on('ajaxComplete', function (event, jqXHR, textStatus) {
+		// Deactivate waiting label
+		// console.log(event);
+		// console.log(jqXHR);
+		// console.log(textStatus);
+		// alert(event);
+		// alert(jqXHR);
+		// alert(textStatus);
+	});
+	
+});
+</script>
 <script>
          //<![CDATA[
-        $(function() {
+        $(document).ready(function() {
             $('#wrapper .version strong').text('v' + $.fn.pignoseCalendar.ComponentVersion);
 
             function onSelectHandler(date, context) {
@@ -220,9 +237,6 @@ AppAsset::register($this);
                     
                 }
             });
-
-
-
 
         });
         //]]>

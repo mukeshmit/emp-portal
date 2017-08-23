@@ -61,7 +61,6 @@ echo Instafeed::widget([
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
-
 				<div class="item active">
 					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal_tv_slide_1.png'; ?>" alt="Chicago" style="width:100%;">
 					
@@ -370,7 +369,6 @@ echo Instafeed::widget([
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
 					<img  src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/facebookimg.png'; ?>" class="newsfedd1" alt="facebook">
-					
 					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide1 caledivextra facestybook">
 						<?php 
 							echo FacebookPlugin::widget(['appId' => '1393509477405036','type'=>FacebookPlugin::POST, 'settings' => ['href'=>'https://www.facebook.com/CriticalContent/posts/1505631216126684']]); ?>
