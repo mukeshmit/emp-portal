@@ -20,6 +20,8 @@ class AppAsset extends AssetBundle
         'https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two',
         'themes/portal-front/demo/css/calendar-style.css',
         'themes/portal-front/dist/css/pignose.calendar.css',
+        'themes/portal-front/css/fullcalendar.min.css',
+        'themes/portal-front/css/fullcalendar.print.css',
         
     ];
 	
@@ -29,6 +31,8 @@ class AppAsset extends AssetBundle
 		'themes/portal-front/dist/js/pignose.calendar.js',
 		'themes/portal-front/js/bootstrap.min.js',		
 		'themes/portal-front/js/custom-common.js',
+		'themes/portal-front/js/fullcalendar.min.js',
+		'themes/portal-front/js/custom.min.js',
 		
     ];
 	

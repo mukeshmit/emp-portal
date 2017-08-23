@@ -2007,9 +2007,10 @@ pre code {
 
 @media (min-width:1200px) and (max-width:1359px) {
     .container {
-        width: 1330px;
+        width: 100%;
     }
 }
+
 .container-fluid {
     padding-right: 15px;
     padding-left: 15px;
@@ -5400,8 +5401,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
     }
 }
 
-.navbar-default {
-}
+.navbar-default {}
 
 .navbar-default .navbar-brand {
     color: #777
@@ -5418,9 +5418,9 @@ textarea.input-group-sm>.input-group-btn>.btn {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: rgb(68,73,73) !important;
+    color: rgb(68, 73, 73) !important;
     font-size: 15px;
-    padding: 8px 5px;
+    padding: 6px 5px 4px;
     font-weight: 700;
 }
 
@@ -7476,9 +7476,11 @@ button.close {
     transition: .6s ease-in-out left
 }
 
+.carousel-inner {background:rgb(34,34,34);}
 .carousel-inner>.item>a>img,
 .carousel-inner>.item>img {
-    line-height: 1
+    line-height: 1;
+	padding: 33px 82px 10px 25px;
 }
 
 @media all and (transform-3d),
@@ -7646,13 +7648,13 @@ button.close {
     list-style: none;
     right: 29px;
     bottom: auto !important;
-    top: 157px;
+    top: 148px;
 }
 
 .carousel-indicators li {
     display: inline-block;
     width: 10px;
-    height: 19px;
+    height: 15px;
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;

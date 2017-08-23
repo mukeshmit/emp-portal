@@ -221,11 +221,18 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation:portrait) {
-.fc-toolbar .fc-center h2 {float: left;margin-top: 7px;padding-left: 24px;}
+.fc-toolbar .fc-center h2 {float: left;margin-top: 7px;padding-left: 0px;}
 .x_content{margin-top:5px}
-.fc-toolbar .fc-left {position: relative;top: 31px;right: 0;left: 155px;}
 .calarea {height: 116px;}
-
+.fc .fc-toolbar > * > :first-child {
+    margin-left: 3px;
+}
+.fc-toolbar .fc-left {
+    position: relative;
+    top: -5px;
+    right: 1px;
+    left: 2px;
+}
 
 
 
@@ -241,6 +248,7 @@
 	
 }
  
+
  
  
  

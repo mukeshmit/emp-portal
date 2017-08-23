@@ -72,7 +72,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+		$model = new LoginForm();
+		
+        return $this->render('index',['model' => $model]);
     }
 
     /**
@@ -82,7 +84,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+        /* if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
@@ -93,7 +95,25 @@ class SiteController extends Controller
             return $this->render('login', [
                 'model' => $model,
             ]);
-        }
+        } */
+		
+		if (!\Yii::$app->user->isGuest) {
+			return $this->goHome();
+		}
+
+		$model = new LoginForm();
+		if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+			Yii::$app->response->format = Response::FORMAT_JSON;
+			return ActiveForm::validate($model);
+		}
+		if ($model->load(Yii::$app->request->post()) && $model->login()) {
+			return $this->goBack();
+		} else {
+			return $this->render('login', [
+				'model' => $model,
+			]);
+		}
+		
     }
 
     /**

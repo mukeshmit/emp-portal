@@ -46,14 +46,58 @@ use yii\helpers\Html;
 			<nav class="navbar navbar-default navBarNew">
 				<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html" class="active">Dashboard</a></li>
-						<li class="hidden-xs"><a href="#">IT</a></li>
-						<li><a href="#">Resource</a></li>
-						<li><a href="#">Directory</a></li>
-						<li class="hidden-xs"><a href="#">Calendar</a></li>
-						<li><a href="#">Gallery</a></li>                            
-						<li><a href="#">Contest/Games</a></li>
-						<li class="hidden-xs"><a href="#">Admins</a></li>
+						<li>
+							<?= Html::a(
+                                    'Dashboard',
+                                    ['/'],
+                                    ['class' => $this->context->action->controller->id=='site'?'active':'']
+                                ) ?>
+						<!-- <a href="index.html" class="active"></a> --></li>
+						<li class="hidden-xs">
+							<?= Html::a(
+                                    'IT',
+                                    ['/'],
+                                    ['class' => '']
+                                ) ?>
+						</li>
+						<li>
+							<?= Html::a(
+                                    'Resource',
+                                    ['/'],
+                                    ['class' => '']
+                                ) ?>
+						</li>
+						<li>
+							<?= Html::a(
+                                    'Directory',
+                                    ['/'],
+                                    ['class' => '']
+                                ) ?>
+						</li>
+						<li class="hidden-xs">
+							<?= Html::a(
+                                    'Calendar',
+                                    ['/calendar/'],
+                                    ['class' => $this->context->action->controller->id=='calendar'?'active':'']
+                                ) ?>
+						</li>
+						<li>
+							<?= Html::a(
+                                    'Gallery',
+                                    ['/'],
+                                    ['class' => '']
+                                ) ?>
+						</li>                            
+						<li>
+							<?= Html::a(
+                                    'Contest/Games',
+                                    ['/'],
+                                    ['class' => '']
+                                ) ?>
+						</li>
+						<li class="hidden-xs">
+							<a class="" id="toggleProfile" href="#">Admins</a>
+						</li>
 					</ul>
 				</div>
 			</nav>
