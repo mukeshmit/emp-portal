@@ -8,6 +8,7 @@ body {
     font-style: normal;
     font-weight: 400;
 }
+
 .mubaraflash {
   left: auto;
     right: -55px;
@@ -2758,6 +2759,10 @@ padding-left: 100px !important;}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+	.carousel-inner > .item > a > img, .carousel-inner > .item > img {
+    padding: 13px 26px 10px 15px !important;
+}
+
 	.vedio_play {height: 178px;}
 	.carousel-inner > .item1 > img {
     height: 100% !important;
@@ -2793,12 +2798,15 @@ padding-left: 100px !important;}
 	#bs-example-navbar-collapse-1 ul li{float: left;}
 	#bs-example-navbar-collapse-1 ul li a{font-size: 10px;font-weight: 700;padding: 4px 3px;}
 	.navBarNew{margin-top:15px;}
-	.slideValues {height: 190px;width: 290px;left: 0px;}
+	.slideValues {height: 190px;width: 290px;left: 0px;overflow: hidden;}
+	.carousel-inner > .item > img {height: 180px;}
+	.carousel-inner > .item  {height: 180px;}
+
 	.slideValues::before {height: 182px;}
 	.testimo_anthr::before {left: -27px;top: 0px;height: 16px;width: 20px;}
 	.carousel-indicators li {width: 5px;height: 5px;float:left;margin-bottom: 3px!important;}
 	.carousel-indicators {right: 4px;top: 64px;}
-	.sliderLink {top: -12px;width: 10px !important;height: 10px !important;left: 1px;}
+	.sliderLink {top: -19px;width: 10px !important;height: 10px !important;left: -1px;}
 	.colMddle2 {position: absolute;top: 257px;}
 	.col-md-12.col-sm-12.col-xs-12.aboshadow.marSpecl {margin-top: 230px;padding: 15px;margin-bottom: 40px;}
 	.border-red, .border-green, .border-blue{width: 220px;margin-right: 5px;min-height: 70px;}	 
@@ -3079,13 +3087,17 @@ text-align:justify}
 }
 .border-red, .border-green, .border-blue {width: 200px !important;}
 .carousel-indicators {
-    right: 14px !important;
-    top: 86px !important;
+    right: 13px !important;
+    top: 93px !important;
 }
 .colMddle2 {
     width: 30%;
     padding-left: 18px;
 }
+.carousel-inner > .item {
+    height: 255px;
+}
+
 .areawith12{
 	width: 12%;
 }
@@ -3232,11 +3244,14 @@ width: 27%;}
 	padding:0px;
 }
 .slideValues {
-    height: 262px !important;
+    height: 258px !important;
     width: 417px !important;
     left: 0px !important;
+	overflow: hidden;
 }
-
+.carousel-inner > .item > a > img, .carousel-inner > .item > img{
+	padding: 16px 42px 10px 18px !important;
+}
 .slideValues::before {
     height: 259px !important;
 }
@@ -3289,14 +3304,30 @@ padding-left: 0px !important; text-align:center !important;}
 .areaform {padding-left: 54px ;}
 .carousel-indicators li{height:10px;}
 .sliderLink {
-    top: -30px !important;
+    top: -28px !important;
     width: 14px !important;
     height: 14px !important;
     left: -2px !important;
 }
+.paddingZ.tabtypxs12 {
+    margin-top: 0px;
+}
+
+.carousel-indicators li {
+    float: left;
+    margin-bottom: 2px;
+}
+
 .widd6 {
     width: 7%;
+	position: absolute;
+right: 15px;
+
 }
+.carousel-indicators li:nth-child(3) {
+    margin-top: 3px !important;
+}
+
 .mubaraflash {
     width: 125px;
     left: -34px;
@@ -3327,11 +3358,15 @@ padding-left: 0px !important; text-align:center !important;}
     background: transparent;
 }
 .sliderLink {
-    top: -49px !important;
-    width: 19px !important;
-    height: 19px !important;
-    left: -3px !important;
+    top: -40px !important;
+	width: 19px !important;
+	height: 19px !important;
+	left: -1px !important;
 }
+.carousel-inner > .item > a > img, .carousel-inner > .item > img {
+    padding: 28px 60px 10px 25px;
+}
+
 .border-red, .border-green, .border-blue { width: 220px !important;}
 .mubaraflash {
     width: 125px;
@@ -3373,10 +3408,10 @@ right: 28px !important;
 	top: 79px !important;
 }
 .carousel-indicators {
-    right: 27px !important;
-    top: 158px !important;
+    right: 21px !important;
+    top: 146px !important;
 }
-.carousel-indicators li {height: 18px ;}
+.carousel-indicators li {height: 16px ;}
 .widd40 {width:70% !important; }
 .slideValues::before {
     height: 416px !important;
@@ -3486,7 +3521,7 @@ width: 32%;}
 .portal700 {
     width: 66%;
 }
-.carousel-indicators .active { width: 6px; height: 6px; margin: 1px; background-color: #fff;}
+
 
 
 
@@ -3594,7 +3629,7 @@ padding-left: 76px !important;}
 	.closesction{display:none;}
 	.sliderLink {top: -24px;width: 12px ;height: 12px ;left: -1px;}
 
-	.navbar-default .navbar-nav > li > a {padding: 8px 4px;}
+	.navbar-default .navbar-nav > li > a {padding: 8px 2px;}
 	.tablr{width: 74%; margin-top: 24px;}
 	.colMddle2 { width: 30%;}
 	.flaoop{top: 43px !important;}
@@ -3752,7 +3787,7 @@ padding-left: 76px !important;}
 }
 .carousel-inner > .item > a > img, .carousel-inner > .item > img {
     line-height: 1;
-    padding: 33px 57px 10px 25px;
+	padding: 21px 66px 10px 25px;
 }
 
 .caledivextra {	display:block;}

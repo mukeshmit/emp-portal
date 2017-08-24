@@ -3,6 +3,10 @@
 use kartik\social\FacebookPlugin;
 use kartik\social\TwitterPlugin;
 use nirvana\instafeed\Instafeed;
+use frontend\models\Newsflash;
+
+$Newsflash = Newsflash::find()->orderBy('created_at')->limit(2)->all();
+
 // use kmarenov\instagram\InstagramWidget;
 /* @var $this yii\web\View */
 
@@ -347,27 +351,17 @@ $this->title = 'Employee Portal - Calendar';
 		<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
 			<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg">
 			<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow">
-
-				<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>" >
-				</div>
-				<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
-					<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
-					<p class="portal-sectionpara">Gather 'round and raise a toast to the final episode of the season! The season three finale 
-						of Tia mowry at Home airs this Sunday, February 26th at 5:30pm PT I 8:30pm ET on Cooking Channel.
-					</p>
-				</div>
-				<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
-					<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group2.png'; ?>" >
-					</div>
-					<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
-						<h2 class="portal-section">TUNE IN: Besties Brunch with Tia SUNDAY!</h2>
-							<p class="portal-sectionpara">Be sure to catch the next episode of Tie Mowry at Home on Cooking Channel this Sunday.
-									February 19th at 5:30pm PT I 8:30pm ET. Don’t  forget to tune in and set your DVRs! 
-							</p>
-					</div>
-				</div>
+				<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
+							
+								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>" >
+								</div>
+								<div class="col-md-9 col-sm-9 col-xs-10 paddingZ m-t-12">
+									<h2 class="portal-section"><?php echo ucwords($Newsflashes->title).' - '.date('m/d/y H:i A',$Newsflashes->created_at) ?> </h2>
+									<p class="portal-sectionpara"><?php echo substr(ucwords($Newsflashes->body),0,140); ?></p>
+								</div>
+							
+				<?php endforeach; } ?>
 			</div>
 		</div>
 		<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">

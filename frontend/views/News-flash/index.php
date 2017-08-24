@@ -1,9 +1,15 @@
-<?php
+﻿<?php
 use kartik\social\FacebookPlugin;
 use kartik\social\TwitterPlugin;
 use nirvana\instafeed\Instafeed;
 // use kartik\grid\GridView;
 use yii\helpers\Html;
+use yii\widgets\LinkPager;
+use yii\data\Pagination;
+use frontend\models\Newsflash;
+
+
+$Newsflash = Newsflash::find()->orderBy('created_at')->limit(2)->all();
 //use yii\widgets\Pjax;
 /* use yii\helpers\Html;
 use yii\grid\GridView;
@@ -84,47 +90,33 @@ echo Instafeed::widget([
 	<div class="col-md-12 col-sm-12 col-xs-12 abosDiv ">
 		<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivEiiiuur portalshow">
 				<div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
-					<div class="col-md-6 col-sm-6 col-xs-9 paddingZ">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/News-flash.png'; ?>" class="">
+					<div class="col-md-6 col-sm-6 col-xs-9 paddingZ" style="margin-bottom:15px!important">
+						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/newsflashimgesadmin.png'; ?>" class="">
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-3 ">
 						<button class="button-add" data-toggle="modal" data-target="#myModal2">ADD</button>
 					</div>
 				</div>
+				<?php if(!empty($modelDatas)){ foreach ($modelDatas as $modelData): ?>
+						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ margintoparea">
+							<div class="col-md-2 col-sm-3 col-xs-5 paddingZ pointerclass flash ">
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work1.jpg'; ?>">
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work2.jpg'; ?>">
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work3.jpg'; ?>">
+							</div>
+							<div class="col-md-1 col-sm-2 col-xs-2 paddingZ areawith12">
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>">
+							</div>
+							<div class="col-md-9 col-sm-7 col-xs-12 padd000 padsh5 areawidth66">
+							<h2 class="portalheading"><span class="portal-areadesign"><?php echo ucwords($modelData->title); ?></span><span class="portal-areadate7"> -- <?php echo date('m/d/y H:i A',$modelData->created_at); ?> </span></h2>
+							<p class="sectiondesign" ><?php echo ucwords($modelData->body); ?></p>
+							</div>
+						</div>
+					
+				<?php endforeach; } ?>
 				
-				<div class="col-md-12 col-sm-12 col-xs-12 paddingZ margintoparea">
-					<div class="col-md-2 col-sm-3 col-xs-5 paddingZ pointerclass flash ">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work1.jpg'; ?>">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work2.jpg'; ?>">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work3.jpg'; ?>">
-					</div>
-					<div class="col-md-1 col-sm-2 col-xs-2 paddingZ areawith12">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>">
-					</div>
-					<div class="col-md-9 col-sm-7 col-xs-12 padd000 padsh5 areawidth66">
-					<h2 class="portalheading"><span class="portal-areadesign">TUNE IN: Tia Season Finale SUNDAY!</span><span class="portal-areadate7"> -- 7/17/2017 </span></h2>
-					<p class="sectiondesign" >Gather 'round and raise a toast to the final episode of the season! The 
-					season three finale of Tia Mowry at Home airs this Sunday, February 26th at 5:30pm PT | 
-					8:30pm ET on Cooking Channel.</p>
-					</div>
-				</div>
-				
-				<div class="col-md-12 col-sm-12 col-xs-12 paddingZ margintoparea">
-					<div class="col-md-2 col-sm-3 col-xs-5 paddingZ pointerclass  flash">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work1.jpg'; ?>">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work2.jpg'; ?>">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work3.jpg'; ?>">
-					</div>
-					<div class="col-md-1 col-sm-2 col-xs-2 paddingZ areawith12">
-						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group2.png'; ?>">
-					</div>
-					<div class="col-md-9 col-sm-7 col-xs-12 padd000 padsh5 areawidth66">
-						<h2 class="portalheading"><span class="portal-areadesign">TUNE IN: Besties Brunch with Tia SUNDAY!</span><span class="portal-areadate7"> -- 7/12/2017 </span></h2>
-						<p class="sectiondesign" >Be sure to catch the next episode of Tia Mowry at Home on Cooking Channel 
-					this Sunday, February 19th at 5:30pm PT | 8:30pm ET. Don’t forget to tune in and set your DVRs!</p>
-					</div>
-				</div>
-			</div>
+			<?php echo LinkPager::widget(['pagination' => $pagination]); ?>	
+		</div>
 			
 		</div>
 </div>
@@ -132,28 +124,18 @@ echo Instafeed::widget([
 				<div class="col-md-1 widd6 curareas">
 				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
 					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg">
-				<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow areaheadinaas">
-						
-						<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-							<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>" >
-						</div>
-						<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
-							<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
-							<p class="portal-sectionpara">Gather 'round and raise a toast to the final episode of the season! The season three finale 
-								of Tia mowry at Home airs this Sunday, February 26th at 5:30pm PT I 8:30pm ET on Cooking Channel.
-							</p>
-						</div>
-						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12 margintoparea">
-							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group2.png'; ?>" >
-							</div>
-							<div class="col-md-9 col-sm-9 col-xs-10 paddingZ ">
-								<h2 class="portal-section">TUNE IN: Besties Brunch with Tia SUNDAY!</h2>
-									<p class="portal-sectionpara">Be sure to catch the next episode of Tie Mowry at Home on Cooking Channel this Sunday.
-											February 19th at 5:30pm PT I 8:30pm ET. Don’t  forget to tune in and set your DVRs! 
-									</p>
-							</div>
-						</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow areaheadinaas">
+						<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
+							
+								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
+									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>" >
+								</div>
+								<div class="col-md-9 col-sm-9 col-xs-10 paddingZ m-t-12">
+									<h2 class="portal-section"><?php echo ucwords($Newsflashes->title).' - '.date('m/d/y H:i A',$Newsflashes->created_at) ?> </h2>
+									<p class="portal-sectionpara"><?php echo substr(ucwords($Newsflashes->body),0,140); ?></p>
+								</div>
+							
+						<?php endforeach; } ?>
 					</div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">

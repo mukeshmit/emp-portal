@@ -8,7 +8,9 @@ use frontend\models\SearchNewsFlash;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\Pagination;
 use sammaye\mailchimp\mailchimp;
+
 
 /**
  * NewsFlashController implements the CRUD actions for Newsflash model.
@@ -46,15 +48,23 @@ class NewsFlashController extends Controller
 		print_r($userList);
 		die; */
 		
-        $searchModel = new SearchNewsFlash();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+		$query = Newsflash::find();
 
-        // return $this->render('index', [
-            // 'searchModel' => $searchModel,
-            // 'dataProvider' => $dataProvider,
-        // ]); 
+        $pagination = new Pagination([
+            'defaultPageSize' => 2,
+            'totalCount' => $query->count(),
+        ]);
+
+        $modelData = $query->orderBy('created_at')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
 		
-		return $this->render('index');
+		return $this->render('index', [
+            'modelDatas' => $modelData,
+            'pagination' => $pagination,
+        ]);
+		
 		
     }
 

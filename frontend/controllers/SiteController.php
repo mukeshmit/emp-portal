@@ -13,6 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+// use app\components\message;
 
 
 /**
@@ -74,6 +75,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+		// Yii::$app->message->display('I am Yii2.0 Programmer');
+		// die;
 		$model = new LoginForm();
 		if (!\Yii::$app->user->isGuest) {
 			return $this->redirect(['news-flash/index']);

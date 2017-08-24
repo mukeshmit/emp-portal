@@ -13,8 +13,6 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
 use kartik\social\FacebookPlugin;
-use common\models\LoginForm;
-
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>

@@ -7668,7 +7668,8 @@ button.close {
     width: 9px;
     height: 9px;
     margin: 1px;
-    background-color: #fff;
+	background-color: #ffef73;
+	box-shadow: 0px 0px 4px 2px #ffef73;
 }
 
 .carousel-caption {

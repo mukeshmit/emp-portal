@@ -66,14 +66,10 @@ class Newsflash extends \yii\db\ActiveRecord
         return new NewsflashQuery(get_called_class());
     }
 	
-	public static function getflashdata()
+	public static function getAllflashData()
     {
-		$model = Newsflash::find()
-				->select('*')
-				->where(['type' => 2])
-				->orderBy(['created_at' => SORT_DESC])
-				->one();
+		$data = Newsflash::find()->orderBy('created_at')->all();
 		
-        return $model;
+        return $data;
     }
 }
