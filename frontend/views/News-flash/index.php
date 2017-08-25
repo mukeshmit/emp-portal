@@ -134,16 +134,13 @@ $model->type= '1';
 								<a href="/news-flash/update?id=<?php echo $modelData->id; ?>" data-pjax="0" title="Update">
 									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work3.jpg'; ?>">
 								</a>
-								
-								
-								
 							</div>
 							<div class="col-md-1 col-sm-2 col-xs-2 paddingZ areawith12">
-								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>">
+								<img src="<?php echo Yii::getAlias('@web').'/uploads/'.$modelData->image; ?>" width="65" height="56" >
 							</div>
 							<div class="col-md-9 col-sm-7 col-xs-12 padd000 padsh5 areawidth66">
-							<h2 class="portalheading"><span class="portal-areadesign"><?php echo ucwords($modelData->title); ?></span><span class="portal-areadate7"> -- <?php echo date('m/d/y H:i A',$modelData->created_at); ?> </span></h2>
-							<p class="sectiondesign" ><?php echo ucwords($modelData->body); ?></p>
+								<h2 class="portalheading"><span class="portal-areadesign"><?php echo ucwords($modelData->title); ?></span><span class="portal-areadate7"> -- <?php echo date('m/d/y H:i A',$modelData->created_at); ?> </span></h2>
+								<p class="sectiondesign" ><?php echo ucwords($modelData->body); ?></p>
 							</div>
 						</div>
 					
@@ -162,7 +159,7 @@ $model->type= '1';
 						<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
 							
 								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>" >
+									<img src="<?php echo Yii::getAlias('@web').'/uploads/'.$Newsflashes->image; ?>" width="65" height="56" >
 								</div>
 								<div class="col-md-9 col-sm-9 col-xs-10 paddingZ m-t-12">
 									<h2 class="portal-section"><?php echo ucwords($Newsflashes->title).' - '.date('m/d/y H:i A',$Newsflashes->created_at) ?> </h2>
