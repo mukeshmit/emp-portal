@@ -71,13 +71,16 @@ $(document).ready(function(){
 		// alert('sending');
 	}).on('ajaxComplete', function (event, jqXHR, textStatus) {
 		// Deactivate waiting label
-		// console.log(event);
-		// console.log(jqXHR);
-		// console.log(textStatus);
-		// alert(event);
-		// alert(jqXHR);
-		// alert(textStatus);
+		
 	});
+	
+	
+	/* $('#Newsflash').on('ajaxBeforeSend', function (event, jqXHR, settings) {
+		// Activate waiting label
+		
+	}).on('ajaxComplete', function (event, jqXHR, textStatus) {
+		// Deactivate waiting label
+	}); */
 	
 });
 </script>

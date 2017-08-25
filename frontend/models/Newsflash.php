@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "newsflash".
@@ -32,12 +33,15 @@ class Newsflash extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'title'], 'required'],
+            [['user_id', 'title', 'body'], 'required'],
             [['user_id', 'type', 'created_at', 'updated_at'], 'integer'],
             [['body'], 'string'],
-            [['title', 'image'], 'string', 'max' => 255],
-            [['title'], 'unique'],
+            [['title'], 'string', 'max' => 255],
+            [['image'], 'required','on' =>'update'], //
+            [['image'], 'file','skipOnEmpty' => true,'extensions' => 'png, jpg'],
+            // [['title'], 'unique'],
         ];
+		
     }
 
     /**
@@ -72,4 +76,31 @@ class Newsflash extends \yii\db\ActiveRecord
 		
         return $data;
     }
+	
+	public static function getSingleData($id)
+    {
+		$data = Newsflash::find()
+					->where(['id' => $id])
+					->one();
+		
+        return $data;
+    }
+	
+	public function upload()
+    {
+        if ($this->validate()) {
+            $this->image->saveAs('uploads/' . $this->image->baseName . '.' . $this->image->extension);
+            return true;
+        } else {
+            return false;
+        }
+    }
+	
+	public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+		$scenarios['update'] = ['image'];
+		return $scenarios;
+    }
+	
 }

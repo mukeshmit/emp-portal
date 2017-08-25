@@ -26,7 +26,7 @@ class AppAsset extends AssetBundle
     ];
 	
     public $js = [
-		'themes/portal-front/demo/js/jquery.latest.min.js',
+		// 'themes/portal-front/demo/js/jquery.latest.min.js',
 		'themes/portal-front/demo/js/moment.latest.min.js',
 		'themes/portal-front/dist/js/pignose.calendar.js',
 		'themes/portal-front/js/bootstrap.min.js',		

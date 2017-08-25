@@ -1,4 +1,5 @@
 ﻿<?php
+use yii\widgets\ActiveForm;
 use kartik\social\FacebookPlugin;
 use kartik\social\TwitterPlugin;
 use nirvana\instafeed\Instafeed;

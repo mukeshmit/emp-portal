@@ -10,6 +10,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\Pagination;
 use sammaye\mailchimp\mailchimp;
+use yii\widgets\ActiveForm;
+use yii\web\UploadedFile;
 
 
 /**
@@ -27,7 +29,7 @@ class NewsFlashController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['GET'],
                 ],
             ],
         ];
@@ -51,18 +53,22 @@ class NewsFlashController extends Controller
 		$query = Newsflash::find();
 
         $pagination = new Pagination([
-            'defaultPageSize' => 2,
+            'defaultPageSize' => 10,
             'totalCount' => $query->count(),
         ]);
 
-        $modelData = $query->orderBy('created_at')
+        $modelData = $query->orderBy('created_at DESC')
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
 		
+		 $model = new Newsflash();
+			
+		
 		return $this->render('index', [
             'modelDatas' => $modelData,
             'pagination' => $pagination,
+            'model' => $model,
         ]);
 		
 		
@@ -88,14 +94,43 @@ class NewsFlashController extends Controller
     public function actionCreate()
     {
         $model = new Newsflash();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+        $model->user_id = Yii::$app->user->identity->id;
+        $model->title = Yii::$app->request->post()['Newsflash']['title'];;
+        $model->body = Yii::$app->request->post()['Newsflash']['body'];;
+        $model->type = 2;
+        $model->image = 'no-image.jpg';
+        $model->created_at = strtotime(date('d-m-Y H:i:s'));
+		
+		if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post()) && $model->save()) {
+			// Yii::$app->response->format = Response::FORMAT_JSON;
+			 \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+			 
+			if(!empty(ActiveForm::validate($model))){
+				
+				return ActiveForm::validate($model);
+				
+			}else{
+				
+				return $this->redirect(['news-flash/index']);
+				
+			}
+			// echo "<pre>";
+			// var_dump(ActiveForm::validate($model));
+			// die;
+			
+			// return ActiveForm::validate($model);
+		}else{
+			 \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+			return ActiveForm::validate($model);
+		}
+		
+        // if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            // return $this->redirect(['view', 'id' => $model->id]);
+        // } else {
+            // return $this->render('create', [
+                // 'model' => $model,
+            // ]);
+        // }
     }
 
     /**
@@ -108,13 +143,63 @@ class NewsFlashController extends Controller
     {
         $model = $this->findModel($id);
 
+		$model->updated_at = strtotime(date('d-m-Y H:i:s'));
+		
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+			
+			$image = UploadedFile::getInstance($model,'image');
+			if(is_object($image)){
+				$model->image = $image->basename . '.'.$image->extension;
+			}
+			
+			if($model->save()){
+				if(is_object($image)){
+					$image->saveAs('uploads/'.$model->image);
+				}				
+				return $this->redirect(['news-flash/index']);
+			}else{
+				 return $this->redirect(['news-flash/update',$id]);
+			}
+            
+			
         } else {
+			
             return $this->render('update', [
-                'model' => $model,
-            ]);
+								 'model' => $model,
+							    ]);
+			
         }
+		
+    }
+
+    /**
+     * Copy an existing Newsflash model.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionCopy($id)
+    {
+        
+		$model = new Newsflash;
+		$obj = $model->getSingleData($id);
+		
+		$clone = new Newsflash;
+		
+		$clone->id = null;
+		$clone->user_id = $obj->user_id;
+		$clone->title = $obj->title;
+		$clone->body = $obj->body;
+		// $clone->image = $obj->image;
+		$clone->type = $obj->type;
+		$clone->created_at = strtotime(date('d-m-Y H:i:s'));
+		$clone->isNewRecord = true;
+			
+		if($clone->save()){
+			
+			return $this->redirect(['news-flash/index']);
+			
+		}
+		
     }
 
     /**

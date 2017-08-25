@@ -39,7 +39,7 @@ use yii\helpers\Html;
 					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-				<ul>
+				</ul>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-3 col-xs-12 paddingZ logoDiv showSm aboshadow visible-xs">

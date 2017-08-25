@@ -2,12 +2,14 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model app\backend\models\Newsflash */
 /* @var $form yii\widgets\ActiveForm */
 
-$model->type= '1';
+// $model->type= '1';
+$model->type = $model->isNewRecord ?1:2;
 ?>
 
     <?php $form = ActiveForm::begin(); ?>
@@ -18,11 +20,38 @@ $model->type= '1';
 	</div>
 	<br>
 	<div class="form-group">
-    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+	<?= $form->field($model, 'body')->widget(CKEditor::className(), [
+																'options' => ['rows' => 6],
+																'preset' => 'custom',
+																'clientOptions' => [
+																// 'extraPlugins' => 'pbckcode',
+																'toolbarGroups' => [
+																	['name' => 'undo'],
+																	['name' => 'basicstyles', 'groups' => ['basicstyles', 'cleanup']],
+																	['name' => 'colors'],
+																	['name' => 'links', 'groups' => ['links', 'insert']],
+																	['name' => 'others', 'groups' => ['others', 'about']],
+																	
+																	// ['name' => 'pbckcode'] // <--- OUR NEW PLUGIN YAY!
+																]
+															]
+															])->label(false) ?>
+    <?php //= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 	</div>
 	<br>
 	<div class="form-group">
-    <?= $form->field($model, 'image[]')->fileInput(['multiple'=>'multiple']); ?>
+		<?= $form->field($model, 'image')->fileInput(); ?>
+		<?php 
+			if(!empty($model->image)){
+		?>
+			<img src="<?php echo Yii::getAlias('@web').'/uploads/'.$model->image; ?>" class="responsive" height="250" width="250" />
+		<?php
+			}else{
+		?>
+			<img src="<?php echo Yii::getAlias('@web').'/uploads/no-image.jpg'; ?>" class="responsive" height="250" width="250" />
+		<?php
+			}
+		?> 
 	</div>
 	<br>
 	<div class="form-group">
