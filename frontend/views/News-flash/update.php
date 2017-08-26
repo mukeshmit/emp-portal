@@ -83,7 +83,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update'); */
 	
 			<div class="col-md-1 widd6 curareas">
 				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg">
+					<a href="/news-flash"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg"></a>
 					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow areaheadinaas">
 						<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
 							

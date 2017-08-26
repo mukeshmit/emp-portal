@@ -56,7 +56,7 @@ use yii\helpers\Html;
 		<div class="col-md-9 col-sm-12 col-xs-12 paddXsZ tablr paddingZ">
 			<nav class="navbar navbar-default navBarNew">
 				<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right <?php if (\Yii::$app->user->isGuest) { echo "hidden"; } ?>">
 						<li>
 							<?= Html::a(
                                     'Dashboard',
@@ -106,20 +106,20 @@ use yii\helpers\Html;
                                     ['class' => '']
                                 ) ?>
 						</li>
-						<li class="hidden-xs">
+						
 							<?php 								
 								echo Yii::$app->user->isGuest ? (
-										'<a class="" id="toggleProfile" href="#">Admins</a>'
-									) : (Html::beginForm(['/site/logout'], 'post', ['class' => ''])
+										''
+									) : ('<li class="hidden-xs">'.Html::beginForm(['/site/logout'], 'post', ['class' => ''])
 										. Html::submitButton(
 											'Logout (' . Yii::$app->user->identity->username . ')',
 											['class' => 'logoutbutton']
 										)
 										. Html::endForm()
-									)
+									.'</li>')
 								
 							?>
-						</li>
+						
 					</ul>
 				</div>
 			</nav>

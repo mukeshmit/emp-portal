@@ -77,11 +77,21 @@ class SiteController extends Controller
     {
 		// Yii::$app->message->display('I am Yii2.0 Programmer');
 		// die;
-		$model = new LoginForm();
-		if (!\Yii::$app->user->isGuest) {
-			return $this->redirect(['news-flash/index']);
+		
+		if (\Yii::$app->user->isGuest) {
+			return $this->redirect(['site/login']);
 		}
+		
+		$model = new LoginForm();
+		
+		// if (!\Yii::$app->user->isGuest) {
+			
+			// return $this->redirect(['news-flash/index']);
+			
+		// }
+		
         return $this->render('index',['model' => $model]);
+		
     }
 
     /**
@@ -103,26 +113,30 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         } */
-		
+	
 		if (!\Yii::$app->user->isGuest) {
 			return $this->goHome();
 		}
-
+	
 		
 		$model = new LoginForm();
-		
+			// var_dump(Yii::$app->request->post());
+			// var_dump($model->load(Yii::$app->request->post()) && $model->login());
+			// var_dump(ActiveForm::validate($model));
+		// die;
 		// $model->'_csrf-frontend' = Yii::$app->request->post()['_csrf-frontend'];
-		$model->username = Yii::$app->request->post()['LoginForm']['username'];
-		$model->password = Yii::$app->request->post()['LoginForm']['password'];
-		$model->rememberMe = Yii::$app->request->post()['LoginForm']['rememberMe'];
-		$postedData = (object) Yii::$app->request->post()['LoginForm'];
-		
+		// $model->username = isset(Yii::$app->request->post()['LoginForm']['username'])?Yii::$app->request->post()['LoginForm']['username']:'';
+		// $model->password = isset(Yii::$app->request->post()['LoginForm']['password'])?Yii::$app->request->post()['LoginForm']['password']:'';
+		// $model->rememberMe = isset(Yii::$app->request->post()['LoginForm']['rememberMe'])?Yii::$app->request->post()['LoginForm']['rememberMe']:'';
+		// $postedData      = (object) Yii::$app->request->post()['LoginForm'];
+		/* 
 		if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
 			// Yii::$app->response->format = Response::FORMAT_JSON;
 			 \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		
 			return ActiveForm::validate($model);
-		}
+		} */
+		
 		if ($model->load(Yii::$app->request->post()) && $model->login()) {
 			return $this->goBack();
 		} else {

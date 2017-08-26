@@ -153,19 +153,17 @@ $model->type= '1';
 </div>
 	
 				<div class="col-md-1 widd6 curareas">
-				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg">
+				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed" onclick="return go_to_newsflash()">
+					<a href="/news-flash"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg"></a>
 					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow areaheadinaas">
 						<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
-							
 								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
 									<img src="<?php echo Yii::getAlias('@web').'/uploads/'.$Newsflashes->image; ?>" width="65" height="56" >
 								</div>
 								<div class="col-md-9 col-sm-9 col-xs-10 paddingZ m-t-12">
 									<h2 class="portal-section"><?php echo ucwords($Newsflashes->title).' - '.date('m/d/y H:i A',$Newsflashes->created_at) ?> </h2>
 									<p class="portal-sectionpara"><?php echo substr(ucwords($Newsflashes->body),0,140); ?></p>
-								</div>
-							
+								</div>							
 						<?php endforeach; } ?>
 					</div>
 				</div>

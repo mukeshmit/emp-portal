@@ -71,7 +71,6 @@ class NewsFlashController extends Controller
             'model' => $model,
         ]);
 		
-		
     }
 
     /**

@@ -350,7 +350,7 @@ $this->title = 'Employee Portal - Calendar';
        
 	<div class="col-md-1 col-sm-1 col-xs-1 widd6">
 		<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-			<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg">
+			<a href="/news-flash"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg"></a>
 			<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow">
 				<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
 							

@@ -40,6 +40,16 @@ AppAsset::register($this);
 				$leftView  = "leftcalender.php";
 				$rightView = "";
 				; break;
+		case 'site' : 
+				if($controlleract=='login'){ 
+					$leftView  = "";
+					$rightView = ""; 
+				}else{
+					$leftView  = "left.php";
+					$rightView = ""; 
+				} ; 
+				
+				break;
 		default: 
 				$leftView  = "left.php";
 				$rightView = "";
@@ -56,7 +66,7 @@ AppAsset::register($this);
 	<div class="container-fluid paddXsZ paddSmZ">
         <div class="container paddXsZ conposition">  
 			
-			<?= $this->render($leftView) ?>
+			<?php if(!empty($leftView)){ echo $this->render($leftView); }  ?>
 			<?= $content ?>		
         </div>
     </div>	
@@ -82,6 +92,9 @@ $(document).ready(function(){
 		// Deactivate waiting label
 	}); */
 	
+	$(document).on('click','.newsfeed',function(){
+		window.location = "<?php echo \Yii::$app->request->BaseUrl .'/news-flash'; ?>";
+	})
 });
 </script>
 <script>
