@@ -54,9 +54,27 @@ echo Instafeed::widget([
 }
 
 </style>
+
+<div class="modal fade" id="myModal_pdc" role="dialog">
+	<div class="modal-dialog-21">
+		<div class="redBoreHead">
+			<div class="redBore">
+				<div class="redBore1">
+					<h2>Pdc</h2>
+					<h6>Thirsty Thursday</h6>
+					<p>Thursday july 20 <span>th</span></p>
+					<div class="divimg">
+						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/cocktail-glasses.jpg'; ?>" class="img-responsive" alt="cocktail glasses">
+						<a href="#">acknowledge</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="col-md-4 col-sm-7 col-xs-12 widd40">
 <div class="col-md-12 col-sm-12 col-xs-12 centereDBoxIMSlid">
-
 	<div class="slideValues">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel"  data-interval="3000">
 			<ol class="carousel-indicators">
@@ -211,7 +229,7 @@ echo Instafeed::widget([
 	<span class="spanVludiv" style="color:#056598">July 6<span>th</span><span>
 </div>	
 
-<div class="col-md-12 col-sm-12 col-xs-12 border-blue color-blue font" >
+<div class="col-md-12 col-sm-12 col-xs-12 border-blue color-blue font" data-toggle="modal" data-target="#myModal_pdc">
 	<h4>PDC </h4>
 	<p>Photo Day</p>
 	<span class="spanVludiv" style="color:#970301">July 6<span>th</span><span>

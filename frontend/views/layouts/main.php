@@ -31,6 +31,7 @@ AppAsset::register($this);
 <?php 
 	// check action and controller and action and then loviewport
 	
+	$headerView = "header.php";
 	$leftView = "";
 	$rightView = "";
 	$controller = $this->context->action->controller->id;
@@ -42,6 +43,7 @@ AppAsset::register($this);
 				; break;
 		case 'site' : 
 				if($controlleract=='login'){ 
+					$headerView  = "";
 					$leftView  = "";
 					$rightView = ""; 
 				}else{
@@ -57,7 +59,7 @@ AppAsset::register($this);
 ?>
 
 
-	<?= $this->render('header.php') ?>	
+	<?php if(!empty($headerView)){ echo $this->render('header.php'); }  ?>
 	<?php 
 		// echo "<pre>";
 		// print_r($this->context->action->id);
@@ -72,7 +74,6 @@ AppAsset::register($this);
     </div>	
 	<?= $this->render('footer.php') ?>
 <?php $this->endBody() ?>
-
 <script>
 $(document).ready(function(){
 	

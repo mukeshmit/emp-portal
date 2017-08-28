@@ -1,6 +1,6 @@
 body {
     font-family: 'Abel', sans-serif;
-    background: rgb(161,204,199);
+    background: #99A5A8;
 }
 
 @font-face {
@@ -8,7 +8,12 @@ body {
     font-style: normal;
     font-weight: 400;
 }
+.side-div-width{
+	width:300px;
+}
+.fb-logo-pad{padding-bottom:25px !important;}
 
+.login-valid{    width: 47%; font-size: 11px; float: left;}
 .redBoreHead{background: #fff;width: 100%;margin: auto;border-radius: 10px;padding: 12px;}
 .redBore{border: 3px solid #BC0017;border-radius: 10px;box-shadow: 0px 0px 11px -3px #BC0017; }
 .redBore1{border-radius: 2px;box-shadow:inset 0px 0px 11px -3px #BC0017;padding: 15px;}
@@ -22,12 +27,12 @@ body {
 .logoExtra{background: #fff;padding: 15px;margin-top: 30px;}
 .logoExtra img{height: 55px;}
 .posiImpo{position:relative !important;}
-.logInBest{margin: 30px 0px 0px;}
+.logInBest{margin: 15px 0px 0px;}
 .logInBest input{width: 100%;border: 1px solid #a5362f;height: 35px;padding:  8px 15px !important;border-radius: 4px;margin: 12px 0px 0px;}
-.logInBest a{color: #A0A0A0;font-size: 13px;display: inline-block;float: right;margin: 5px 0px 12px;text-decoration: none !important;}
-.faceNewSadd{background:#fff;padding:15px;}
+.logInBest a{color: #A0A0A0;font-size: 11px;display: inline-block;float: left.;margin: 5px 0px 12px;text-decoration: none !important;}
+.faceNewSadd{background:#fff;padding:15px;    min-height: 235px;}
 .faceNewS{background:#fff;padding:15px;}
-.marNewCon{margin-top:30px;}
+.marNewCon{}
 .modal-dialog-21{margin: 141px auto;width: 450px;}
 .everiyr{width:100%!important;}
 .firinDecv{width: 75px !important;}
@@ -38,9 +43,11 @@ body {
 .linelitForim li:nth-child(2n+1) img {float: right;}
 .linelitForim {margin-bottom: 20px!important;}
 .like {margin-bottom: 10px;}
-
-
-
+.canResolve{width: 1075px;/*! height: 785px; */margin: auto;display: table-cell;vertical-align: middle;padding: 50px 0px 50px !important;}
+.canResolvehead{width: 100%;height:100%;width: 100%;height: 100%;display: table;}
+.img-responsive.SocilIcob {position: absolute;right: 10px;top: 10px;border-radius: 3px;}
+.araealeft{transition: all 0.4s ease;cursor:pointer;}
+.araealeft:hover{transition: all 0.4s ease;color:rgb(188,0,24);}
 
 
 
@@ -2195,6 +2202,7 @@ color: #4c4c4c;
 .portalheading{
 	margin-top: 6px;
 	margin-bottom: 0px;
+display:flex;
 }
 .sectiondesign{
 	color:#727272;
@@ -2421,7 +2429,7 @@ border: none;
 /*------------------------------------------------------portal csss--------------------------------------------------------------------*/
 .portal-loogin{
 	height: 230px;
-width: 350px;
+ width: 350px; 
 margin-bottom:30px;
 
 }
@@ -2430,6 +2438,7 @@ margin-bottom:30px;
 height: 230px;
 margin-bottom:30px;
 
+	margin-left: 30px;
 }
 .portal-login-2{
 	width:350px;
@@ -2437,47 +2446,50 @@ margin-bottom:30px;
 
 .portal-login-set-2 {
     width: 400px !important;
-    height: 323px;
+    height: 310px;
     background: #fff;
-    margin-left: 15px;
+    margin-left: 30px;
 }
 
 .portal-center{
-width: 1075px;
-margin: auto;
-float: none;
+    padding: 0px;
 }	
 	
 .portal-center-1{
 width: 1075px;
-margin: auto;
-float: none;
+ margin: auto; 
+float: left;
+padding: 0px;
 }	
 
 .portal-last {
-    width: 235px;
+    width: 265px;
     margin-left: 30px;
-    height: 323px;
+    height: 310px;
     background: #fff;
 }
 .logins-1{
 	height: 230px;
+	margin: 0px;
 }
 .logins{
 	height:230px;
 
+	width: 100%;
+	margin: 0px;
 }	
 .login-buton{
 	background: #bc0018;
 color: #fff;
-border: 2px solid #000;
-padding: 3px;
+box-shadow: 1px 2px 2px -1px #000;
+padding: 2px;
 margin-left: 10px;
-width: 30%;
+width: 25%;
 
+	border: 1px solid #000;
 }	
 .pas-input{
-	width: 65% !important;
+	width: 70% !important;
 }	
 .araealeft{
 	float:left !important;
@@ -2579,7 +2591,6 @@ width: 30%;
     margin-top: 4px !important;
 }
 .portal-login-set-2 {
-    width: 90% !important;
 }
 
 
@@ -2650,15 +2661,19 @@ width: 28%;
     width: 94% !important;
 }
 .portal-last {
-    width: 94% !important;
+    width:  100% !important;
 }
 
 .portal-center {
     width: 80% !important;
+    margin: auto;
+    float: none;
 }
 
 .portal-center-1 {
     width: 80% !important;
+    margin: auto;
+    float: none;
 }
 
 
@@ -2838,14 +2853,18 @@ width: 33%;}
     width: 95% !important;
 }
 .portal-last {
-    width: 95% !important;
+    width: 100% !important;
 }
 .portal-center {
     width: 80% !important;
+    float: none;
+    margin: auto;
 }
 
 .portal-center-1 {
     width: 80% !important;
+    margin: auto;
+    float: none;
 }
 
 
@@ -2903,6 +2922,14 @@ padding-left: 100px !important;}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+	.canResolvehead {}
+	.canResolve {width: 80%;}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 	.modal-dialog-21 {
     margin: 10% auto;
     width: 320px;
@@ -3227,6 +3254,7 @@ text-align:justify}
 	width:100% !important ;
 	height:auto ;
 	margin-bottom:15px;
+	margin-left: 0px;
 }
 
 .portal-login-2{
@@ -3235,15 +3263,16 @@ text-align:justify}
 	margin-bottom:15px;
 }
 .portal-login-set-2 {
-	width:90%  ;
-	height:auto ;
+	width:100% !important;
+	height:auto;
 	margin-bottom:30px;
 	
+	margin-left: 0px;
 }
 .portal-last {
-	width:90%  ;
+	width:100%;
 	height:auto ;
-	margin-left:15px
+	margin-left:0px;
 }
 .portal-center {
     width: 100% ;
@@ -3561,7 +3590,7 @@ right: 15px;
 }
 
 .portal-login-set {
-    width: 63%;
+    width: 100%;
     height: 246px;
 }
 
@@ -3928,6 +3957,11 @@ padding-left: 76px !important;}
 
 }
 @media only screen and (min-width: 768px) and (max-width: 1200px)  {
+	.canResolve {width: 90%;}
+	.porSpest {width: calc(65% - 30px);}
+	.portal-login-set {width: 100%;}
+	.portal-login-set .sectiondesign {font-size: 11px;}
+	.faceNewS img:first-child{width:100px;}
 	.carousel-inner {
     background: transparent;
 }
@@ -4117,7 +4151,7 @@ padding-left: 76px !important;}
 .border-red {width:156px;}	
 .border-blue {width: 156px;}	
 .border-green {	width: 156px;}	
-.caleDivEiiiuur { margin-top: 30px; width: 95%;}
+.caleDivEiiiuur { margin-top:0px; width: 95%;}
 .portal-direct { width: 61%;}
 .portal700 {  width: 60%;}
 .m-l-22 { margin-left: 17px;}
