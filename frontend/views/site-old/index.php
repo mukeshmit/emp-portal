@@ -54,11 +54,29 @@ echo Instafeed::widget([
 }
 
 </style>
+
+<div class="modal fade" id="myModal_pdc" role="dialog">
+	<div class="modal-dialog-21">
+		<div class="redBoreHead">
+			<div class="redBore">
+				<div class="redBore1">
+					<h2>Pdc</h2>
+					<h6>Thirsty Thursday</h6>
+					<p>Thursday july 20 <span>th</span></p>
+					<div class="divimg">
+						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/cocktail-glasses.jpg'; ?>" class="img-responsive" alt="cocktail glasses">
+						<a href="#">acknowledge</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="col-md-4 col-sm-7 col-xs-12 widd40">
 <div class="col-md-12 col-sm-12 col-xs-12 centereDBoxIMSlid">
-
 	<div class="slideValues">
-		<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel"  data-interval="3000">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel"  data-interval="3000">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
@@ -66,23 +84,23 @@ echo Instafeed::widget([
 				<li class="sliderLink" data-target="#myCarousel" data-slide-to="3"></li>
 			</ol>
 
-			<!-- Wrapper for slides --> 
+			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
-				<div class="item active"  data-interval="9000">
+				<div class="item active">
 					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal_tv_slide_1.png'; ?>" alt="Chicago" style="width:100%;">
 					
 				</div>
 
-				<div class="item"  data-interval="1000">
-					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/start.gif'; ?>" alt="New York" style="width:100%;height:380px;">
+				<div class="item">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal_tv_slide_3.png'; ?>" alt="New York" style="width:100%;">
 					
 				</div>
 
-				<div class="item"  data-interval="9000">
+				<div class="item">
 					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal_tv_slide_2.png'; ?>" alt="Chicago" style="width:100%;">
 				
 				</div>	
-				<div class="item1"  data-interval="1000">
+				<div class="item1">
 					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/tv_start.gif'; ?>" alt="Chicago" style="width:100%;">
 				</div>
 
@@ -99,7 +117,7 @@ echo Instafeed::widget([
 	</div>
 </div>
 <div class="col-md-12 col-sm-12 col-xs-12 aboshadow marSpecl ">
-	<h2 class="curHeading">Critical Wall</h2>
+	<h2 class="curHeading">Company Feed</h2>
 	<div class="col-md-12 col-sm-12 col-xs-12 paddingZ  ">
 		<textarea placeholder="What's happening?" class="happningTearea"> </textarea>
 		<div class="sendWithCI">
@@ -195,9 +213,9 @@ echo Instafeed::widget([
 </div>
 
 <div class="col-md-2 col-sm-2 col-xs-12  colMddle2 widd15">
-	<div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+	<div class="col-md-12 col-sm-12 col-xs-12 paddXsZ">
 
-		<div class="col-ms-12 col-sm-12 col-xs-12 paddingZ">
+		<div class="col-ms-12 col-sm-12 col-xs-12 paddSmZ">
 			<div class="col-md-12 col-xs-12 col-sm-12 paddingZ">
 				<div class="col-md-12 col-sm-12 col-xs-12 border-red color-red font">
 					<h4>Empire</h4>
@@ -211,7 +229,7 @@ echo Instafeed::widget([
 	<span class="spanVludiv" style="color:#056598">July 6<span>th</span><span>
 </div>	
 
-<div class="col-md-12 col-sm-12 col-xs-12 border-blue color-blue font"  data-toggle="modal" data-target="#myModal_pdc">
+<div class="col-md-12 col-sm-12 col-xs-12 border-blue color-blue font" data-toggle="modal" data-target="#myModal_pdc">
 	<h4>PDC </h4>
 	<p>Photo Day</p>
 	<span class="spanVludiv" style="color:#970301">July 6<span>th</span><span>
@@ -227,6 +245,11 @@ echo Instafeed::widget([
 
 	<div class="col-ms-12 col-sm-12 col-xs-12 paddingZ tabtypxs tabtypxs12">
 		<div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+			<div class="col-md-12 col-sm-12 col-xs-12  paddingZ hidden-xs" style="display:block;">
+				<div class="col-md-12 col-sm-12 col-xs-12 user paddingZ" style="display:block;margin: 25px 0px 10px;">
+					<h6><b>My Feed</b></h6>
+				</div>
+			</div>
                         <div class="col-md-12 col-sm-12 col-xs-12 paddingZ pad015">
                             <div class="col-md-5 col-sm-5 col-xs-12 user paddingZ">
                                 <h6><b>Users</b></h6>
@@ -389,22 +412,3 @@ echo Instafeed::widget([
 
 	</div>
 </div> 
-
-    <!-------------------model window for PDC------------------->
-    <div class="modal fade" id="myModal_pdc" role="dialog">
-        <div class="modal-dialog-21">
-            <div class="redBoreHead">
-                <div class="redBore">
-                    <div class="redBore1">
-                        <h2>Pdc</h2>
-                        <h6>Thirsty Thursday</h6>
-                        <p>Thursday july 20 <span>th</span></p>
-                        <div class="divimg">
-                            <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/cocktail-glasses.jpg'; ?>" class="img-responsive" alt="cocktail glasses">
-                            <a href="#">acknowledge</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>

@@ -1,17 +1,13 @@
 ﻿<?php
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 use kartik\social\FacebookPlugin;
 use kartik\social\TwitterPlugin;
 use nirvana\instafeed\Instafeed;
 // use kartik\grid\GridView;
-
+use yii\helpers\Html;
 use yii\widgets\LinkPager;
 use yii\data\Pagination;
 use frontend\models\Newsflash;
-use dosamigos\ckeditor\CKEditor;
 
-// $model = new Newsflash();
 
 $Newsflash = Newsflash::find()->orderBy('created_at')->limit(2)->all();
 //use yii\widgets\Pjax;
@@ -33,8 +29,8 @@ echo Instafeed::widget([
     ],
 ]);
 
-$model->type= '1';
 ?>
+
 <style>
 .fb_iframe_widget iframe {
     position: absolute;
@@ -48,20 +44,16 @@ $model->type= '1';
     width: 190px !important;
     height: 200px !important;
 }
+
 </style>
-<!-------------------model window for skup------------------->
+	<!-------------------model window for skup------------------->
 <div class="modal fade" id="myModal2" role="dialog">
 	<div class="modal-dialog-1">
 	<!-- Modal content-->
-		<div class="areapopup-1 paddingZ">
+		<div class=" areapopup-1 paddingZ">
 			<div class="contct-details">
 				<div class="contact-left">
-					<?php $form = ActiveForm::begin([
-									'action' =>['news-flash/create'],
-									'id' => $model->formName(),
-									'enableAjaxValidation' => true,
-									
-								]); ?>
+					<form action="#" method="post">
 						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
 							<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/ribbon.jpg'; ?>" class="ribonsection ribbonarea">
 							<a href="#" class="closeWin-1" type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></a>
@@ -69,41 +61,26 @@ $model->type= '1';
 						</div>
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-								<label for="search55" >Title:</label>
-								<?= $form->field($model, 'title')->textInput(['class'=>'form-control sectionarea12','maxlength' => true])->label(false); ?>
-								
+								<label for="search55" >To:</label>
+								<select name="search" class="sectionarea12 option-contact-area" id="search55"  class="" type="text">
+									<option value="">All Critical Show ; All Critical Content</option>
+								</select>
 							</div>
 							<div class="clearfix"></div>
 						</div>
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12  text-center">
 								<label for="searcharea" class="bodyarea">Body:</label>
-								<br />
-								<div class="">
-									<?= $form->field($model, 'body')->widget(CKEditor::className(), [
-																			'options' => ['rows' => 6],
-																			'preset' => 'custom',
-																			'clientOptions' => [
-																			// 'extraPlugins' => 'pbckcode',
-																			'toolbarGroups' => [
-																				['name' => 'undo'],
-																				['name' => 'basicstyles', 'groups' => ['basicstyles', 'cleanup']],
-																				['name' => 'colors'],
-																				['name' => 'links', 'groups' => ['links', 'insert']],
-																				['name' => 'others', 'groups' => ['others', 'about']],
-																				
-																				// ['name' => 'pbckcode'] // <--- OUR NEW PLUGIN YAY!
-																			]
-																		]
-																		])->label(false) ?>
+								<div class="msoffice">
+									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/msoffice.jpg'; ?>" class="office">
 								</div>
 							</div>
 							<div class="">
-								<?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'button-section5' : 'button-section5']) ?>
+								<button class="button-section5">SEND</button>
 							</div>
 							<div class="clearfix"></div>
 						</div>
-					<?php ActiveForm::end(); ?>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -123,24 +100,16 @@ $model->type= '1';
 				<?php if(!empty($modelDatas)){ foreach ($modelDatas as $modelData): ?>
 						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ margintoparea">
 							<div class="col-md-2 col-sm-3 col-xs-5 paddingZ pointerclass flash ">
-								<a class="w0-action-del" href="/frontend/web/news-flash/delete?id=<?php echo $modelData->id; ?>" data-pjax="false" data-pjax-container="w0-pjax" title="Delete">
-									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work1.jpg'; ?>">
-								</a>
-								
-								<a class="w0-action-del" href="/frontend/web/news-flash/copy?id=<?php echo $modelData->id; ?>" title="Delete">
-									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work2.jpg'; ?>">
-								</a>
-								
-								<a href="/frontend/web/news-flash/update?id=<?php echo $modelData->id; ?>" data-pjax="0" title="Update">
-									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work3.jpg'; ?>">
-								</a>
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work1.jpg'; ?>">
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work2.jpg'; ?>">
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work3.jpg'; ?>">
 							</div>
 							<div class="col-md-1 col-sm-2 col-xs-2 paddingZ areawith12">
-								<img src="<?php echo Yii::getAlias('@web').'/uploads/'.$modelData->image; ?>" width="65" height="56" >
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>">
 							</div>
 							<div class="col-md-9 col-sm-7 col-xs-12 padd000 padsh5 areawidth66">
-								<h2 class="portalheading"><span class="portal-areadesign"><?php echo ucwords($modelData->title); ?></span><span class="portal-areadate7"> -- <?php echo date('m/d/y H:i A',$modelData->created_at); ?> </span></h2>
-								<p class="sectiondesign" ><?php echo ucwords($modelData->body); ?></p>
+							<h2 class="portalheading"><span class="portal-areadesign"><?php echo ucwords($modelData->title); ?></span><span class="portal-areadate7"> -- <?php echo date('m/d/y H:i A',$modelData->created_at); ?> </span></h2>
+							<p class="sectiondesign" ><?php echo ucwords($modelData->body); ?></p>
 							</div>
 						</div>
 					
@@ -153,17 +122,19 @@ $model->type= '1';
 </div>
 	
 				<div class="col-md-1 widd6 curareas">
-				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed" onclick="return go_to_newsflash()">
-					<a href="/news-flash"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg"></a>
+				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
+					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg">
 					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow areaheadinaas">
 						<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
+							
 								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-									<img src="<?php echo Yii::getAlias('@web').'/uploads/'.$Newsflashes->image; ?>" width="65" height="56" >
+									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>" >
 								</div>
 								<div class="col-md-9 col-sm-9 col-xs-10 paddingZ m-t-12">
 									<h2 class="portal-section"><?php echo ucwords($Newsflashes->title).' - '.date('m/d/y H:i A',$Newsflashes->created_at) ?> </h2>
 									<p class="portal-sectionpara"><?php echo substr(ucwords($Newsflashes->body),0,140); ?></p>
-								</div>							
+								</div>
+							
 						<?php endforeach; } ?>
 					</div>
 				</div>

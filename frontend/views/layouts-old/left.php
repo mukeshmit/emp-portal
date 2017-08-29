@@ -1,7 +1,7 @@
 <div class="col-md-3 col-sm-3 col-xs-12 abosDiv hidden-xs widd22">
                 <div class="col-md-12 col-sm-12 col-xs-12 bsdivll logoDiv aboshadow hiddSm">
                     <div class="logoSecond" style="float:left;">
-                        <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/lorianna-face.png'; ?>" alt="logo man pic" class="img-responsive" style="float:left;">
+                        <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/nouser.jpg'; ?>" alt="logo man pic" class="img-responsive" style="float:left;">
                     </div>
                     <div class="logoanthrtext">
                         <h1><?php echo Yii::$app->user->isGuest ? 'Guest' : ucfirst(Yii::$app->user->identity->username); ?></h1>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
                     <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
-                        <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/people-collect.png'; ?>" class="img-responsive commentbox">
+                        <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/comment-boxes.jpg'; ?>" class="img-responsive commentbox">
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExt">
                         <div class="col-md-12 col-sm-12 col-xs-12 divinpees">

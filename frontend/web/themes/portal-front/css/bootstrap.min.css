@@ -3565,8 +3565,11 @@ textarea.input-lg {
 .help-block {
     display: block;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     color: #737373
+    width: 47%;
+    font-size: 11px;
+    float: left;
 }
 
 @media (min-width:768px) {
@@ -7480,7 +7483,7 @@ button.close {
 .carousel-inner>.item>a>img,
 .carousel-inner>.item>img {
     line-height: 1;
-	padding: 33px 82px 10px 25px;
+	padding: 30px 75px 10px 25px;
 }
 
 @media all and (transform-3d),
@@ -7646,9 +7649,9 @@ button.close {
     margin-left: 0px;
     text-align: center;
     list-style: none;
-    right: 29px;
+    right: 26px;
     bottom: auto !important;
-    top: 148px;
+    top: 139px;
 }
 
 .carousel-indicators li {
@@ -8056,5 +8059,29 @@ button.close {
     }
 }
 
-
+.carousel-fade .carousel-inner .item {
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
 /*# sourceMappingURL=bootstrap.min.css.map */

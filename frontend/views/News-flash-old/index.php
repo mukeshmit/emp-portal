@@ -123,15 +123,15 @@ $model->type= '1';
 				<?php if(!empty($modelDatas)){ foreach ($modelDatas as $modelData): ?>
 						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ margintoparea">
 							<div class="col-md-2 col-sm-3 col-xs-5 paddingZ pointerclass flash ">
-								<a class="w0-action-del" href="/frontend/web/news-flash/delete?id=<?php echo $modelData->id; ?>" data-pjax="false" data-pjax-container="w0-pjax" title="Delete">
+								<a class="w0-action-del" href="/news-flash/delete?id=<?php echo $modelData->id; ?>" data-pjax="false" data-pjax-container="w0-pjax" title="Delete">
 									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work1.jpg'; ?>">
 								</a>
 								
-								<a class="w0-action-del" href="/frontend/web/news-flash/copy?id=<?php echo $modelData->id; ?>" title="Delete">
+								<a class="w0-action-del" href="/news-flash/copy?id=<?php echo $modelData->id; ?>" title="Delete">
 									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work2.jpg'; ?>">
 								</a>
 								
-								<a href="/frontend/web/news-flash/update?id=<?php echo $modelData->id; ?>" data-pjax="0" title="Update">
+								<a href="/news-flash/update?id=<?php echo $modelData->id; ?>" data-pjax="0" title="Update">
 									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/work3.jpg'; ?>">
 								</a>
 							</div>
