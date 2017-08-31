@@ -4,8 +4,10 @@
                         <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/lorianna-face.png'; ?>" alt="logo man pic" class="img-responsive" style="float:left;">
                     </div>
                     <div class="logoanthrtext">
-                        <h1><?php echo Yii::$app->user->isGuest ? 'Guest' : ucfirst(Yii::$app->user->identity->username); ?></h1>
-                        <p>Welcome to Portal Content</p>
+                        <h1>Lorianna Shedlock
+						<!-- <?php echo Yii::$app->user->isGuest ? 'Guest' : ucfirst(Yii::$app->user->identity->username); ?> -->
+						</h1>
+                        <p>Vice President, Head of HR & Cultural</p>
                     </div>
 
                 </div>
@@ -56,116 +58,47 @@
                             </form>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
-                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ sideprofileIm">
                                 <i class="fa fa-user userList"></i>
                             </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
-                                <h3>John Smith</h3>
-                                <p>Line Producer Production</p>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
-                                <ul class="IcnListFrm">
-                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
-                                </ul>
+                            <div class="col-md-7 col-sm-5 col-xs-4 nameOfListMmb sideprofileIc">
+                                <h3>George De La Cruz</h3>
+                                <p>VP, Controller  Finance</p>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
-                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ sideprofileIm">
                                 <i class="fa fa-user userList"></i>
                             </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
-                                <h3>John Smith</h3>
-                                <p>Line Producer Production</p>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
-                                <ul class="IcnListFrm">
-                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
-                                </ul>
+                            <div class="col-md-7 col-sm-5 col-xs-4 nameOfListMmb sideprofileIc">
+                                <h3>Tyy Sams</h3>
+                                <p>Executive Assistant, Tom Forman (Executive Office)</p>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
-                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ sideprofileIm">
                                 <i class="fa fa-user userList"></i>
                             </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
-                                <h3>John Smith</h3>
-                                <p>Line Producer Production</p>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
-                                <ul class="IcnListFrm">
-                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
-                                </ul>
+                            <div class="col-md-7 col-sm-5 col-xs-4 nameOfListMmb sideprofileIc">
+                                <h3>Omer Daouk</h3>
+                                <p>Executive Assistant, The Jay & Tony Show (POD)</p>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
-                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
+                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ sideprofileIm">
                                 <i class="fa fa-user userList"></i>
                             </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
-                                <h3>John Smith</h3>
-                                <p>Line Producer Production</p>
+                            <div class="col-md-7 col-sm-5 col-xs-4 nameOfListMmb sideprofileIc">
+                                <h3>Karry-Kay Wynter</h3>
+                                <p>Executive Assistant, Rebacca Rosichan (Casting)</p>
                             </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
+                            <!-- <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
                                 <ul class="IcnListFrm">
                                     <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
                                     <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
                                     <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
-                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
-                                <i class="fa fa-user userList"></i>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
-                                <h3>John Smith</h3>
-                                <p>Line Producer Production</p>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
-                                <ul class="IcnListFrm">
-                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
-                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
-                                <i class="fa fa-user userList"></i>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
-                                <h3>John Smith</h3>
-                                <p>Line Producer Production</p>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
-                                <ul class="IcnListFrm">
-                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ eklavl">
-                            <div class="col-md-4 col-sm-2 col-xs-4 paddingZ">
-                                <i class="fa fa-user userList"></i>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 nameOfListMmb">
-                                <h3>John Smith</h3>
-                                <p>Line Producer Production</p>
-                            </div>
-                            <div class="col-md-4 col-sm-5 col-xs-4 paddingZ">
-                                <ul class="IcnListFrm">
-                                    <li><a href="#"><i class="fa fa-envelope-o redT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-whatsapp  greenT"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype  blueT"></i></a></li>
-                                </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

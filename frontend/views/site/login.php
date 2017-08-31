@@ -355,3 +355,8 @@ $this->params['breadcrumbs'][] = $this->title;
 }
 .divFixed{display:none!important;}
 </style>
+<script>
+$('.canResolve').css('margin-top' : -$('.canResolve').outerHeight()/2!important):
+</script>
+ 
+

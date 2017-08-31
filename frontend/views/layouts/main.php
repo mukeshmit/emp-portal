@@ -256,6 +256,15 @@ $(document).ready(function(){
         });
         //]]>
 </script>
+<script>
+$(document).ready(function(){
+	setInterval(function(){
+		$('.loaders').addClass('loaded');
+
+	}, 3000);
+ });
+
+		</script>
 </body>
 </html>
 <?php $this->endPage() ?>
