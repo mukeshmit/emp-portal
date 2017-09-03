@@ -511,7 +511,7 @@ echo Instafeed::widget([
 							</div>
 							</div>
 							<div class="col-md-12 col-sm-12 col-xs-12 paddingZ postorre">
-							<a style="cursor:pointer"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/arrow-box.jpg'; ?>" id="toggleProfile1" class="img-responsive imageArrw1" alt="Arrow Icon"></a>
+							<a style="cursor:pointer"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/arrow-box.jpg'; ?>" id="" class="img-responsive imageArrw1" alt="Arrow Icon"></a> <!-- imageArrw1 toggleProfile1-->
 						</div>
 
 					</div>
