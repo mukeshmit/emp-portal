@@ -60,18 +60,25 @@ echo Instafeed::widget([
 	<div class="slideValues">
 		<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel"  data-interval="10000">
 			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
-				<li data-target="#myCarousel" data-slide-to="4"></li>
-		<!-- 		<li class="sliderLink" data-target="#myCarousel" data-slide-to="5"></li> -->
+				<li data-target="#myCarousel" data-slide-to="0" class="itmeeee  active"></li>
+				<li data-target="#myCarousel" data-slide-to="1" class="itmeeee1"></li>
+				<li data-target="#myCarousel" data-slide-to="2" class="itmeeee1"></li>
+				<li data-target="#myCarousel" data-slide-to="3" class="itmeeee1"></li>
+				<li data-target="#myCarousel" data-slide-to="4" class="itmeeee1"></li>
+		<!--	<li data-target="#myCarousel" data-slide-to="5" style="opacity:0;"></li>
+				<li class="sliderLink" ></li> --> 
 			</ol>
-
+<script>
+	setTimeout(
+    function() {
+      var a=document.getElementById('abcde').src;
+      document.getElementById('abcd').src=a;
+    }, 10000);
+</script>
 			<!-- Wrapper for slides --> 
 			<div class="carousel-inner">
-				<div class="item active"  data-interval="11000">
-					<img class="loaders" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/start.gif'; ?>" alt="portal slide image" style="width:100%;">
+				<div class="item itmeeee active"   data-interval="11000" >
+					<img class="loaders" id="abcd" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/start.gif'; ?>" alt="portal slide image" style="width:100%;">
 					<div class="slideDivSechead">
 						<div class="slideDivSec marB25">
 							<div class="slideImgDiv ">
@@ -113,7 +120,7 @@ echo Instafeed::widget([
 				</div>
 
 				<div class="item"  data-interval="11000">
-					<img class="loaders" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/transition.gif'; ?>" alt="portal slide image" style="width:100%;">
+					<img class="loaders" id="abcde" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/transition.gif'; ?>" alt="portal slide image" style="width:100%;">
 					
 					<div class="slideDivSechead ">
 						<div class="slideDivSec ">
@@ -151,7 +158,10 @@ echo Instafeed::widget([
 						</div>
 					</div>
 				</div>	
-				<div class="item"  data-interval="9000">
+				<div class="item"  data-interval="11000">
+				<img class="loaders" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/transition.gif'; ?>" alt="portal slide image" style="width:100%;">
+					
+					
 				
 					<div class="slideDivSechead ">
 						<div class="slideDivSec ">
@@ -171,7 +181,7 @@ echo Instafeed::widget([
 						</div>
 					</div>
 				</div>	
-				<div class="item"  data-interval="11000">
+				<div class="item" data-interval="11000" >
 					<img class="loaders" src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/transition.gif'; ?>" alt="portal slide image" style="width:100%;">
 					
 					<div class="slideDivSechead ">
@@ -184,11 +194,12 @@ echo Instafeed::widget([
 								<h3> 10/8c | Travel Channel </h3>
 								<p> Philippe and Ashlan Cousteau head to St. Thomas to learn more about Jean Hamlin, a sadistic pirate who may have left a vast
 								fortune on the sea floor. Their investigation uncovers a secret society of divers who lead them to a shocking discovery. </p>
-								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/slide5_logo.png'; ?>" alt="portal slide image" >
+								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/slide5_logo.png'; ?>" alt="portal slide image" class="imagesLogoS">
 							</div>
 						</div>
 					</div>
 				</div>	
+
 				<!-- <div class="item1"  data-interval="1000">			
 					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/start.gif'; ?>" alt="portal slide image" style="width:100%;">
 					

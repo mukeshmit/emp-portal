@@ -256,15 +256,51 @@ $(document).ready(function(){
         });
         //]]>
 </script>
+
 <script>
+
 $(document).ready(function(){
 	setInterval(function(){
 		$('.loaders').addClass('loaded');
+	}, 2000);
 
-	}, 3000);
  });
+ </script>
+ <script>
+$(document).ready(function() {
+$('#myCarousel').carousel({
+	interval: 12000,
+	wrap: true,
+	pause: false
+});
+});
+ </script>
 
-		</script>
+
+<script>
+
+$(document).ready(function(){
+	setInterval(function(){
+    $('.itmeeee').addClass('itmeeeeAc');
+},15000);
+
+ });
+ </script>
+
+
+<script>
+
+$(document).ready(function(){
+	setInterval(function(){
+    $('.itmeeee.itmeeeeAc.active').removeClass('itmeeeeAc');
+},800);
+
+ });
+ </script>
+
+ 
+
+ 
 </body>
 </html>
 <?php $this->endPage() ?>
