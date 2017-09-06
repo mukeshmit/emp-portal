@@ -39,7 +39,7 @@ AppAsset::register($this);
 	switch($controller){
 		case 'calendar' : 
 				$leftView  = "leftcalender.php";
-				$rightView = "";
+				$rightView = "right.php";
 				; break;
 		case 'site' : 
 				if($controlleract=='login'){ 
@@ -48,13 +48,13 @@ AppAsset::register($this);
 					$rightView = ""; 
 				}else{
 					$leftView  = "left.php";
-					$rightView = ""; 
+					$rightView = "right.php"; 
 				} ; 
 				
 				break;
 		default: 
 				$leftView  = "left.php";
-				$rightView = "";
+				$rightView = "right.php";
 	}
 ?>
 
@@ -69,7 +69,10 @@ AppAsset::register($this);
         <div class="container paddXsZ conposition">  
 			
 			<?php if(!empty($leftView)){ echo $this->render($leftView); }  ?>
-			<?= $content ?>		
+			<?= $content ?>	
+			
+			<?php if(!empty($headerView)){ echo $this->render($rightView); }  ?>
+			
         </div>
     </div>	
 	<?= $this->render('footer.php') ?>
@@ -94,7 +97,7 @@ $(document).ready(function(){
 	}); */
 	
 	$(document).on('click','.newsfeed',function(){
-		window.location = "<?php echo \Yii::$app->request->BaseUrl .'/news-flash'; ?>";
+		window.location = "<?php echo \Yii::$app->request->BaseUrl .'/news-flash/index'; ?>";
 	})
 });
 </script>

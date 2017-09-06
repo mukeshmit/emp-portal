@@ -41,7 +41,6 @@ class NewsFlashController extends Controller
      */
     public function actionIndex()
     {
-		// die();
 		
 		/* $mc = new Mailchimp(['apikey' => '5562acdeed1bf2ee829a71b7e6428c5a-us15','opts'=>['verify_ssl'=>false]]);
 		// $this->opts = false;
@@ -49,27 +48,33 @@ class NewsFlashController extends Controller
 		/* echo "<pre>";
 		print_r($userList);
 		die; */
-		
-		$query = Newsflash::find();
-
-        $pagination = new Pagination([
-            'defaultPageSize' => 10,
-            'totalCount' => $query->count(),
-        ]);
-
-        $modelData = $query->orderBy('created_at DESC')
-            ->offset($pagination->offset)
-            ->limit($pagination->limit)
-            ->all();
-		
-		 $model = new Newsflash();
+		if(Yii::$app->user->isGuest){
+			return $this->redirect(['site/login']);
+		}else{
 			
+			$query = Newsflash::find();
+
+			$pagination = new Pagination([
+				'defaultPageSize' => 10,
+				'totalCount' => $query->count(),
+			]);
+
+			$modelData = $query->orderBy('created_at DESC')
+				->offset($pagination->offset)
+				->limit($pagination->limit)
+				->all();
+			
+			 $model = new Newsflash();
+				
+			
+			return $this->render('index', [
+				'modelDatas' => $modelData,
+				'pagination' => $pagination,
+				'model' => $model,
+			]);
+			
+		}
 		
-		return $this->render('index', [
-            'modelDatas' => $modelData,
-            'pagination' => $pagination,
-            'model' => $model,
-        ]);
 		
     }
 
@@ -92,10 +97,46 @@ class NewsFlashController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Newsflash();
+		
+		$model = new Newsflash();
+
+		$model->user_id = Yii::$app->user->identity->id;
+		$model->created_at = strtotime(date('d-m-Y H:i:s'));
+		
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			
+			$image = UploadedFile::getInstance($model,'image');
+			if(is_object($image)){
+				$model->image = $image->basename . '.'.$image->extension;
+			}
+			
+			if($model->save()){
+				if(is_object($image)){
+					$image->saveAs('uploads/'.$model->image);
+				}				
+				return $this->redirect(['news-flash/index']);
+			}else{
+				 return $this->renderAjax('update', [
+								 'model' => $model,
+							    ]);
+			}
+            
+        } else {
+			
+            return $this->renderAjax('create', [
+								 'model' => $model,
+							    ]);
+			
+        }
+		
+		
+		
+		
+		
+        /* $model = new Newsflash();
         $model->user_id = Yii::$app->user->identity->id;
-        $model->title = Yii::$app->request->post()['Newsflash']['title'];;
-        $model->body = Yii::$app->request->post()['Newsflash']['body'];;
+        $model->title = isset(Yii::$app->request->post()['Newsflash']['title'])?Yii::$app->request->post()['Newsflash']['title']:'';
+        $model->body = isset(Yii::$app->request->post()['Newsflash']['body'])?Yii::$app->request->post()['Newsflash']['body']:'';
         $model->type = 2;
         $model->image = 'no-image.jpg';
         $model->created_at = strtotime(date('d-m-Y H:i:s'));
@@ -113,15 +154,16 @@ class NewsFlashController extends Controller
 				return $this->redirect(['news-flash/index']);
 				
 			}
-			// echo "<pre>";
-			// var_dump(ActiveForm::validate($model));
-			// die;
 			
 			// return ActiveForm::validate($model);
 		}else{
-			 \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-			return ActiveForm::validate($model);
-		}
+			 // \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+			// return ActiveForm::validate($model);
+			
+			 return $this->renderAjax('create', [
+                'model' => $model,
+            ]);
+		} */
 		
         // if ($model->load(Yii::$app->request->post()) && $model->save()) {
             // return $this->redirect(['view', 'id' => $model->id]);
@@ -160,10 +202,9 @@ class NewsFlashController extends Controller
 				 return $this->redirect(['news-flash/update',$id]);
 			}
             
-			
         } else {
 			
-            return $this->render('update', [
+            return $this->renderAjax('update', [
 								 'model' => $model,
 							    ]);
 			

@@ -1,15 +1,14 @@
 <div class="col-md-3 col-sm-3 col-xs-12 abosDiv hidden-xs widd22">
                 <div class="col-md-12 col-sm-12 col-xs-12 bsdivll logoDiv aboshadow hiddSm">
                     <div class="logoSecond" style="float:left;">
-                        <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/lorianna-face.png'; ?>" alt="logo man pic" class="img-responsive" style="float:left;">
+                        <img src="<?php echo Yii::$app->user->isGuest ? Yii::getAlias('@web').'/themes/portal-front/images/lorianna-face.png' : Yii::getAlias('@web').'/uploads/demo-man.png'; ?>" />
                     </div>
                     <div class="logoanthrtext">
-                        <h1>Lorianna Shedlock
-						<!-- <?php echo Yii::$app->user->isGuest ? 'Guest' : ucfirst(Yii::$app->user->identity->username); ?> -->
+                        <h1>
+						<?php echo Yii::$app->user->isGuest ? 'Lorianna Shedlock' : ucfirst(Yii::$app->user->identity->username); ?> 
 						</h1>
-                        <p>Vice President, Head of HR & Cultural</p>
+                        <p><?php echo Yii::$app->user->isGuest ? 'Vice President, Head of HR & Cultural' : ''; ?></p>
                     </div>
-
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDiv">
                     <div id="wrapper">

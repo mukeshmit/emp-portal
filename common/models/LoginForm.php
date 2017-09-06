@@ -27,7 +27,7 @@ class LoginForm extends Model
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
-            ['password', 'validatePassword'],
+            // ['password', 'validatePassword'],
         ];
     }
 
@@ -67,12 +67,27 @@ class LoginForm extends Model
      *
      * @return User|null
      */
-    protected function getUser()
+	 
+	public function getUser()
+	{
+		
+		if ($this->_user === null) {
+			
+			$this->_user = \Edvlerblog\Adldap2\model\UserDbLdap::findByUsername($this->username);
+			
+		}
+		
+		return $this->_user;
+		
+	}
+	
+   /*  protected function getUser()
     {
         if ($this->_user === null) {
             $this->_user = User::findByUsername($this->username);
         }
 
         return $this->_user;
-    }
+    } */
+	
 }

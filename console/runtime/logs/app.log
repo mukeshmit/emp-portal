@@ -491,3 +491,1080 @@ Stack trace:
     ]
     'argc' => 2
 ]
+2017-09-01 21:50:28 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'yii2advanced'' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Connection.php:646
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Connection.php(646): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Connection.php(928): yii\db\Connection->open()
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(910): yii\db\Command->prepare(true)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\mysql\Schema.php(199): yii\db\Command->queryAll()
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\mysql\Schema.php(98): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Schema.php(152): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\MigrateController.php(194): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(814): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(155): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#16 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('up', Array)
+#17 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('up', Array)
+#18 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/up', Array)
+#19 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/up', Array)
+#20 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1049] Unknown database 'yii2advanced'' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Connection.php:584
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Connection.php(928): yii\db\Connection->open()
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(910): yii\db\Command->prepare(true)
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\mysql\Schema.php(199): yii\db\Command->queryAll()
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\mysql\Schema.php(98): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Schema.php(152): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\MigrateController.php(194): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(814): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(155): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#14 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('up', Array)
+#15 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('up', Array)
+#16 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/up', Array)
+#17 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/up', Array)
+#18 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2017-09-01 21:50:28 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw64/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'CONFIG_SITE' => '/mingw64/etc/config.site'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'C:\\Program Files\\Git'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOME' => 'C:\\Users\\Asus'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'HOSTNAME' => 'DESKTOP-MKDDV08'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info'
+    'LANG' => 'en_US.UTF-8'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'MANPATH' => '/mingw64/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man'
+    'MINGW_CHOST' => 'x86_64-w64-mingw32'
+    'MINGW_PACKAGE_PREFIX' => 'mingw-w64-x86_64'
+    'MINGW_PREFIX' => '/mingw64'
+    'MSYSTEM' => 'MINGW64'
+    'MSYSTEM_CARCH' => 'x86_64'
+    'MSYSTEM_CHOST' => 'x86_64-w64-mingw32'
+    'MSYSTEM_PREFIX' => '/mingw64'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'ORIGINAL_PATH' => 'C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'ORIGINAL_TEMP' => '/tmp'
+    'ORIGINAL_TMP' => '/tmp'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\Asus\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw64/lib/pkgconfig:/mingw64/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Send To OneNote 2010'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/c/wamp/www/emp-portal'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw64/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'WINDIR' => 'C:\\Windows'
+    '_' => '/usr/bin/winpty'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504282828.7382
+    'REQUEST_TIME' => 1504282828
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/up'
+        2 => '--migrationPath=@yii/rbac/migrations'
+    ]
+    'argc' => 3
+]
+2017-09-01 21:53:21 [-][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'COMMENT' (T_STRING)' in C:\wamp\www\emp-portal\console\migrations\m170713_125828_add_type_column_to_newsFlash_table.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-09-01 21:53:05 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw64/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'CONFIG_SITE' => '/mingw64/etc/config.site'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'C:\\Program Files\\Git'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOME' => 'C:\\Users\\Asus'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'HOSTNAME' => 'DESKTOP-MKDDV08'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info'
+    'LANG' => 'en_US.UTF-8'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'MANPATH' => '/mingw64/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man'
+    'MINGW_CHOST' => 'x86_64-w64-mingw32'
+    'MINGW_PACKAGE_PREFIX' => 'mingw-w64-x86_64'
+    'MINGW_PREFIX' => '/mingw64'
+    'MSYSTEM' => 'MINGW64'
+    'MSYSTEM_CARCH' => 'x86_64'
+    'MSYSTEM_CHOST' => 'x86_64-w64-mingw32'
+    'MSYSTEM_PREFIX' => '/mingw64'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'ORIGINAL_PATH' => 'C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'ORIGINAL_TEMP' => '/tmp'
+    'ORIGINAL_TMP' => '/tmp'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\Asus\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw64/lib/pkgconfig:/mingw64/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Send To OneNote 2010'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/c/wamp/www/emp-portal'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw64/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'WINDIR' => 'C:\\Windows'
+    '_' => '/usr/bin/winpty'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504282985.3304
+    'REQUEST_TIME' => 1504282985
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2017-09-01 21:58:17 [-][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: m170713_125937_add_type_column_to_newsFlash_table::tinyint()' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Component.php:290
+Stack trace:
+#0 C:\wamp\www\emp-portal\console\migrations\m170713_125937_add_type_column_to_newsFlash_table.php(15): yii\base\Component->__call('tinyint', Array)
+#1 C:\wamp\www\emp-portal\console\migrations\m170713_125937_add_type_column_to_newsFlash_table.php(15): m170713_125937_add_type_column_to_newsFlash_table->tinyint()
+#2 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m170713_125937_add_type_column_to_newsFlash_table->up()
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m170713_125937_...')
+#4 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('', Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('', Array)
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#11 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#13 {main}
+2017-09-01 21:58:11 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw64/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'CONFIG_SITE' => '/mingw64/etc/config.site'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'C:\\Program Files\\Git'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOME' => 'C:\\Users\\Asus'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'HOSTNAME' => 'DESKTOP-MKDDV08'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info'
+    'LANG' => 'en_US.UTF-8'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'MANPATH' => '/mingw64/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man'
+    'MINGW_CHOST' => 'x86_64-w64-mingw32'
+    'MINGW_PACKAGE_PREFIX' => 'mingw-w64-x86_64'
+    'MINGW_PREFIX' => '/mingw64'
+    'MSYSTEM' => 'MINGW64'
+    'MSYSTEM_CARCH' => 'x86_64'
+    'MSYSTEM_CHOST' => 'x86_64-w64-mingw32'
+    'MSYSTEM_PREFIX' => '/mingw64'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'ORIGINAL_PATH' => 'C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'ORIGINAL_TEMP' => '/tmp'
+    'ORIGINAL_TMP' => '/tmp'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\Asus\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw64/lib/pkgconfig:/mingw64/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Send To OneNote 2010'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/c/wamp/www/emp-portal'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw64/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'WINDIR' => 'C:\\Windows'
+    '_' => '/usr/bin/winpty'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504283291.3078
+    'REQUEST_TIME' => 1504283291
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2017-09-01 21:59:24 [-][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: m170713_125937_add_type_column_to_newsFlash_table::tinyint()' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Component.php:290
+Stack trace:
+#0 C:\wamp\www\emp-portal\console\migrations\m170713_125937_add_type_column_to_newsFlash_table.php(15): yii\base\Component->__call('tinyint', Array)
+#1 C:\wamp\www\emp-portal\console\migrations\m170713_125937_add_type_column_to_newsFlash_table.php(15): m170713_125937_add_type_column_to_newsFlash_table->tinyint()
+#2 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m170713_125937_add_type_column_to_newsFlash_table->up()
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m170713_125937_...')
+#4 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('', Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('', Array)
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#11 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#13 {main}
+2017-09-01 21:59:21 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw64/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'CONFIG_SITE' => '/mingw64/etc/config.site'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'C:\\Program Files\\Git'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOME' => 'C:\\Users\\Asus'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'HOSTNAME' => 'DESKTOP-MKDDV08'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info'
+    'LANG' => 'en_US.UTF-8'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'MANPATH' => '/mingw64/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man'
+    'MINGW_CHOST' => 'x86_64-w64-mingw32'
+    'MINGW_PACKAGE_PREFIX' => 'mingw-w64-x86_64'
+    'MINGW_PREFIX' => '/mingw64'
+    'MSYSTEM' => 'MINGW64'
+    'MSYSTEM_CARCH' => 'x86_64'
+    'MSYSTEM_CHOST' => 'x86_64-w64-mingw32'
+    'MSYSTEM_PREFIX' => '/mingw64'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'ORIGINAL_PATH' => 'C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'ORIGINAL_TEMP' => '/tmp'
+    'ORIGINAL_TMP' => '/tmp'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\Asus\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw64/lib/pkgconfig:/mingw64/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Send To OneNote 2010'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/c/wamp/www/emp-portal'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw64/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'WINDIR' => 'C:\\Windows'
+    '_' => '/usr/bin/winpty'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504283361.6728
+    'REQUEST_TIME' => 1504283361
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2017-09-02 01:12:32 [-][-][-][error][yii\console\UnknownCommandException] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "rbac/init".' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#2 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\console\UnknownCommandException' with message 'Unknown command "rbac/init".' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#3 {main}
+2017-09-02 01:12:32 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw64/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'CONFIG_SITE' => '/mingw64/etc/config.site'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'C:\\Program Files\\Git'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOME' => 'C:\\Users\\Asus'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'HOSTNAME' => 'DESKTOP-MKDDV08'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info'
+    'LANG' => 'en_US.UTF-8'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'MANPATH' => '/mingw64/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man'
+    'MINGW_CHOST' => 'x86_64-w64-mingw32'
+    'MINGW_PACKAGE_PREFIX' => 'mingw-w64-x86_64'
+    'MINGW_PREFIX' => '/mingw64'
+    'MSYSTEM' => 'MINGW64'
+    'MSYSTEM_CARCH' => 'x86_64'
+    'MSYSTEM_CHOST' => 'x86_64-w64-mingw32'
+    'MSYSTEM_PREFIX' => '/mingw64'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'ORIGINAL_PATH' => 'C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'ORIGINAL_TEMP' => '/tmp'
+    'ORIGINAL_TMP' => '/tmp'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\Asus\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw64/lib/pkgconfig:/mingw64/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Send To OneNote 2010'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/c/wamp/www/emp-portal'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw64/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'WINDIR' => 'C:\\Windows'
+    '_' => '/usr/bin/winpty'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504294951.6392
+    'REQUEST_TIME' => 1504294951
+    'argv' => [
+        0 => 'yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]
+2017-09-02 01:13:47 [-][-][-][error][yii\base\UnknownClassException] exception 'yii\base\UnknownClassException' with message 'Unable to find 'console\controllers\RbacController' in file: C:\wamp\www\emp-portal/console/controllers/RbacController.php. Namespace missing?' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\BaseYii.php:295
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('console\\control...')
+#1 [internal function]: spl_autoload_call('console\\control...')
+#2 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(633): class_exists('console\\control...')
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(591): yii\base\Module->createControllerByID('rbac')
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(517): yii\base\Module->createController('rbac/init')
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#9 {main}
+2017-09-02 01:13:47 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw64/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'CONFIG_SITE' => '/mingw64/etc/config.site'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'C:\\Program Files\\Git'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOME' => 'C:\\Users\\Asus'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'HOSTNAME' => 'DESKTOP-MKDDV08'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info'
+    'LANG' => 'en_US.UTF-8'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'MANPATH' => '/mingw64/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man'
+    'MINGW_CHOST' => 'x86_64-w64-mingw32'
+    'MINGW_PACKAGE_PREFIX' => 'mingw-w64-x86_64'
+    'MINGW_PREFIX' => '/mingw64'
+    'MSYSTEM' => 'MINGW64'
+    'MSYSTEM_CARCH' => 'x86_64'
+    'MSYSTEM_CHOST' => 'x86_64-w64-mingw32'
+    'MSYSTEM_PREFIX' => '/mingw64'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'ORIGINAL_PATH' => 'C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'ORIGINAL_TEMP' => '/tmp'
+    'ORIGINAL_TMP' => '/tmp'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\Asus\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw64/lib/pkgconfig:/mingw64/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Send To OneNote 2010'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/c/wamp/www/emp-portal'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw64/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'WINDIR' => 'C:\\Windows'
+    '_' => '/usr/bin/winpty'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504295026.9939
+    'REQUEST_TIME' => 1504295026
+    'argv' => [
+        0 => 'yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]
+2017-09-04 18:29:22 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php:842
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(842): PDOStatement->execute()
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Migration.php(288): yii\db\Command->execute()
+#2 C:\wamp\www\emp-portal\vendor\edvlerblog\yii2-adldap-module\src\migrations\m161220_101944_create_user_table.php(33): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m161220_101944_create_user_table->up()
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m161220_101944_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('', Array)
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('', Array)
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#11 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#12 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#14 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists
+The SQL being executed was: CREATE TABLE `user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`username` varchar(255) NOT NULL UNIQUE,
+	`auth_key` varchar(32) NOT NULL UNIQUE,
+	`status` smallint(6) NOT NULL DEFAULT 10,
+	`created_at` int(11) NOT NULL,
+	`updated_at` int(11) NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Schema.php:636
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `u...')
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Migration.php(288): yii\db\Command->execute()
+#2 C:\wamp\www\emp-portal\vendor\edvlerblog\yii2-adldap-module\src\migrations\m161220_101944_create_user_table.php(33): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(671): m161220_101944_create_user_table->up()
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->migrateUp('m161220_101944_...')
+#5 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Controller.php(128): yii\base\Controller->runAction('', Array)
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\console\Controller->runAction('', Array)
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#11 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#12 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\wamp\www\emp-portal\yii(27): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42S01
+    [1] => 1050
+    [2] => Table 'user' already exists
+)
+
+2017-09-04 18:29:17 [-][-][-][info][application] $_SERVER = [
+    'ACLOCAL_PATH' => '/mingw64/share/aclocal:/usr/share/aclocal'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'COMMONPROGRAMFILES' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'CONFIG_SITE' => '/mingw64/etc/config.site'
+    'DISPLAY' => 'needs-to-be-defined'
+    'EXEPATH' => 'C:\\Program Files\\Git'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOME' => 'C:\\Users\\Asus'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'HOSTNAME' => 'DESKTOP-MKDDV08'
+    'INFOPATH' => '/usr/local/info:/usr/share/info:/usr/info:/share/info'
+    'LANG' => 'en_US.UTF-8'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'MANPATH' => '/mingw64/share/man:/usr/local/man:/usr/share/man:/usr/man:/share/man'
+    'MINGW_CHOST' => 'x86_64-w64-mingw32'
+    'MINGW_PACKAGE_PREFIX' => 'mingw-w64-x86_64'
+    'MINGW_PREFIX' => '/mingw64'
+    'MSYSTEM' => 'MINGW64'
+    'MSYSTEM_CARCH' => 'x86_64'
+    'MSYSTEM_CHOST' => 'x86_64-w64-mingw32'
+    'MSYSTEM_PREFIX' => '/mingw64'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'ORIGINAL_PATH' => 'C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'ORIGINAL_TEMP' => '/tmp'
+    'ORIGINAL_TMP' => '/tmp'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Users\\Asus\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\local\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Asus\\bin;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Git\\usr\\bin\\vendor_perl;C:\\Program Files\\Git\\usr\\bin\\core_perl'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PKG_CONFIG_PATH' => '/mingw64/lib/pkgconfig:/mingw64/share/pkgconfig'
+    'PLINK_PROTOCOL' => 'ssh'
+    'PRINTER' => 'Send To OneNote 2010'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'PROGRAMFILES' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PS1' => '\\[\\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\\007\\]\\n\\[\\033[32m\\]\\u@\\h \\[\\033[35m\\]$MSYSTEM \\[\\033[33m\\]\\w\\[\\033[36m\\]`__git_ps1`\\[\\033[0m\\]\\n$ '
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'PWD' => '/c/wamp/www/emp-portal'
+    'SESSIONNAME' => 'Console'
+    'SHELL' => 'C:\\Program Files\\Git\\usr\\bin\\bash.exe'
+    'SHLVL' => '1'
+    'SSH_ASKPASS' => '/mingw64/libexec/git-core/git-gui--askpass'
+    'SYSTEMDRIVE' => 'C:'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMPDIR' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'WINDIR' => 'C:\\Windows'
+    '_' => '/usr/bin/winpty'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504529957.0346
+    'REQUEST_TIME' => 1504529957
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+        2 => '--migrationPath=@Edvlerblog/Adldap2/migrations'
+    ]
+    'argc' => 3
+]
+2017-09-05 00:59:17 [-][-][-][warning][application] -- Starting import from Active Directory --
+2017-09-05 00:59:18 [-][-][-][warning][application] -- Found 0 users --
+2017-09-05 00:59:18 [-][-][-][warning][application] -- End import from Active Directory --
+2017-09-05 00:59:17 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504553357.3935
+    'REQUEST_TIME' => 1504553357
+    'argv' => [
+        0 => 'yii'
+        1 => 'ldapcmd/import-all-users'
+    ]
+    'argc' => 2
+]
+2017-09-05 01:01:28 [-][-][-][warning][application] -- Starting import from Active Directory --
+2017-09-05 01:01:29 [-][-][-][warning][application] -- Found 0 users --
+2017-09-05 01:01:29 [-][-][-][warning][application] -- End import from Active Directory --
+2017-09-05 01:01:28 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504553488.4801
+    'REQUEST_TIME' => 1504553488
+    'argv' => [
+        0 => 'yii'
+        1 => 'ldapcmd/import-all-users'
+    ]
+    'argc' => 2
+]
+2017-09-05 01:01:41 [-][-][-][warning][application] -- Starting import from Active Directory --
+2017-09-05 01:01:42 [-][-][-][warning][application] -- Found 0 users --
+2017-09-05 01:01:42 [-][-][-][warning][application] -- End import from Active Directory --
+2017-09-05 01:01:41 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\emp-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504553501.542
+    'REQUEST_TIME' => 1504553501
+    'argv' => [
+        0 => 'C:\\wamp\\www\\emp-portal\\yii'
+        1 => 'ldapcmd/import-all-users'
+    ]
+    'argc' => 2
+]
+2017-09-05 01:03:24 [-][-][-][warning][application] -- Starting import from Active Directory --
+2017-09-05 01:03:25 [-][-][-][warning][application] -- Found 0 users --
+2017-09-05 01:03:25 [-][-][-][warning][application] -- End import from Active Directory --
+2017-09-05 01:03:24 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\emp-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504553604.3293
+    'REQUEST_TIME' => 1504553604
+    'argv' => [
+        0 => 'C:\\wamp\\www\\emp-portal\\yii'
+        1 => 'ldapcmd/import-all-users'
+    ]
+    'argc' => 2
+]
+2017-09-05 01:07:25 [-][-][-][warning][application] -- Starting import from Active Directory --
+2017-09-05 01:07:26 [-][-][-][warning][application] -- Found 0 users --
+2017-09-05 01:07:26 [-][-][-][warning][application] -- End import from Active Directory --
+2017-09-05 01:07:25 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\emp-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504553845.2625
+    'REQUEST_TIME' => 1504553845
+    'argv' => [
+        0 => 'C:\\wamp\\www\\emp-portal\\yii'
+        1 => 'ldapcmd/import-all-users'
+    ]
+    'argc' => 2
+]
+2017-09-05 01:08:49 [-][-][-][warning][application] -- Starting import from Active Directory --
+2017-09-05 01:08:50 [-][-][-][warning][application] -- Found 0 users --
+2017-09-05 01:08:50 [-][-][-][warning][application] -- End import from Active Directory --
+2017-09-05 01:08:49 [-][-][-][info][application] $_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Asus\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-MKDDV08'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Asus'
+    'LOCALAPPDATA' => 'C:\\Users\\Asus\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-MKDDV08'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Asus\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Asus\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Asus\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\Asus\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-MKDDV08'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-MKDDV08'
+    'USERNAME' => 'Asus'
+    'USERPROFILE' => 'C:\\Users\\Asus'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp\\www\\emp-portal\\'
+    'PHP_SELF' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp\\www\\emp-portal\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1504553929.3324
+    'REQUEST_TIME' => 1504553929
+    'argv' => [
+        0 => 'C:\\wamp\\www\\emp-portal\\yii'
+        1 => 'ldapcmd/import-all-users'
+    ]
+    'argc' => 2
+]

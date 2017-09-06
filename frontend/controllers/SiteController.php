@@ -74,14 +74,24 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {
+    { 
 		// Yii::$app->message->display('I am Yii2.0 Programmer');
+		// die;
+		
+		$un = 'riemann';
+		
+		$user = \Yii::$app->ad->search()->findBy('uid', $un);
+		// $user = \Yii::$app->ad->getDefaultProvider()->search()->findBy('uid', $un);
+		// $user = \Yii::$app->ad->getProvider('default')->search()->findBy('uid', $un);
+		// echo "<pre>";
+		// print_r($user);
 		// die;
 		
 		if (\Yii::$app->user->isGuest) {
 			return $this->redirect(['site/login']);
 		}
 		
+
 		$model = new LoginForm();
 		
 		// if (!\Yii::$app->user->isGuest) {
@@ -117,10 +127,11 @@ class SiteController extends Controller
 		if (!\Yii::$app->user->isGuest) {
 			return $this->goHome();
 		}
-	
 		
 		$model = new LoginForm();
-			// var_dump(Yii::$app->request->post());
+		$model->username = 'riemann';
+		$model->password = 'password';
+		// $model->rememberMe = 1;
 			// var_dump($model->load(Yii::$app->request->post()) && $model->login());
 			// var_dump(ActiveForm::validate($model));
 		// die;
@@ -136,6 +147,9 @@ class SiteController extends Controller
 		
 			return ActiveForm::validate($model);
 		} */
+		
+		// var_dump($model->load(Yii::$app->request->post()) && $model->login());
+		// die;
 		
 		if ($model->load(Yii::$app->request->post()) && $model->login()) {
 			return $this->goBack();

@@ -2,14 +2,14 @@
 use yii\widgets\ActiveForm;
 use kartik\social\FacebookPlugin;
 use kartik\social\TwitterPlugin;
-use nirvana\instafeed\Instafeed;
+// use nirvana\instafeed\Instafeed;
 use frontend\models\Newsflash;
 // use kmarenov\instagram\InstagramWidget;
 /* @var $this yii\web\View */
 
 $this->title = 'Employee Portal - Home';
 
-$Newsflash = Newsflash::find()->orderBy('created_at')->limit(2)->all();
+$Newsflash = Newsflash::find()->orderBy(['created_at' => SORT_DESC])->limit(3)->all();
 
 
 
@@ -30,13 +30,13 @@ $Newsflash = Newsflash::find()->orderBy('created_at')->limit(2)->all();
 // $config = Yii::$app->instafeedConfig;
 // var_dump($config);
 // die;
-echo Instafeed::widget([
+/* echo Instafeed::widget([
     'pluginOptions' => [
         'get' => 'user',
         'userId' => 'dcf70018fd4f47a7bffeeb3e135cb418',
         'accessToken' => '4457192918.1677ed0.520942912c6b491598e3e823cce18c81',
     ],
-]);
+]); */
 
 ?>
 <style>
@@ -460,252 +460,23 @@ echo Instafeed::widget([
 		</div>
 	</div>
 </div>
-</div><div class="col-md-1 col-sm-1 col-xs-1 widd6 newdare">
-				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/mewsflashimges.png'; ?>" class="newsfedd" alt="newsflashimg">
-					
-						<!-- <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow">
-						<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
-							
-								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-									<img src="<?php echo Yii::getAlias('@web').'/uploads/'.$Newsflashes->image; ?>" width="65" height="56" >
-								</div>
-								<div class="col-md-9 col-sm-9 col-xs-10 paddingZ m-t-12">
-									<h2 class="portal-section"><?php echo ucwords($Newsflashes->title).' - '.date('m/d/y H:i A',$Newsflashes->created_at) ?> </h2>
-									<p class="portal-sectionpara"><?php echo substr(ucwords($Newsflashes->body),0,140); ?></p>
-								</div>
-							
-						<?php endforeach; } ?>
-						</div> -->
-						<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide caledivextra portalshow">
-						
-						<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-							<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>" alt="grounp1-img">
-						</div>
-						<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
-							<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
-							<p class="portal-sectionpara">Gather 'round and raise a toast to the final episode of the season! The season three finale 
-								of Tia mowry at Home airs this Sunday, February 26th at 5:30pm PT I 8:30pm ET on Cooking Channel.
-							</p>
-						</div>
-						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
-							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group2.png'; ?>" alt="poral-grounp2">
-							</div>
-							<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
-								<h2 class="portal-section">TUNE IN: Besties Brunch with Tia SUNDAY!</h2>
-									<p class="portal-sectionpara">Be sure to catch the next episode of Tie Mowry at Home on Cooking Channel this Sunday.
-											February 19th at 5:30pm PT I 8:30pm ET. Don’t  forget to tune in and set your DVRs! 
-									</p>
-							</div>
-						</div>
-						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
-							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-									<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group3.png'; ?>" alt="grounp3">
-							</div>
-							<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
-								<h2 class="portal-section">TUNE IN: Tie Season Finale SUNDAY!</h2>
-								<p class="portal-sectionpara">Gather 'round and raise a toast to the final episode of the season! The season three finale 
-									of Tia mowry at Home airs this Sunday, February 26th at 5:30pm PT I 8:30pm ET on Cooking Channel.
-								</p>
-							</div>
-							</div>
-							<div class="col-md-12 col-sm-12 col-xs-12 paddingZ postorre">
-							<a style="cursor:pointer"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/arrow-box.jpg'; ?>" id="" class="img-responsive imageArrw1" alt="Arrow Icon"></a> <!-- imageArrw1 toggleProfile1-->
-						</div>
+</div>
 
+<!-------------------model window for PDC------------------->
+<div class="modal fade" id="myModal_pdc" role="dialog">
+	<div class="modal-dialog-21">
+		<div class="redBoreHead">
+			<div class="redBore">
+				<div class="redBore1">
+					<h2>Pdc</h2>
+					<h6>Thirsty Thursday</h6>
+					<p>Thursday july 20 <span>th</span></p>
+					<div class="divimg">
+						<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/cocktail-glasses.jpg'; ?>" class="img-responsive" alt="cocktail glasses">
+						<a href="#">acknowledge</a>
 					</div>
-				</div>
-				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-					<img  src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/facebookimg.png'; ?>" class="newsfedd1" alt="facebook">
-					<!-- <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide1 caledivextra facestybook">
-						<?php 
-							echo FacebookPlugin::widget(['appId' => '1393509477405036','type'=>FacebookPlugin::POST, 'settings' => ['href'=>'https://www.facebook.com/CriticalContent/posts/1505631216126684']]); ?>
-					</div> -->
-					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide1 caledivextra">
-						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ pad0Top">
-							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/tv-show.png'; ?>" alt="tv-show" class="img-responsive">
-							</div>
-							<div class="col-md-9 col-sm-9 col-xs-12 pad0Righ">
-								<h2 class="tv-show">Catfish: The TV Show's photo.</h2>
-								<p class="show-para">It's the day we've all been waiting for! Tag a friend in the comments to let them know Catfish: The TV Show is back tonight!</p>
-								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-									<p class="like"><i class="fa fa-thumbs-up facebook-icon" aria-hidden="true"></i>like</p>
-								</div>
-								<div class="col-md-5 col-sm-5 col-xs-12 paddingZ">
-									<p class="like"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/comment.png'; ?>" class="facebook-icon" alt="comment1">comment</p>
-								</div>
-								<div class="col-md-4 col-sm-4 col-xs-12 paddingZ">
-									<p class="like"><i class="fa fa-share facebook-icon" aria-hidden="true"></i>share</p>
-								</div>
-							</div>
-						
-
-						</div>
-						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ pad0Top">
-
-							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">	
-							<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/facebookgroup.png'; ?>" alt="tv-show1" class="img-responsive">
-							
-							</div>
-							<div class="col-md-9 col-sm-9 col-xs-12 pad0Righ">
-								<h2 class="tv-show">Tia Mowry At Home</h2>
-								<p class="show-para">It's the season 3 FINALE of #TiaMowryAtHome TODAY 2/26 at 5:30pPT|8:30pET with Tia Mowry on Cooking Channel</p>
-								<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">
-									<p class="like"><i class="fa fa-thumbs-up facebook-icon" aria-hidden="true"></i>like</p>
-								</div>
-								<div class="col-md-5 col-sm-5 col-xs-12 paddingZ">
-									<p class="like"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/comment.png'; ?>" class="facebook-icon" alt="comment1">comment</p>
-								</div>
-								<div class="col-md-4 col-sm-4 col-xs-12 paddingZ">
-									<p class="like"><i class="fa fa-share facebook-icon" aria-hidden="true"></i>share</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/twiiter1.png'; ?>" class="newsfedd2" alt="twitter">
-					<!-- <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide2 caledivextra facestybook1">
-						<?php 
-							echo TwitterPlugin::widget(['type'=>TwitterPlugin::TWEET, 'content' => '<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/TheLoweFiles?src=hash">#TheLoweFiles</a> WED 8/2 on <a href="https://twitter.com/AETV">@AETV</a> <a href="https://t.co/gt8cw48IrV">https://t.co/gt8cw48IrV</a></p>&mdash; Critical Content (@critcalcontent) <a href="https://twitter.com/critcalcontent/status/892096557914349568">July 31, 2017</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>', 'settings' => ['href'=>'https://twitter.com/critcalcontent']]);
-						?>							
-                    </div> -->
-					<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide2 caledivextra">
-
-							
-						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ twitter">
-							<div class="col-md-2 col-sm-2 col-xs-12 paddingZ">
-							<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/demoman.png'; ?>" class="img-responsive" alt="default">
-							</div>
-							<div class="col-md-10 col-sm-10 col-xs-12 paddingZ">
-							<p class="content"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/share.png'; ?>" alt="share" class="img-responsive">critical content relweeted</p>
-							<p><span class="catfish1">catfish</span> <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/fbmessanger.png'; ?>" alt="fbmessager"><span class="catfish2">catfish Mtv .mar1</span></p>
-                                <p class="seasonrelated">THREE HOUR UNTIL THE NEW SEASON OF I</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-l-45">
-                            <ul class="list-inline twitterimage">
-                                <li>
-                                    <p class="like"><i class="fa fa-share facebook-icon likeisd" aria-hidden="true"></i></p>
-                                </li>
-                                <li>
-                                    <p class="like"><i class="fa fa-retweet" aria-hidden="true"></i>22</p>
-                                </li>
-                                <li>
-                                    <p class="like"><i class="fa fa-star" aria-hidden="true"></i>7</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ twitter1">
-                            <div class="col-md-2 col-sm-2 col-xs-12 paddingZ">
-								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/demoman.png'; ?>" class="img-responsive" alt="default">
-							  </div>
-                            <div class="col-md-10 col-sm-10 col-xs-12 paddingZ">
-                                <p class="content"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/share.png'; ?>" alt="share" class="img-responsive">critical content relweeted</p>
-                                <p><span class="catfish1">catfish</span> <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/fbmessanger.png'; ?>" alt="fbmessager"><span class="catfish2">catfish Mtv .mar1</span></p>
-                                <p class="seasonrelated">Did Someone Say........Two hour Until #catfish ?!</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-l-45">
-                            <ul class="list-inline twitterimage">
-                                <li>
-                                    <p class="like"><i class="fa fa-share facebook-icon likeisd" aria-hidden="true"></i></p>
-                                </li>
-                                <li>
-                                    <p class="like"><i class="fa fa-retweet" aria-hidden="true"></i>22</p>
-                                </li>
-                                <li>
-                                    <p class="like"><i class="fa fa-star" aria-hidden="true"></i>7</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ twitter">
-                            <div class="col-md-2 col-sm-2 col-xs-12 paddingZ">
-								<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/demoman.png'; ?>" class="img-responsive" alt="default">
-							 </div>
-                            <div class="col-md-10 col-sm-10 col-xs-12 paddingZ">
-                                <p class="content"><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/share.png'; ?>" alt="share" class="img-responsive">critical content relweeted</p>
-                                <p><span class="catfish1">catfish</span> <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/fbmessanger.png'; ?>" alt="fbmessager"><span class="catfish2">catfish Mtv .mar1</span></p>
-                                <p class="seasonrelated">THREE HOUR UNTIL THE NEW SEASON OF I</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-l-45">
-                            <ul class="list-inline twitterimage">
-                                <li>
-                                    <p class="like"><i class="fa fa-share facebook-icon likeisd" aria-hidden="true"></i></p>
-                                </li>
-                                <li>
-                                    <p class="like"><i class="fa fa-retweet" aria-hidden="true"></i>22</p>
-                                </li>
-                                <li>
-                                    <p class="like"><i class="fa fa-star" aria-hidden="true"></i>7</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-				</div>
-				<div class="col-md-12 col-sm-12 col-xs-12 newsfeed">
-					<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/instagram1.png'; ?>" class="newsfedd3" alt="intragram">
-						<!-- <div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide3 caledivextra areasectionWide facestybook2">
-                        
-						</div> -->
-						<div class="col-md-12 col-sm-12 col-xs-12 aboshadow caleDivExtLvlSide3 caledivextra areasectionWide">
-                        
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ ">
-
-                            <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
-                                <ul class="list-inline linelitForim marBimg">
-                                    <li><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/intagram1.png'; ?>" class="img-responsive" alt="intragram1"></li>
-                                    <li><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/intagram2.png'; ?>"" class="img-responsive" alt="intragram2"></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
-                            <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
-                                <ul class="list-inline linelitForim">
-                                    <li><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/intagram3.png'; ?>"" class="img-responsive" alt="intragram3"></li>
-                                    <li><img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/intagram4.png'; ?>"" class="img-responsive" alt="intragram4"></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 				</div>
 			</div>
-<div class="col-md-3 col-sm-3 col-xs-12 hidden-xs hiddSm widd23">	
-
-	<div class="col-md-12 col-sm-12 col-xs-12 abosDiv ">	
-
-
-
+		</div>
 	</div>
-</div> 
-
-    <!-------------------model window for PDC------------------->
-    <div class="modal fade" id="myModal_pdc" role="dialog">
-        <div class="modal-dialog-21">
-            <div class="redBoreHead">
-                <div class="redBore">
-                    <div class="redBore1">
-                        <h2>Pdc</h2>
-                        <h6>Thirsty Thursday</h6>
-                        <p>Thursday july 20 <span>th</span></p>
-                        <div class="divimg">
-                            <img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/cocktail-glasses.jpg'; ?>" class="img-responsive" alt="cocktail glasses">
-                            <a href="#">acknowledge</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>

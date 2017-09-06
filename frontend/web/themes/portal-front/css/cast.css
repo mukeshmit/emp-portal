@@ -295,7 +295,8 @@ left: 0px;}
 
 .logoDiv {
     border: 1px solid #B9B9BB;
-    margin-top: 30px;
+   /*  margin-top: 30px; */
+    margin-top: 12px;
     background: #fff;
 }
 
@@ -1190,7 +1191,8 @@ p.content img{
 	display: none;
 }
 .caleDivExtLvlSide {
-    margin-top: 30px;
+    /* margin-top: 30px; */
+	margin-top: 30px;
     width: 300px;
    z-index:999;
     display: none;
@@ -2719,7 +2721,7 @@ width: 25%;
 .border-red {width:160px;margin-left: 25px;}	
 .border-blue {width: 160px;margin-left: 25px;}	
 .border-green {	width: 160px;margin-left: 25px;}	
-.caleDivEiiiuur { margin-top:0px; width: 95%;}
+.caleDivEiiiuur { /* margin-top:0px; */ margin-top:11px; width: 95%;}
 .portal-direct { width: 61%;}
 .portal700 {  width: 60%;}
 .m-l-22 { margin-left: 17px;}

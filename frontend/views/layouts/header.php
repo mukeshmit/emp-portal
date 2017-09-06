@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -13,6 +14,12 @@ use yii\helpers\Html;
 	border-bottom: 2px solid transparent;
     margin: 6px;
     transition: all 0.4s ease 0s;
+}
+nav{
+	background:#99A5A8 !important;
+}
+.logoDiv {
+  margin-top: !important;
 }
 </style>
 <div class="container-fluid ">

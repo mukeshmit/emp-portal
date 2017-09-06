@@ -20,22 +20,11 @@ $model->type = $model->isNewRecord ?1:2;
 	</div>
 	<br>
 	<div class="form-group">
-	<?= $form->field($model, 'body')->widget(CKEditor::className(), [
-																'options' => ['rows' => 6],
-																'preset' => 'custom',
-																'clientOptions' => [
-																// 'extraPlugins' => 'pbckcode',
-																'toolbarGroups' => [
-																	['name' => 'undo'],
-																	['name' => 'basicstyles', 'groups' => ['basicstyles', 'cleanup']],
-																	['name' => 'colors'],
-																	['name' => 'links', 'groups' => ['links', 'insert']],
-																	['name' => 'others', 'groups' => ['others', 'about']],
-																	
-																	// ['name' => 'pbckcode'] // <--- OUR NEW PLUGIN YAY!
-																]
-															]
-															])->label(false) ?>
+	<?= $form->field($model, 'body')->widget(CKEditor::className(), [ 'options' => ['rows' => 6],
+    'preset' => 'basic',
+    'clientOptions' => [
+        'allowedContent' => true,
+    ]]) ?>
     <?php //= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 	</div>
 	<br>

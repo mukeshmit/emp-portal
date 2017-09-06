@@ -9,7 +9,7 @@ use kartik\social\TwitterPlugin;
 use nirvana\instafeed\Instafeed;
 use frontend\models\Newsflash;
 
-$Newsflash = Newsflash::find()->orderBy('created_at')->orderBy(['created_at' => SORT_DESC])->limit(2)->all();
+$Newsflash = Newsflash::find()->orderBy(['created_at' => SORT_DESC])->limit(2)->all();
 
 
 $this->title = 'Portal Content : Login';
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
-
+	
     <div class="container-fluid paddXsZ paddSmZ canResolvehead">
         <div class="container paddingZ conposition canResolve" >
             <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
@@ -135,8 +135,23 @@ $this->params['breadcrumbs'][] = $this->title;
 									</div>
 									
 									<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
-								
-										
+									
+										<div class="col-md-12 col-sm-12 col-xs-12 paddingZ margintoparea">
+											<div class="col-md-1 col-sm-2 col-xs-2 paddingZ areawith12 firinDecv">
+													<?php 
+														if (file_exists(Yii::getAlias('@web').'/uploads/'.$Newsflashes->image)) {
+															$imgUrl = Yii::getAlias('@web').'/uploads/'.$Newsflashes->image;
+														}else{
+															$imgUrl = Yii::getAlias('@web').'/uploads/no-image.jpg';
+														}
+													?>
+													<img src="<?php echo $imgUrl; ?>" width="65" height="56">
+											</div>
+											<div class="col-md-11 col-sm-10 col-xs-9 padd000 padsh5 areawidth66 secinDecv">
+												<h2 class="portalheading"><span class="portal-areadesign"><?php echo ucwords($Newsflashes->title); ?></span><span class="portal-areadate7"> &nbsp;&nbsp;-- <?php echo date('m/d/y H:i A',$Newsflashes->created_at)?> </span></h2>
+												<div class="sectiondesign"><?php echo substr(ucwords($Newsflashes->body),0,350); ?></div>
+											</div>
+										</div>
 									<!--	<div class="col-md-12 col-sm-12 col-xs-12 paddingZ margintoparea">
 											 <div class="col-md-1 col-sm-2 col-xs-2 paddingZ areawith12 firinDecv">
 												<img src="<?php echo Yii::getAlias('@web').'/uploads/'.$Newsflashes->image; ?>" width="65" height="56">
@@ -171,7 +186,7 @@ $this->params['breadcrumbs'][] = $this->title;
 								</div>-->
 								
 								
-								
+								<!-- 
                                 <div class="col-md-12 col-sm-12 col-xs-12 paddingZ margintoparea">
                                     <div class="col-md-1 col-sm-2 col-xs-2 paddingZ areawith12 firinDecv">
 											<img src="<?php echo Yii::getAlias('@web').'/themes/portal-front/images/portal-group1.png'; ?>">
@@ -189,7 +204,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <h2 class="portalheading"><span class="portal-areadesign">TUNE IN: Besties Brunch with Tia SUNDAY!</span><span class="portal-areadate7"> &nbsp;&nbsp;-- 7/12/2017 </span></h2>
                                         <p class="sectiondesign">Be sure to catch the next episode of Tia Mowry at Home on Cooking Channel this Sunday, February 19th at 5:30pm PT | 8:30pm ET. Don't forget to tune in and set your DVRs!</p>
                                     </div>
-                                </div>
+                                </div> -->
 
 
 							</div>
@@ -348,15 +363,14 @@ $this->params['breadcrumbs'][] = $this->title;
 					</div>
 				</div>
 				</div>
-			</div>    </div>
+			</div>    
+	</div>
 <style>
 .fb-post.fb_iframe_widget > span > iframe {
   width: 160% !important;
 }
-.divFixed{display:none!important;}
+.divFixed{ display:none!important; }
 </style>
 <script>
-$('.canResolve').css('margin-top' : -$('.canResolve').outerHeight()/2!important):
+	$('.canResolve').css('margin-top' : -$('.canResolve').outerHeight()/2!important):
 </script>
- 
-

@@ -10,24 +10,30 @@ $this->title = Yii::t('app', 'Create News Flash');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', ''), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <div class="col-md-12">
-          <!-- Input addon -->
+	<div class="box box-info">
+		<div class="box-body">
+			<?= $this->render('_form', [
+					'model' => $model,
+				]) ?>
+		</div>
+	</div>
+</div>
+
+<!--
+<div class="col-md-12">
+        
           <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
             </div>
             <div class="box-body">
-				<?= $this->render('_form', [
-					'model' => $model,
-				]) ?>
-			
-			
-              <!-- /input-group -->
+				<?php 
+					// = $this->render('_form', [
+						// 'model' => $model,
+					// ])
+				?>
             </div>
-            <!-- /.box-body -->
           </div>
-          <!-- /.box -->
-
-</div>
+</div> -->
 

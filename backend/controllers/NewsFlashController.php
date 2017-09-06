@@ -38,9 +38,9 @@ class NewsFlashController extends Controller
     {
 		// die();
 		
-		$mc = new Mailchimp(['apikey' => '5562acdeed1bf2ee829a71b7e6428c5a-us15','opts'=>['verify_ssl'=>false]]);
+		// $mc = new Mailchimp(['apikey' => '5562acdeed1bf2ee829a71b7e6428c5a-us15','opts'=>['verify_ssl'=>false]]);
 		// $this->opts = false;
-		$userList = $mc->lists->getList();
+		// $userList = $mc->lists->getList();
 		/* echo "<pre>";
 		print_r($userList);
 		die; */

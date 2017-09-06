@@ -16739,3 +16739,362 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1502360294.142
     'REQUEST_TIME' => 1502360294
 ]
+2017-09-02 00:41:02 [::1][-][-][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp\www\emp-portal\common\modules\auth\views\rbac\index.php in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\View.php:229
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\View.php(152): yii\base\View->renderFile('C:\\wamp\\www\\emp...', Array, Object(common\modules\auth\controllers\RbacController))
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(381): yii\base\View->render('index', Array, Object(common\modules\auth\controllers\RbacController))
+#2 C:\wamp\www\emp-portal\common\modules\auth\controllers\RbacController.php(43): yii\base\Controller->render('index', Array)
+#3 [internal function]: common\modules\auth\controllers\RbacController->actionIndex()
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('', Array)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('auth/rbac', Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp\www\emp-portal\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2017-09-02 00:41:01 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '48915f9333a7f5601171ac30d950100cf69519ece6a0eaf227084e04d63f15eca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"_rmT;¬’cÊ\\ð>zb@«Õ+TaîF€¥o‹3\";}'
+    'advanced-backend' => 'mtfg14qf5gh03u8pr8hddsp5e2'
+    '_identity-backend' => '60291e8aa52afbdb5dd6aa2670d9f4d54f31de88e1a3558aeb6b9e288aabc5e4a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"TiYtvOLwIWV9ehwu0DgTur5IdVIn35Om\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'employee-portal.backend'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf-backend=48915f9333a7f5601171ac30d950100cf69519ece6a0eaf227084e04d63f15eca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22_rm%15T%1C%3B%AC%92%14c%CA%5C%10%F0%3Ezb%40%AB%D5%2BTa%8F%EEF%80%A5o%8B3%22%3B%7D; advanced-backend=mtfg14qf5gh03u8pr8hddsp5e2; _identity-backend=60291e8aa52afbdb5dd6aa2670d9f4d54f31de88e1a3558aeb6b9e288aabc5e4a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22TiYtvOLwIWV9ehwu0DgTur5IdVIn35Om%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win64) PHP/7.0.10 Server at employee-portal.backend Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win64) PHP/7.0.10'
+    'SERVER_NAME' => 'employee-portal.backend'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/emp-portal/backend/web/index.php'
+    'REMOTE_PORT' => '54383'
+    'REDIRECT_URL' => '/auth/rbac'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/auth/rbac'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504293061.882
+    'REQUEST_TIME' => 1504293061
+]
+2017-09-02 00:44:39 [::1][-][-][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp\www\emp-portal\common\modules\auth\views\rbac\index.php in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\View.php:229
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\View.php(152): yii\base\View->renderFile('C:\\wamp\\www\\emp...', Array, Object(common\modules\auth\controllers\RbacController))
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(381): yii\base\View->render('index', Array, Object(common\modules\auth\controllers\RbacController))
+#2 C:\wamp\www\emp-portal\common\modules\auth\controllers\RbacController.php(43): yii\base\Controller->render('index', Array)
+#3 [internal function]: common\modules\auth\controllers\RbacController->actionIndex()
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('', Array)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('auth/rbac', Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp\www\emp-portal\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2017-09-02 00:44:39 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '48915f9333a7f5601171ac30d950100cf69519ece6a0eaf227084e04d63f15eca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"_rmT;¬’cÊ\\ð>zb@«Õ+TaîF€¥o‹3\";}'
+    'advanced-backend' => 'mtfg14qf5gh03u8pr8hddsp5e2'
+    '_identity-backend' => '60291e8aa52afbdb5dd6aa2670d9f4d54f31de88e1a3558aeb6b9e288aabc5e4a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"TiYtvOLwIWV9ehwu0DgTur5IdVIn35Om\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'employee-portal.backend'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf-backend=48915f9333a7f5601171ac30d950100cf69519ece6a0eaf227084e04d63f15eca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22_rm%15T%1C%3B%AC%92%14c%CA%5C%10%F0%3Ezb%40%AB%D5%2BTa%8F%EEF%80%A5o%8B3%22%3B%7D; advanced-backend=mtfg14qf5gh03u8pr8hddsp5e2; _identity-backend=60291e8aa52afbdb5dd6aa2670d9f4d54f31de88e1a3558aeb6b9e288aabc5e4a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22TiYtvOLwIWV9ehwu0DgTur5IdVIn35Om%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win64) PHP/7.0.10 Server at employee-portal.backend Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win64) PHP/7.0.10'
+    'SERVER_NAME' => 'employee-portal.backend'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/emp-portal/backend/web/index.php'
+    'REMOTE_PORT' => '54431'
+    'REDIRECT_URL' => '/auth/rbac'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/auth/rbac'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504293279.171
+    'REQUEST_TIME' => 1504293279
+]
+2017-09-02 01:15:34 [::1][-][-][error][Mailchimp_Invalid_ApiKey] Mailchimp_Invalid_ApiKey: Invalid MailChimp API key: 5562acdeed1bf2ee829a71b7e6428c5a in C:\wamp\www\emp-portal\vendor\mailchimp\mailchimp\src\Mailchimp.php:263
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\mailchimp\mailchimp\src\Mailchimp.php(238): Mailchimp->castError(Array)
+#1 C:\wamp\www\emp-portal\vendor\mailchimp\mailchimp\src\Mailchimp\Lists.php(900): Mailchimp->call('lists/list', '{"filters":[],"...')
+#2 C:\wamp\www\emp-portal\backend\controllers\NewsFlashController.php(43): Mailchimp_Lists->getList()
+#3 [internal function]: backend\controllers\NewsFlashController->actionIndex()
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('', Array)
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('news-flash', Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp\www\emp-portal\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2017-09-02 01:15:32 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '48915f9333a7f5601171ac30d950100cf69519ece6a0eaf227084e04d63f15eca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"_rmT;¬’cÊ\\ð>zb@«Õ+TaîF€¥o‹3\";}'
+    'advanced-backend' => 'mtfg14qf5gh03u8pr8hddsp5e2'
+    '_identity-backend' => '60291e8aa52afbdb5dd6aa2670d9f4d54f31de88e1a3558aeb6b9e288aabc5e4a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"TiYtvOLwIWV9ehwu0DgTur5IdVIn35Om\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'employee-portal.backend'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://employee-portal.backend/auth/rbac/create'
+    'HTTP_COOKIE' => '_csrf-backend=48915f9333a7f5601171ac30d950100cf69519ece6a0eaf227084e04d63f15eca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22_rm%15T%1C%3B%AC%92%14c%CA%5C%10%F0%3Ezb%40%AB%D5%2BTa%8F%EEF%80%A5o%8B3%22%3B%7D; advanced-backend=mtfg14qf5gh03u8pr8hddsp5e2; _identity-backend=60291e8aa52afbdb5dd6aa2670d9f4d54f31de88e1a3558aeb6b9e288aabc5e4a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22TiYtvOLwIWV9ehwu0DgTur5IdVIn35Om%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win64) PHP/7.0.10 Server at employee-portal.backend Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win64) PHP/7.0.10'
+    'SERVER_NAME' => 'employee-portal.backend'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/emp-portal/backend/web/index.php'
+    'REMOTE_PORT' => '54895'
+    'REDIRECT_URL' => '/news-flash'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/news-flash'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504295132.662
+    'REQUEST_TIME' => 1504295132
+]
+2017-09-02 01:16:23 [::1][-][-][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The 'gridview' module MUST be setup in your Yii configuration file and must be an instance of 'kartik\grid\Module'. in C:\wamp\www\emp-portal\vendor\kartik-v\yii2-krajee-base\Config.php:260
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\kartik-v\yii2-grid\GridView.php(928): kartik\base\Config::initModule('kartik\\grid\\Mod...')
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Object.php(107): kartik\grid\GridView->init()
+#2 [internal function]: yii\base\Object->__construct(Array)
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\di\Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('kartik\\grid\\Gri...', Array, Array)
+#5 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\BaseYii.php(348): yii\di\Container->get('kartik\\grid\\Gri...', Array, Array)
+#6 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Widget.php(136): yii\BaseYii::createObject(Array)
+#7 C:\wamp\www\emp-portal\backend\views\News-flash\index.php(22): yii\base\Widget::widget(Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\View.php(330): require('C:\\wamp\\www\\emp...')
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\View.php(250): yii\base\View->renderPhpFile('C:\\wamp\\www\\emp...', Array)
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\View.php(152): yii\base\View->renderFile('C:\\wamp\\www\\emp...', Array, Object(backend\controllers\NewsFlashController))
+#11 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(381): yii\base\View->render('index', Array, Object(backend\controllers\NewsFlashController))
+#12 C:\wamp\www\emp-portal\backend\controllers\NewsFlashController.php(53): yii\base\Controller->render('index', Array)
+#13 [internal function]: backend\controllers\NewsFlashController->actionIndex()
+#14 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#16 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('', Array)
+#17 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('news-flash', Array)
+#18 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\wamp\www\emp-portal\backend\web\index.php(17): yii\base\Application->run()
+#20 {main}
+2017-09-02 01:16:22 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '48915f9333a7f5601171ac30d950100cf69519ece6a0eaf227084e04d63f15eca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"_rmT;¬’cÊ\\ð>zb@«Õ+TaîF€¥o‹3\";}'
+    'advanced-backend' => 'mtfg14qf5gh03u8pr8hddsp5e2'
+    '_identity-backend' => '60291e8aa52afbdb5dd6aa2670d9f4d54f31de88e1a3558aeb6b9e288aabc5e4a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"TiYtvOLwIWV9ehwu0DgTur5IdVIn35Om\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'employee-portal.backend'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://employee-portal.backend/auth/rbac/create'
+    'HTTP_COOKIE' => '_csrf-backend=48915f9333a7f5601171ac30d950100cf69519ece6a0eaf227084e04d63f15eca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22_rm%15T%1C%3B%AC%92%14c%CA%5C%10%F0%3Ezb%40%AB%D5%2BTa%8F%EEF%80%A5o%8B3%22%3B%7D; advanced-backend=mtfg14qf5gh03u8pr8hddsp5e2; _identity-backend=60291e8aa52afbdb5dd6aa2670d9f4d54f31de88e1a3558aeb6b9e288aabc5e4a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22TiYtvOLwIWV9ehwu0DgTur5IdVIn35Om%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win64) PHP/7.0.10 Server at employee-portal.backend Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win64) PHP/7.0.10'
+    'SERVER_NAME' => 'employee-portal.backend'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/emp-portal/backend/web/index.php'
+    'REMOTE_PORT' => '54934'
+    'REDIRECT_URL' => '/news-flash'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/news-flash'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504295182.642
+    'REQUEST_TIME' => 1504295182
+]
+2017-09-05 01:57:19 [::1][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`emportal`.`auth_item`, CONSTRAINT `auth_item_ibfk_1` FOREIGN KEY (`rule_name`) REFERENCES `auth_rule` (`name`) ON DELETE SET NULL ON UPDATE CASCADE) in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php:842
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(842): PDOStatement->execute()
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\ActiveRecord.php(227): yii\db\Command->execute()
+#2 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\BaseActiveRecord.php(774): yii\db\ActiveRecord::updateAll(Array, Array)
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\ActiveRecord.php(570): yii\db\BaseActiveRecord->updateInternal(NULL)
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\BaseActiveRecord.php(645): yii\db\ActiveRecord->update(true, NULL)
+#5 C:\wamp\www\emp-portal\common\modules\auth\controllers\RbacController.php(119): yii\db\BaseActiveRecord->save()
+#6 [internal function]: common\modules\auth\controllers\RbacController->actionUpdate('createPost')
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('update', Array)
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('auth/rbac/updat...', Array)
+#11 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\wamp\www\emp-portal\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`emportal`.`auth_item`, CONSTRAINT `auth_item_ibfk_1` FOREIGN KEY (`rule_name`) REFERENCES `auth_rule` (`name`) ON DELETE SET NULL ON UPDATE CASCADE)
+The SQL being executed was: UPDATE `auth_item` SET `type`=2, `rule_name`='', `data`='', `created_at`=1504556708, `updated_at`=1504556708 WHERE `name`='createPost' in C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Schema.php:636
+Stack trace:
+#0 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'UPDATE `auth_it...')
+#1 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\ActiveRecord.php(227): yii\db\Command->execute()
+#2 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\BaseActiveRecord.php(774): yii\db\ActiveRecord::updateAll(Array, Array)
+#3 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\ActiveRecord.php(570): yii\db\BaseActiveRecord->updateInternal(NULL)
+#4 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\db\BaseActiveRecord.php(645): yii\db\ActiveRecord->update(true, NULL)
+#5 C:\wamp\www\emp-portal\common\modules\auth\controllers\RbacController.php(119): yii\db\BaseActiveRecord->save()
+#6 [internal function]: common\modules\auth\controllers\RbacController->actionUpdate('createPost')
+#7 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#9 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('update', Array)
+#10 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('auth/rbac/updat...', Array)
+#11 C:\wamp\www\emp-portal\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\wamp\www\emp-portal\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1452
+    [2] => Cannot add or update a child row: a foreign key constraint fails (`emportal`.`auth_item`, CONSTRAINT `auth_item_ibfk_1` FOREIGN KEY (`rule_name`) REFERENCES `auth_rule` (`name`) ON DELETE SET NULL ON UPDATE CASCADE)
+)
+
+2017-09-05 01:57:19 [::1][-][-][info][application] $_GET = [
+    'id' => 'createPost'
+]
+
+$_POST = [
+    '_csrf-backend' => 'luYZomR4Pa9zxVJZb-jsv2UcN8W3jOOQjDqWEDbrEU0zoM7j3Gk3A8GmVMYzj19J1Ien7zgLEbAr6gRvaAugpA=='
+    'AuthItem' => [
+        'name' => 'createPost'
+        'type' => '2'
+        'description' => 'Create a news flash'
+        'rule_name' => ''
+        'data' => ''
+        'created_at' => '1504556708'
+        'updated_at' => '1504556708'
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-backend' => 'c4fcefa922af9bdffc3c6ba61ac4d1ad35c4d40c0d4e173e6cd05faa28c41fcca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"¥F×A¸
+¬²cŸ\\g³ö±›*‡ò §Ð’^à±é\";}'
+    'advanced-backend' => 'ugn52arb3hm0c8mlrlk64jpvp5'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'employee-portal.backend'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '320'
+    'HTTP_REFERER' => 'http://employee-portal.backend/auth/rbac/update?id=createPost'
+    'HTTP_COOKIE' => '_csrf-backend=c4fcefa922af9bdffc3c6ba61ac4d1ad35c4d40c0d4e173e6cd05faa28c41fcca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%A5F%D7A%B8%11%0A%AC%B2c%06%9F%5Cg%B3%F6%B1%9B%90%2A%8F%87%F2+%A7%D0%92%7F%5E%E0%B1%E9%22%3B%7D; advanced-backend=ugn52arb3hm0c8mlrlk64jpvp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\wamp\\bin\\php\\php5.6.25;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\wamp\\ruby\\bin;C:\\Program Files\\Git\\cmd;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win64) PHP/7.0.10 Server at employee-portal.backend Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win64) PHP/7.0.10'
+    'SERVER_NAME' => 'employee-portal.backend'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp/www/emp-portal/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp/www/emp-portal/backend/web/index.php'
+    'REMOTE_PORT' => '60042'
+    'REDIRECT_URL' => '/auth/rbac/update'
+    'REDIRECT_QUERY_STRING' => 'id=createPost'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=createPost'
+    'REQUEST_URI' => '/auth/rbac/update?id=createPost'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1504556839.178
+    'REQUEST_TIME' => 1504556839
+]

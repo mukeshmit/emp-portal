@@ -138,6 +138,15 @@ return array (
       '@nirvana/instafeed' => $vendorDir . '/nirvana-msu/yii2-instafeed',
     ),
   ),
+  'edvlerblog/yii2-adldap-module' => 
+  array (
+    'name' => 'edvlerblog/yii2-adldap-module',
+    'version' => '3.0.4.0',
+    'alias' => 
+    array (
+      '@Edvlerblog/Adldap2' => $vendorDir . '/edvlerblog/yii2-adldap-module/src',
+    ),
+  ),
   '2amigos/yii2-ckeditor-widget' => 
   array (
     'name' => '2amigos/yii2-ckeditor-widget',
@@ -146,5 +155,24 @@ return array (
     array (
       '@dosamigos/ckeditor' => $vendorDir . '/2amigos/yii2-ckeditor-widget/src',
     ),
+  ),
+  'kartik-v/yii2-widget-select2' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-select2',
+    'version' => '2.1.0.0',
+    'alias' => 
+    array (
+      '@kartik/select2' => $vendorDir . '/kartik-v/yii2-widget-select2',
+    ),
+  ),
+  'dektrium/yii2-rbac' => 
+  array (
+    'name' => 'dektrium/yii2-rbac',
+    'version' => '1.0.0.0-alpha',
+    'alias' => 
+    array (
+      '@dektrium/rbac' => $vendorDir . '/dektrium/yii2-rbac',
+    ),
+    'bootstrap' => 'dektrium\\rbac\\Bootstrap',
   ),
 );

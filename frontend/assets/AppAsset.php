@@ -32,11 +32,12 @@ class AppAsset extends AssetBundle
 		'themes/portal-front/js/bootstrap.min.js',		
 		'themes/portal-front/js/custom-common.js',
 		'themes/portal-front/js/fullcalendar.min.js',
-		'themes/portal-front/js/custom.min.js'
+		'themes/portal-front/js/custom.min.js',
+		'themes/portal-front/js/popupmodel.js'
     ];
 	
     public $depends = [
-        // 'yii\web\YiiAsset',
+        'yii\web\YiiAsset',
         // 'yii\bootstrap\BootstrapAsset',
     ];
 }

@@ -9,7 +9,9 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
+        '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
@@ -46,6 +48,7 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         array (
             'kmarenov\\instagram\\' => 19,
             'kartik\\social\\' => 14,
+            'kartik\\select2\\' => 15,
             'kartik\\grid\\' => 12,
             'kartik\\dialog\\' => 14,
             'kartik\\base\\' => 12,
@@ -54,6 +57,7 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         array (
             'dosamigos\\ckeditor\\' => 19,
             'dmstr\\' => 6,
+            'dektrium\\rbac\\' => 14,
         ),
         'c' => 
         array (
@@ -85,6 +89,11 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         array (
             'MetzWeb\\Instagram\\' => 18,
         ),
+        'I' => 
+        array (
+            'Illuminate\\Support\\' => 19,
+            'Illuminate\\Contracts\\' => 21,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -93,6 +102,10 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         array (
             'Faker\\' => 6,
             'Facebook\\' => 9,
+        ),
+        'E' => 
+        array (
+            'Edvlerblog\\Adldap2\\' => 19,
         ),
         'D' => 
         array (
@@ -103,6 +116,10 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         array (
             'Codeception\\Extension\\' => 22,
             'Codeception\\' => 12,
+        ),
+        'A' => 
+        array (
+            'Adldap\\' => 7,
         ),
     );
 
@@ -161,6 +178,10 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-social',
         ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
+        ),
         'kartik\\grid\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-grid',
@@ -180,6 +201,10 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
+        ),
+        'dektrium\\rbac\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dektrium/yii2-rbac',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -241,6 +266,14 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         array (
             0 => __DIR__ . '/..' . '/cosenary/instagram/src',
         ),
+        'Illuminate\\Support\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/support',
+        ),
+        'Illuminate\\Contracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/contracts',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -252,6 +285,10 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         'Facebook\\' => 
         array (
             0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
+        ),
+        'Edvlerblog\\Adldap2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/edvlerblog/yii2-adldap-module/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -268,6 +305,10 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         'Codeception\\' => 
         array (
             0 => __DIR__ . '/..' . '/codeception/base/src/Codeception',
+        ),
+        'Adldap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/adldap2/adldap2/src',
         ),
     );
 
@@ -302,6 +343,10 @@ class ComposerStaticInit92d83fa9dbaa42de1fb88b17d3d68642
         ),
         'D' => 
         array (
+            'Doctrine\\Common\\Inflector\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
             'Diff' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',

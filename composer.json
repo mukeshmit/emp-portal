@@ -23,7 +23,10 @@
         "sammaye/yii2-mailchimp": "*",
         "kartik-v/yii2-social": "@dev",
         "kmarenov/yii2-instagram-widget": "*",
-        "nirvana-msu/yii2-instafeed": "1.0.*@dev"
+        "nirvana-msu/yii2-instafeed": "1.0.*@dev",
+        "edvlerblog/yii2-adldap-module": "^3.0.0",
+        "2amigos/yii2-ckeditor-widget": "^2.1",
+        "dektrium/yii2-rbac": "1.0.0-alpha@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
