@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\Newsflash;
 use frontend\models\SearchNewsFlash;
+use frontend\models\Campaigns;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -42,12 +43,7 @@ class NewsFlashController extends Controller
     public function actionIndex()
     {
 		
-		/* $mc = new Mailchimp(['apikey' => '5562acdeed1bf2ee829a71b7e6428c5a-us15','opts'=>['verify_ssl'=>false]]);
-		// $this->opts = false;
-		$userList = $mc->lists->getList(); */
-		/* echo "<pre>";
-		print_r($userList);
-		die; */
+		
 		if(Yii::$app->user->isGuest){
 			return $this->redirect(['site/login']);
 		}else{
@@ -113,7 +109,12 @@ class NewsFlashController extends Controller
 			if($model->save()){
 				if(is_object($image)){
 					$image->saveAs('uploads/'.$model->image);
-				}				
+				}
+
+				
+
+
+				
 				return $this->redirect(['news-flash/index']);
 			}else{
 				 return $this->renderAjax('update', [
@@ -270,4 +271,58 @@ class NewsFlashController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+	
+	
+	/**
+     * Creates a new Newsflash campaign model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreatecampaign()
+    {
+		
+		/* $mc = new Mailchimp(['apikey' => 'a3cbd818e258031efe11591b96fa3fcc-us16','opts'=>['verify_ssl'=>false]]);
+		// $mc = new Mailchimp(['apikey' => '5562acdeed1bf2ee829a71b7e6428c5a-us15','opts'=>['verify_ssl'=>false]]);
+		// $this->opts = false;
+		
+		
+		$userList = $mc->lists->getList();
+		$listsdata = [];
+		if(isset($userList['data']) && !empty($userList['data'])){
+			foreach ($userList['data'] as $userListData){
+				
+				$listsdata[$userListData['id']] = $userListData['name']; 
+				
+			}
+		} */
+	
+		
+		$model = new Campaigns();
+
+		$model->user_id = Yii::$app->user->identity->id;
+		$model->created_at = strtotime(date('d-m-Y H:i:s'));
+		
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			
+			if($model->save()){
+				
+
+				return $this->redirect(['news-flash/index']);
+			}else{
+				 return $this->redirect(['news-flash/index']);
+			}
+            
+        } else {
+			
+            return $this->renderAjax('campaign/create', [
+								 'model' => $model,
+								 // 'listsdata' => $listsdata
+							    ]);
+			
+        }
+		
+    }
+	
+	
+	
 }

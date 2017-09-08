@@ -74,7 +74,15 @@ button.newsFlashEditModel {
 		'size'=>'modal-lg'
 	]);
 	echo "<div id='modelCOntent' style='overflow:hidden;'></div>";
-	Modal::end()
+	Modal::end();
+	
+	Modal::begin([
+		'header' => '<div class="col-md-12 col-sm-12 col-xs-12 paddingZ"><img src="'.Yii::getAlias('@web').'/themes/portal-front/images/ribbon.jpg" class="ribonsection ribbonarea"><p class="WinDheader2">Create a new campaign</p></div>',
+		'id'=>'newsFlashCampaign',
+		'size'=>'modal-lg'
+	]);
+	echo "<div id='modelCOntent' style='overflow:hidden;'></div>";
+	Modal::end();
 ?>
 
 <div class="col-md-6 col-sm-6 col-xs-12 paddingZ portal-direct areapattern">
@@ -86,6 +94,7 @@ button.newsFlashEditModel {
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-3 ">
 						<?= Html::button(Yii::t('app', 'ADD'), ['value'=>Url::to('create'),'class'=>'button-add','id'=>'newsFlashModel']) ?>
+						<?= Html::button(Yii::t('app', 'Create Campaign'), ['value'=>Url::to('createcampaign'),'class'=>'button-add','id'=>'createcamp']) ?>
 						<!-- <button class="button-add" data-toggle="modal" data-target="#myModal2">ADD</button> -->
 					</div>
 				</div>

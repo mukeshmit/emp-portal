@@ -20,11 +20,10 @@ $model->type = $model->isNewRecord ?1:2;
 	</div>
 	<br>
 	<div class="form-group">
-	<?= $form->field($model, 'body')->widget(CKEditor::className(), [ 'options' => ['rows' => 6],
-    'preset' => 'basic',
-    'clientOptions' => [
-        'allowedContent' => true,
-    ]]) ?>
+	<?= $form->field($model, 'body')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'full'
+    ]) ?>
     <?php //= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 	</div>
 	<br>

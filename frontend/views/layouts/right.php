@@ -39,7 +39,7 @@ $Newsflash = Newsflash::find()->orderBy(['created_at' => SORT_DESC])->limit(3)->
 							<div class="col-md-9 col-sm-9 col-xs-10 paddingZ">
 								<h2 class="portal-section"> <?php echo ucwords($Newsflashes->title).' - '.date('m/d/y H:i A',$Newsflashes->created_at); ?></h2>
 								<div class="portal-sectionpara">
-									<?php echo substr(ucwords($Newsflashes->body),0,140); ?>
+									<?php echo substr(ucwords($Newsflashes->body),0,240); ?>
 								</div>
 							</div>
 						</div>
