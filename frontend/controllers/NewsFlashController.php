@@ -105,6 +105,8 @@ class NewsFlashController extends Controller
 			$image = UploadedFile::getInstance($model,'image');
 			if(is_object($image)){
 				$model->image = $image->basename . '.'.$image->extension;
+			}else{
+				$model->image = 'no-image.jpg';
 			}
 			
 			if($model->save()){
@@ -187,24 +189,33 @@ class NewsFlashController extends Controller
         $model = $this->findModel($id);
 
 		$model->updated_at = strtotime(date('d-m-Y H:i:s'));
+		$imagename = $model->image;
 		
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
 			
-			$image = UploadedFile::getInstance($model,'image');
-			if(is_object($image)){
-				$model->image = $image->basename . '.'.$image->extension;
+			$imageInstance 	= UploadedFile::getInstance($model,'image');
+			
+			$randm 			= rand(278, 99999);
+			$fileName 		= "{$randm}-{$imageInstance}";
+			
+			$image = (empty($imageInstance))? $model->image : $fileName ;
+			
+			if(empty($imageInstance)){
+				$model->image = $imagename;$model->image;
+			}else{
+				$model->image = $image;				
 			}
-			
+						
 			if($model->save()){
-				if(is_object($image)){
-					$image->saveAs('uploads/'.$model->image);
+				if(is_object($imageInstance)){
+					$imageInstance->saveAs('uploads/'.$image);
 				}				
 				return $this->redirect(['news-flash/index']);
 			}else{
 				 return $this->redirect(['news-flash/update',$id]);
 			}
             
-        } else {
+        } else { 
 			
             return $this->renderAjax('update', [
 								 'model' => $model,
@@ -231,7 +242,7 @@ class NewsFlashController extends Controller
 		$clone->user_id = $obj->user_id;
 		$clone->title = $obj->title;
 		$clone->body = $obj->body;
-		// $clone->image = $obj->image;
+		$clone->image = $obj->image;
 		$clone->type = $obj->type;
 		$clone->created_at = strtotime(date('d-m-Y H:i:s'));
 		$clone->isNewRecord = true;

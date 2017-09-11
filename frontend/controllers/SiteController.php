@@ -80,7 +80,7 @@ class SiteController extends Controller
 		
 		$un = 'riemann';
 		
-		$user = \Yii::$app->ad->search()->findBy('uid', $un);
+		// $user = \Yii::$app->ad->search()->findBy('uid', $un);
 		// $user = \Yii::$app->ad->getDefaultProvider()->search()->findBy('uid', $un);
 		// $user = \Yii::$app->ad->getProvider('default')->search()->findBy('uid', $un);
 		// echo "<pre>";
@@ -129,8 +129,8 @@ class SiteController extends Controller
 		}
 		
 		$model = new LoginForm();
-		$model->username = 'riemann';
-		$model->password = 'password';
+		// $model->username = 'riemann';
+		// $model->password = 'password';
 		// $model->rememberMe = 1;
 			// var_dump($model->load(Yii::$app->request->post()) && $model->login());
 			// var_dump(ActiveForm::validate($model));

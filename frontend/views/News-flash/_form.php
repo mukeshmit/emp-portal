@@ -9,7 +9,9 @@ use dosamigos\ckeditor\CKEditor;
 /* @var $form yii\widgets\ActiveForm */
 
 // $model->type= '1';
-$model->type = $model->isNewRecord ?1:2;
+if($model->isNewRecord){
+	$model->type = 1;
+}
 ?>
 
     <?php $form = ActiveForm::begin(); ?>

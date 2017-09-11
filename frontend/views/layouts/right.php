@@ -26,11 +26,19 @@ $Newsflash = Newsflash::find()->orderBy(['created_at' => SORT_DESC])->limit(3)->
 				<?php if(!empty($Newsflash)){ foreach ($Newsflash as $Newsflashes): ?>
 						
 						<?php 
-							if (file_exists(Yii::getAlias('@web').'/uploads/'.$Newsflashes->image)) {
+						
+							$headers = get_headers(Url::to('@web/uploads/'.$Newsflashes->image, 1));
+								// var_dump($headers[0] == "HTTP/1.1 200 OK");
+							if ($headers[0] == "HTTP/1.1 200 OK") {
 								$imgUrl = Yii::getAlias('@web').'/uploads/'.$Newsflashes->image;
 							}else{
 								$imgUrl = Yii::getAlias('@web').'/uploads/no-image.jpg';
 							}
+							/* if (file_exists(Yii::getAlias('@web').'/uploads/'.$Newsflashes->image)) {
+								$imgUrl = Yii::getAlias('@web').'/uploads/'.$Newsflashes->image;
+							}else{
+								$imgUrl = Yii::getAlias('@web').'/uploads/no-image.jpg';
+							} */
 						?>
 						<div class="col-md-12 col-sm-12 col-xs-12 paddingZ m-t-12">
 							<div class="col-md-3 col-sm-3 col-xs-12 paddingZ">

@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     // ],
 // ]);
 
-$model->type= '1';
+// $model->type= '1';
 
 /* @var $this yii\web\View */
 /* @var $model app\backend\models\Newsflash */
