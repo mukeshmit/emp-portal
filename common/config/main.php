@@ -48,9 +48,9 @@ return [
 				 * $provider = \Yii::$app->ad->getDefaultProvider();
 				 * or with $provider = \Yii::$app->ad->getProvider('default');
 				 */
-				/* 'default' => [ //Providername default
+				'default' => [ //Providername default
 					// Connect this provider on initialisation of the LdapWrapper Class automatically
-					'autoconnect' => false,
+					'autoconnect' => true,
 
 					// The provider's schema. Default is \Adldap\Schemas\ActiveDirectory set in https://github.com/Adldap2/Adldap2/blob/master/src/Connections/Provider.php#L112
 					// You can make your own https://github.com/Adldap2/Adldap2/blob/master/docs/schema.md or use one from https://github.com/Adldap2/Adldap2/tree/master/src/Schemas
@@ -74,7 +74,7 @@ return [
 					'admin_username'        => '',
 					'admin_password'        => '',
 					]
-				], */
+				],
 
 				/*
 				 * Another Provider
@@ -83,7 +83,7 @@ return [
 				 * You can get the provider with:
 				 * or with $provider = \Yii::$app->ad->getProvider('another_provider');
 				 */
-				'another_provider' => [ //Providername another_provider
+				/* 'another_provider' => [ //Providername another_provider
 					// Connect this provider on initialisation of the LdapWrapper Class automatically
 					'autoconnect' => true,
 
@@ -109,7 +109,7 @@ return [
 					'admin_username'        => 'LDAP_Auth@criticalcontent.com',
 					'admin_password'        => 'Cr1t1c@l2016!',
 					] // close config
-				], // close provider 
+				], // close provider */ 
 			], // close providers array
 		], //close ad
 		'authManager' => [

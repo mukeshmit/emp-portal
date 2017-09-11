@@ -32,8 +32,9 @@ class Campaigns extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'news_flash_id', 'mc_camp_list_id', 'mc_camp_id', 'created_by'], 'required'],
-            [['user_id', 'news_flash_id', 'mc_camp_list_id', 'mc_camp_id', 'created_by', 'created_at', 'updated_at'], 'integer'],
+            [['user_id', 'news_flash_id', 'mc_camp_list_id', 'created_by', 'campaignname'], 'required'],
+            [['mc_camp_list_id', 'mc_camp_id', 'campaignname'], 'string'],
+            [['user_id', 'news_flash_id', 'created_by', 'created_at', 'updated_at'], 'integer'],
         ];
     }
 
@@ -45,9 +46,10 @@ class Campaigns extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'news_flash_id' => 'Choose a news flash',
-            'mc_camp_list_id' => 'Choose a Campaign',
-            'mc_camp_id' => 'Mc Camp ID',
+            'news_flash_id' => 'News Flash',
+            'mc_camp_list_id' => 'Mailchimp Campaign List',
+            // 'mc_camp_id' => 'Mc Camp ID',
+            'campaignname' => 'Campaign Name',
             'created_by' => 'Created By',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',

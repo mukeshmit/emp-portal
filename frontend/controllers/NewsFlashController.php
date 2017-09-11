@@ -13,6 +13,7 @@ use yii\data\Pagination;
 use sammaye\mailchimp\mailchimp;
 use yii\widgets\ActiveForm;
 use yii\web\UploadedFile;
+use yii\helpers\Url;
 
 
 /**
@@ -281,33 +282,71 @@ class NewsFlashController extends Controller
     public function actionCreatecampaign()
     {
 		
-		/* $mc = new Mailchimp(['apikey' => 'a3cbd818e258031efe11591b96fa3fcc-us16','opts'=>['verify_ssl'=>false]]);
+		$mc = new Mailchimp(['apikey' => 'a3cbd818e258031efe11591b96fa3fcc-us16','opts'=>['verify_ssl'=>false]]);
 		// $mc = new Mailchimp(['apikey' => '5562acdeed1bf2ee829a71b7e6428c5a-us15','opts'=>['verify_ssl'=>false]]);
 		// $this->opts = false;
-		
-		
-		$userList = $mc->lists->getList();
+				
+		/* $userList = $mc->lists->getList();
 		$listsdata = [];
 		if(isset($userList['data']) && !empty($userList['data'])){
+			
 			foreach ($userList['data'] as $userListData){
 				
 				$listsdata[$userListData['id']] = $userListData['name']; 
 				
 			}
-		} */
-	
+			
+		} */	
+		
+		$news_flash_id = isset(Yii::$app->request->post()['Campaigns']['news_flash_id'])?Yii::$app->request->post()['Campaigns']['news_flash_id']:'';
+		$mc_camp_list_id = isset(Yii::$app->request->post()['Campaigns']['mc_camp_list_id'])?Yii::$app->request->post()['Campaigns']['mc_camp_list_id']:'';
+		$campaignname = isset(Yii::$app->request->post()['Campaigns']['mc_camp_list_id'])?Yii::$app->request->post()['Campaigns']['campaignname']:'';
 		
 		$model = new Campaigns();
-
 		$model->user_id = Yii::$app->user->identity->id;
+		$model->created_by = Yii::$app->user->identity->id;
+		$model->campaignname = $campaignname;
+		$model->news_flash_id = $news_flash_id;
+		$model->mc_camp_list_id = $mc_camp_list_id;
 		$model->created_at = strtotime(date('d-m-Y H:i:s'));
+		$model->updated_at = strtotime(date('d-m-Y H:i:s'));
+		
 		
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			
-			if($model->save()){
+			if($model->save()){		
 				
-
-				return $this->redirect(['news-flash/index']);
+				$newsflashdata = $this->findModel($news_flash_id);
+				
+				$camp_id = $model->getPrimaryKey();
+				
+				$html = "Hello User <br />";
+				$html .= "<h1>".$newsflashdata->title."</h1>";
+				$html .= "<p><img src='https://gallery.mailchimp.com/3e055ae88c03feb23a6db9008/images/d939e22b-594c-4fc1-9f58-bb2b649e470b.png' height='50' width='50'>". $newsflashdata->body . "</p>";
+				// $html .= "<p><img src='".Url::home(true).'uploads/' . $newsflashdata->image."' height='50' width='50'>". $newsflashdata->body . "</p>";
+				
+				$options = ['list_id'=>$mc_camp_list_id,'subject'=>$campaignname,'from_email'=>'mukeshkumar33390@gmail.com','from_name'=>Yii::$app->request->serverName];
+					
+				$content = ['html'=>$html];
+				$type = 'regular';
+				
+				if($mc->campaigns->create($type, $options, $content)){
+					$ret = $mc->campaigns->create($type, $options, $content);
+					$cid = $ret['id'];
+					$retData = $mc->campaigns->send($cid);
+					if($retData){
+						
+						$model->id = $camp_id;
+						$model->mc_camp_id = $cid;
+						$model->status = 1;
+						$model->updated_at = strtotime(date('d-m-Y H:i:s'));
+						$model->save();
+					}
+					return $this->redirect(['news-flash/index']);
+				}else{
+					return $this->redirect(['news-flash/index']);
+				}
+				
 			}else{
 				 return $this->redirect(['news-flash/index']);
 			}
@@ -316,7 +355,6 @@ class NewsFlashController extends Controller
 			
             return $this->renderAjax('campaign/create', [
 								 'model' => $model,
-								 // 'listsdata' => $listsdata
 							    ]);
 			
         }
